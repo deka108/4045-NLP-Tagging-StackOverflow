@@ -9,11 +9,13 @@ data_dir = 'data'
 
 # Filtering options
 pagesize = 100
+# filter w/o answer link !)EhwLl5mQ7SRRT.giqkyY*Ml6ZLhMFIWPHEQ-OGv88TMTWrEL' 
 # filter w/o answer count = !17vhT8QOUm)koH5(u-VKOO052pl0CqLsE)qJhVj8Pg-YDP
-filter = '!)EhwLl5mQ7SRRT.giqkyY*Ml6ZLhMFIWPHEQ-OGv88TMTWrEL' # with count
+filter = '!)EhwLl5mQ7SRRT.giYQTnz8D57tDq2vbNAWqwoSK5c4qWEEEL' # with count
 order = 'desc'
 sort = 'votes'
 site = 'stackoverflow'
+tagged = 'java'
 
 # Date formats
 first_half = {'from_date': '%s-01-01', 'to_date': '%s-06-30'}
@@ -54,7 +56,7 @@ def generate_json_per_year(year):
 
 		# Write JSON result into a JSON file
 		file_name = 'data_' + str(year) + '.json'
-		path = os.path.join("data", file_name)
+		path = os.path.join(data_dir, file_name)
 		with open(path, 'w') as output:
 			json.dump(res.json(), output)
 		
@@ -77,9 +79,7 @@ def generate_json_per_halfyear(year):
 			year -= 1
 		else:
 			file_name = 'data_sec_half_' + str(year) + '.json'
-
-		path = os.path.join("data", file_name)
-
+		path = os.path.join(data_dir, file_name)
 		with open(path, 'w') as output:
 			json.dump(res.json(), output)
 		
@@ -93,8 +93,7 @@ def check_questions_per_year(year):
 
 		with open(path) as input:
 			data = json.load(input)
-		print 'Number of questions for year %d: %d ' % (year, 
-			len(data['items']))
+		print 'Number of questions for year %d: %d ' % (year, len(data['items']))
 
 		year -= 1
 
@@ -125,6 +124,6 @@ def check_questions_per_halfyear(year):
 		
 
 #generate_json_per_year(2016)
-check_questions_per_year(2016)
-#generate_json_per_halfyear(2015)
+#check_questions_per_year(2016)
+generate_json_per_halfyear(2015)
 check_questions_per_halfyear(2015)
