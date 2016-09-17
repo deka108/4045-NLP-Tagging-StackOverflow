@@ -14,8 +14,7 @@ json_suffix = '.json'
 # Filtering options
 pagesize = 100
 page = 1
-# filter w/o answer link !)EhwLl5mQ7SRRT.giqkyY*Ml6ZLhMFIWPHEQ-OGv88TMTWrEL'
-filter = '!)EhwLl5mQ7SRRT.giYQTnz8D57tDq2vbNAWqwoSK5c4qWEEEL' # with count
+filter = '!)EhwLl5mQ7SRRT.giqkyY*Ml6ZLhMFIWSL4731oh8m9wwZ.ra' # with count
 order = 'desc'
 sort = 'votes'
 site = 'stackoverflow'
