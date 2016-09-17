@@ -1,0 +1,54 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style type="text/css">
+
+#container > div {
+	border-bottom: 1px solid black;
+}
+
+	</style>
+</head>
+<body>
+
+<div id="container"></div>
+
+<script type="text/javascript">
+
+// http://stackoverflow.com/a/14388512
+function fetchJSONFile(path, callback) {
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = function() {
+        if (httpRequest.readyState === 4) {
+            if (httpRequest.status === 200) {
+                var data = JSON.parse(httpRequest.responseText);
+                if (callback) callback(data);
+            }
+        }
+    };
+    httpRequest.open('GET', path);
+    httpRequest.send(); 
+}
+
+var container = document.getElementById('container')
+
+fetchJSONFile('data/data_2013-01-01-2013-06-30_java.json', function (data) {
+	console.log(data)
+	data.items.forEach(function (qn) {
+		var e = document.createElement('div')
+		e.innerHTML = qn.body
+		container.appendChild(e)
+
+		qn.answers.forEach(function (ans) {
+			var d = document.createElement('div')
+			d.innerHTML = ans.body
+			container.appendChild(d)
+		})
+	})
+})
+
+</script>
+
+</body>
+</html>
