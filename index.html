@@ -33,16 +33,16 @@ function fetchJSONFile(path, callback) {
 
 var container = document.getElementById('container')
 
-fetchJSONFile('data/data_2013-01-01-2013-06-30_java.json', function (data) {
+fetchJSONFile('data/data_2015-07-01-2015-12-31_java.json', function (data) {
 	console.log(data)
-	data.items.forEach(function (qn) {
+	data.items.forEach(function (qn, i) {
 		var e = document.createElement('div')
-		e.innerHTML = qn.body
+		e.innerHTML = "<h1>items index : " + i + "</h1>" + qn.body
 		container.appendChild(e)
 
-		qn.answers.forEach(function (ans) {
+		qn.answers.forEach(function (ans, j) {
 			var d = document.createElement('div')
-			d.innerHTML = ans.body
+			d.innerHTML = "<h1>items index : " + i + "</h1>" + "<h1>answers index : " + j + "</h1>" + ans.body
 			container.appendChild(d)
 		})
 	})
