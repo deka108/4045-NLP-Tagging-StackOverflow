@@ -47,7 +47,7 @@
 			    httpRequest.send(); 
 			}
 
-			var path_name = [
+			var path_name_javatag = [
 				'data/data_2011-01-01-2011-06-30_java.json', 
 				'data/data_2011-07-01-2011-12-31_java.json', 
 				'data/data_2012-01-01-2012-06-30_java.json', 
@@ -58,10 +58,23 @@
 				'data/data_2014-07-01-2014-12-31_java.json', 
 				'data/data_2015-01-01-2015-06-30_java.json', 
 				'data/data_2015-07-01-2015-12-31_java.json', 
-			]
+			];
+
+			var path_name_notag = [
+				'data/data_2011-01-01-2011-06-30.json', 
+				'data/data_2011-07-01-2011-12-31.json', 
+				'data/data_2012-01-01-2012-06-30.json', 
+				'data/data_2012-07-01-2012-12-31.json', 
+				'data/data_2013-01-01-2013-06-30.json', 
+				'data/data_2013-07-01-2013-12-31.json', 
+				'data/data_2014-01-01-2014-06-30.json', 
+				'data/data_2014-07-01-2014-12-31.json', 
+				'data/data_2015-01-01-2015-06-30.json', 
+				'data/data_2015-07-01-2015-12-31.json', 
+			];
 			
 			var container = document.getElementById('container');
-			var path_to_file = path_name[6];
+			var path_to_file = path_name_javatag[0];
 
 			fetchJSONFile(path_to_file, function (data) {
 				document.title = path_to_file.replace('data\/', '');

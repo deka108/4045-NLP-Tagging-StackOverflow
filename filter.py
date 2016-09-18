@@ -7,6 +7,7 @@ import time
 os.environ['TZ']='UTC'
 data_dir = 'data'
 file_name_year = 'data_%s'
+file_name_year_java = 'data_%s_java'
 file_name_month = 'data_%s-%s'
 file_name_month_java = 'data_%s-%s_java'
 json_suffix = '.json'
@@ -20,6 +21,10 @@ sort = 'votes'
 site = 'stackoverflow'
 tagged = 'java'
 
+# Initial URL + payload
+url = 'https://api.stackexchange.com/2.2/questions'
+payload = {'pagesize': pagesize, 'order': order, 'sort': sort, 'site': site, 'filter': filter}
+
 # Date formats
 from_date = 'from_date'
 to_date = 'to_date'
@@ -31,10 +36,6 @@ date_year = {from_date: '%s-01-01', to_date:  '%s-12-31'}
 date_format = '%Y-%m-%d'
 base_year = 2008
 base_halfyear = 2011
-
-# Initial URL + payload
-url = 'https://api.stackexchange.com/2.2/questions'
-payload = {'pagesize': pagesize, 'order': order, 'sort': sort, 'site': site, 'filter': filter}
 
 def get_format_per_month(year):
 	per_month = [
@@ -57,10 +58,12 @@ def get_format_per_month(year):
 
 	return per_month
 
+
 def update_year(format, year):
 	"""Updates the from and to date as UTC epoch per year."""
 	payload['fromdate'] = int(time.mktime(time.strptime(format[from_date] % year, date_format)))
 	payload['todate'] = int(time.mktime(time.strptime(format[to_date] % year, date_format)))
+
 
 def update_half_year(year, is_first_half):
 	"""Updates the from and to date as UTC epoch per half year."""
@@ -71,7 +74,8 @@ def update_half_year(year, is_first_half):
 
 	update_year(half, year)
 	
-def generate_json_per_year(year):
+
+def generate_json_per_year(year, file_format=file_name_month):
 	"""Generates JSON file per year from 01/01/08 - 31/12/16."""
 	while(year >= base_year):
 		update_year(date_year, year)
@@ -87,6 +91,7 @@ def generate_json_per_year(year):
 			json.dump(res.json(), output)
 		
 		year -= 1
+
 
 def generate_json_per_halfyear(year, file_format=file_name_month):
 	"""Generates JSON file per 6 months from 01/01/11 - 31/12/15."""
@@ -117,8 +122,17 @@ def generate_json_per_halfyear(year, file_format=file_name_month):
 		
 		is_first_half = not is_first_half
 
-def generate_json_per_month(year):
+
+def generate_json_per_halfyear_tag(year):
+	payload['tagged'] = 'java'
+	generate_json_per_halfyear(year, file_name_month_java)
+	del payload['tagged']
+
+
+def generate_json_per_month(year, size=10, file_format=file_name_month):
 	"""Generates JSON file per month from 01/01/08 - 31/12/15."""
+	payload['pagesize'] = size
+
 	while(year >= base_year):
 		format_per_month = get_format_per_month(year)
 
@@ -132,7 +146,7 @@ def generate_json_per_month(year):
 			# Write JSON result into a JSON file
 			frm = format_per_month[i][from_date] % year
 			to = format_per_month[i][to_date] % year
-			file_name = file_name_month % (frm, to) + json_suffix
+			file_name = file_format % (frm, to) + json_suffix
 			
 			path = os.path.join(data_dir, file_name)
 			
@@ -141,10 +155,8 @@ def generate_json_per_month(year):
 			
 		year -= 1
 
-def generate_json_per_halfyear_java_tag(year):
-	payload['tagged'] = 'java'
-	generate_json_per_halfyear(year, file_name_month_java)
-	del payload['tagged']
+	payload['pagesize'] = pagesize
+
 
 def check_questions_per_year(year):
 	"""Validates that number of question posts per year are 100."""
@@ -157,6 +169,7 @@ def check_questions_per_year(year):
 		print 'Number of questions for year %d: %d ' % (year, len(data['items']))
 
 		year -= 1
+
 
 def check_questions_per_halfyear(year, file_format=file_name_month):
 	"""Validates that number of question posts per half year are 100."""
@@ -184,11 +197,12 @@ def check_questions_per_halfyear(year, file_format=file_name_month):
 		is_first_half = not is_first_half
 	
 #generate_json_per_year(2016)
-#generate_json_per_month(2015) DO NOT USE
 #check_questions_per_year(2016)
 
-#generate_json_per_halfyear(2015)
-#check_questions_per_halfyear(2015)
+#generate_json_per_month(2015)
 
-generate_json_per_halfyear_java_tag(2015)
-#check_questions_per_halfyear(2015, file_name_month_java)
+#generate_json_per_halfyear(2012)
+check_questions_per_halfyear(2015)
+
+#generate_json_per_halfyear_java_tag(2015)
+check_questions_per_halfyear(2015, file_name_month_java)
