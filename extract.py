@@ -1,10 +1,17 @@
 import json
 
-index = {
-	# item index : list of ans index
-	0 : [0,1,2],
-	1 : []
+##################################################
+
+question_index = []
+
+answer_index = {
+	# question_index : list of answer_index
+	# example
+	# 0 : [0, 1, 2]
 }
+
+##################################################
+
 
 items = []
 
@@ -12,28 +19,29 @@ items = []
 with open("data/data_2015-07-01-2015-12-31_java.json", "r") as source:
 	data = json.load(source)
 
+	for i in question_index:
+		items.append({
+			"body" : data["items"][i]["body"],
+			"tags" : data["items"][i]["tags"],
+			"title" : data["items"][i]["title"],
+			"link" : data["items"][i]["link"],
+			"question_id" : data["items"][i]["question_id"]
+		})
+
+	# python 2 only
+	for key,value in answer_index.iteritems():
+		for i in value:
+			items.append({
+				"body" : data["items"][key]["answers"][i]["body"],
+				"tags" : data["items"][key]["answers"][i]["tags"],
+				"title" : data["items"][key]["answers"][i]["title"],
+				"link" : data["items"][key]["answers"][i]["link"],
+				"answer_id" : data["items"][key]["answers"][i]["answer_id"],
+				"question_id" : data["items"][key]["question_id"]
+			})
+
+	
 	# REMEMBER TO CHANGE TARGET PATH
 	with open("api_mention/data_2015-07-01-2015-12-31_java_api_mention.json", "w") as target:
-		# python 2
-		for key,value in index.iteritems():
-
-			if (value):
-				items.append(
-					{
-						"body" : data["items"][key]["body"],
-						"tags" : data["items"][key]["tags"],
-						"title" : data["items"][key]["title"],
-						"question_id" : data["items"][key]["question_id"],
-						"answers" : [data["items"][key]["answers"][idx] for idx in value]
-					})
-			else:
-				items.append(
-					{
-						"body" : data["items"][key]["body"],
-						"tags" : data["items"][key]["tags"],
-						"title" : data["items"][key]["title"],
-						"question_id" : data["items"][key]["question_id"]
-					})	
-
-
 		target.write(json.dumps({"items" : items}))
+		
