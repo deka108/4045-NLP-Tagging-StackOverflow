@@ -1,123 +1,129 @@
 <html>
-<head>
-	<meta charset="utf-8" />
-	<title></title>
-	<style type="text/css">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
 
-	#container > div {
-		border-bottom: 1px solid black;
-	}
-
-	:not(pre) > code, blockquote{
-		background-color: yellow;
-	}
-
-	pre{
-		background-color: lightgray;
-	}
-
-	.question-span, .answer-span{
-		font-style: italic;
-	}
-
-	</style>
-</head>
-	<body>
-
-	<div id="container"></div>
-
-	<script type="text/javascript">
-
-		// http://stackoverflow.com/a/14388512
-		function fetchJSONFile(path, callback) {
-		    var httpRequest = new XMLHttpRequest();
-		    httpRequest.onreadystatechange = function() {
-		        if (httpRequest.readyState === 4) {
-		            if (httpRequest.status === 200) {
-		                var data = JSON.parse(httpRequest.responseText);
-		                if (callback) callback(data);
-		            }
-		        }
-		    };
-		    httpRequest.open('GET', path);
-		    httpRequest.send(); 
+		#container > div {
+			border-bottom: 1px solid black;
 		}
 
-		var path_name = [
-			'data/data_2011-01-01-2011-06-30_java.json', 
-			'data/data_2011-07-01-2011-12-31_java.json', 
-			'data/data_2012-01-01-2012-06-30_java.json', 
-			'data/data_2012-07-01-2012-12-31_java.json', 
-			'data/data_2013-01-01-2013-06-30_java.json', 
-			'data/data_2013-07-01-2013-12-31_java.json', 
-			'data/data_2014-01-01-2014-06-30_java.json', 
-			'data/data_2014-07-01-2014-12-31_java.json', 
-			'data/data_2015-01-01-2015-06-30_java.json', 
-			'data/data_2015-07-01-2015-12-31_java.json', 
-		]
-		
-		var container = document.getElementById('container')
-		
-		fetchJSONFile(path_name[6], function (data) {
-			console.log(data);
-			var i = 1;
+		:not(pre) > code{
+			background-color: yellow;
+		}
 
-			data.items.forEach(function (qn) {
-				// Create question div
-				var qnDiv = document.createElement("div");
-				qnDiv.className = "question";
-				var qnHeading = document.createElement("h2"); 
-				var qnTitle = document.createTextNode("Question " + i + ":"); 
-				qnHeading.appendChild(qnTitle);
-				qnDiv.appendChild(qnHeading);
+		blockquote{
+			background-color: lightsalmon;
+		}
 
-				// Insert SO link to the question
-				var qnSpan = document.createElement("span");
-				qnSpan.className = "question-span";
-				qnSpan.innerHTML = "Link: ";
-				var qnLink = document.createElement("a");
-				qnLink.href = qn.link;
-				qnLink.innerHTML = qn.link;
-				qnSpan.appendChild(qnLink);
-				qnSpan.insertAdjacentHTML("beforeend", "<br/>Answer count: " + qn.answer_count);
-				qnDiv.appendChild(qnSpan);
-				
-				// Insert question body
-				qnDiv.insertAdjacentHTML('beforeend', qn.body);
+		pre{
+			background-color: lightgray;
+		}
 
-				var j = 1;
-				qn.answers.forEach(function (ans) {
-					// Create answer div
-					var ansDiv = document.createElement("div");
-					ansDiv.className = "answer";
-					var ansHeading = document.createElement("h4");
-					var ansTitle = document.createTextNode("Answer " + j + ":"); 
-					ansHeading.appendChild(ansTitle);
-					ansDiv.appendChild(ansHeading);
+		.question-span, .answer-span{
+			font-style: italic;
+		}
 
-					// Insert SO link to the answer
-					var ansSpan = document.createElement("span");
-					ansSpan.className = "answer-span";
-					ansSpan.innerHTML = "Link: ";
-					var ansLink = document.createElement("a");
-					ansLink.href = ans.link;
-					ansLink.innerHTML = ans.link;
-					ansSpan.appendChild(ansLink);
-					ansDiv.appendChild(ansSpan);
+		</style>
+	</head>
 
-					// Insert answer body
-		 			ansDiv.insertAdjacentHTML("beforeend", ans.body);
-		 			j++;
+	<body>
+		<div id="container"></div>
 
-		 			qnDiv.appendChild(ansDiv);
+		<script type="text/javascript">
+
+			// http://stackoverflow.com/a/14388512
+			function fetchJSONFile(path, callback) {
+			    var httpRequest = new XMLHttpRequest();
+			    httpRequest.onreadystatechange = function() {
+			        if (httpRequest.readyState === 4) {
+			            if (httpRequest.status === 200) {
+			                var data = JSON.parse(httpRequest.responseText);
+			                if (callback) callback(data);
+			            }
+			        }
+			    };
+			    httpRequest.open('GET', path);
+			    httpRequest.send(); 
+			}
+
+			var path_name = [
+				'data/data_2011-01-01-2011-06-30_java.json', 
+				'data/data_2011-07-01-2011-12-31_java.json', 
+				'data/data_2012-01-01-2012-06-30_java.json', 
+				'data/data_2012-07-01-2012-12-31_java.json', 
+				'data/data_2013-01-01-2013-06-30_java.json', 
+				'data/data_2013-07-01-2013-12-31_java.json', 
+				'data/data_2014-01-01-2014-06-30_java.json', 
+				'data/data_2014-07-01-2014-12-31_java.json', 
+				'data/data_2015-01-01-2015-06-30_java.json', 
+				'data/data_2015-07-01-2015-12-31_java.json', 
+			]
+			
+			var container = document.getElementById('container');
+			var path_to_file = path_name[6];
+
+			fetchJSONFile(path_to_file, function (data) {
+				document.title = path_to_file.replace('data\/', '');
+				console.log(data);
+				var i = 1;
+
+				data.items.forEach(function (qn) {
+					// Create question div
+					var qnDiv = document.createElement("div");
+					qnDiv.className = "question";
+					var qnHeading = document.createElement("h2"); 
+					var qnTitle = document.createTextNode("Question " + i + ":"); 
+					qnHeading.appendChild(qnTitle);
+					qnDiv.appendChild(qnHeading);
+
+					// Insert SO link to the question
+					var qnSpan = document.createElement("span");
+					qnSpan.className = "question-span";
+					qnSpan.innerHTML = "Link: ";
+					var qnLink = document.createElement("a");
+					qnLink.href = qn.link;
+					qnLink.innerHTML = qn.link;
+					qnSpan.appendChild(qnLink);
+					qnSpan.insertAdjacentHTML("beforeend", "<br/>Answer count: " + qn.answer_count);
+					qnDiv.appendChild(qnSpan);
+					
+					// Insert question body
+					qnDiv.insertAdjacentHTML('beforeend', qn.body);
+
+					var j = 1;
+					qn.answers.forEach(function (ans) {
+						// Create answer div
+						var ansDiv = document.createElement("div");
+						ansDiv.className = "answer";
+						var ansHeading = document.createElement("h4");
+						var ansTitle = document.createTextNode("Answer " + j + ":"); 
+						ansHeading.appendChild(ansTitle);
+						ansDiv.appendChild(ansHeading);
+
+						// Insert SO link to the answer
+						var ansSpan = document.createElement("span");
+						ansSpan.className = "answer-span";
+						ansSpan.innerHTML = "Link: ";
+						var ansLink = document.createElement("a");
+						ansLink.href = ans.link;
+						ansLink.innerHTML = ans.link;
+						ansSpan.appendChild(ansLink);
+						ansDiv.appendChild(ansSpan);
+
+						// Insert answer body
+			 			ansDiv.insertAdjacentHTML("beforeend", ans.body);
+			 			j++;
+
+			 			qnDiv.appendChild(ansDiv);
+					});
+
+					container.appendChild(qnDiv);
+					i++;
 				});
+			})
 
-				container.appendChild(qnDiv);
-				i++;
-			});
-		})
+		</script>
 
-	</script>
-
-</body>
+	</body>
 </html>
