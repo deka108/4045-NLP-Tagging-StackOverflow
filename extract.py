@@ -7,7 +7,6 @@ question_index = []
 answer_index = {
     # question_index : list of answer_index
     # example
-    # 0 : [0, 1, 2]
 }
 
 ##################################################
@@ -38,6 +37,7 @@ def extract_api_mention_post(index):
 
     data_path = os.path.join(data_dir, data_name_javatag[index])
     api_mention_path = get_mention_api_path(data_name_javatag[index])
+    print api_mention_path
 
     with open(data_path, "r") as source:
         data = json.load(source)
@@ -68,5 +68,5 @@ def extract_api_mention_post(index):
         with open(api_mention_path, "w") as target:
             target.write(json.dumps({"items": items}))
 
-# Change index of the data path
-extract_api_mention_post(7)
+# Uncomment and change index of the data path
+# extract_api_mention_post(7)
