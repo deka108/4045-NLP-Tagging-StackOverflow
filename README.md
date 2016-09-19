@@ -9,9 +9,15 @@ To generate the files:
 
 ## Data Preprocessing
 ### Data Viewing
-To view the generated JSON file in a human-readable format, edit `index.html`. Select the JSON file by changing the index at line 77 `var path_to_file = path_name_javatag[indexToChange]`. Open `index.html` in your browser.
+To view the generated JSON file in a human-readable format, open `index.html`. Then, open the developer console and call one of the following methods:
 
-Todo @pciangm, @stefan0010
+1. `displayJsonData(path_to_post_json)` to display the raw JSON data. Replace `path_to_post_json` with either:
+  * `path_name_javatag[index]` to display top voted 100 question posts with answers that are tagged with Java and replace `index` with a number from 0-9.
+  * `path_name_notag[index]` to display any top voted 100 question posts with answers and replace `index` with a number from 0-9.
+
+2. `displayJsonApiMention(path_to_api_mention_json)` to display the extracted API mention for ground truth. Replace `path_to_api_mention_json` with `api_mention_javatag[index]` and replace `index` with a number from 0-9.
+
+Todo @pciang, @stefan0010
 - [ ] clean JSON data
 - [ ] summary statistics
 
