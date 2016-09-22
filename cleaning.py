@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup,NavigableString
 import io , json
 
 # change the path later on
-datapath_java = ['data//data_2012-01-01-2012-06-30_java.json',
+datapath_java = [
 'data//data_2011-01-01-2011-06-30_java.json',
 'data//data_2011-07-01-2011-12-31_java.json',
 'data//data_2012-01-01-2012-06-30_java.json',
@@ -28,43 +28,33 @@ datapath = [
 'data//data_2015-01-01-2015-06-30.json',
 'data//data_2015-07-01-2015-12-31.json'
 ]
-invalid_tags = ["p","li","ul","hr"]
+valid_tags = ["code","pre","blockquote"]
 json_list = []
 index = 100
 # change the index
-source_file = io.open(datapath_java[3], "r", encoding="utf-8")
+source_file = io.open(datapath_java[2], "r", encoding="utf-8")
 # change the path
 dest_file = io.open("data//parsed.json", "w+", encoding="utf-8")
-# add another tag if you want to delete the content as well before preprocessed
 
-# def delete_pre(html, invalid_tags):
-#     soup = BeautifulSoup(html, "html.parser")
-#     for tag in soup.find_all(True):
-#         if tag.name in invalid_tags:
-#             tag.decompose()
-#     return soup
-
-def delete_tag(html, invalid_tags):
+def delete_tag(html, valid_tags):
     soup = BeautifulSoup(html, "html.parser")
     for tag in soup.find_all(True):
-        if tag.name in invalid_tags:
+        if tag.name not in valid_tags:
             s = ""
             for c in tag.contents:
                 if not isinstance(c, NavigableString):
-                    c = delete_tag(unicode(c), invalid_tags)
+                    c = delete_tag(unicode(c), valid_tags)
                 s += unicode(c)
             tag.replace_with(s)
-
-    return soup
+        # else:
+        #     if tag.name in replace_tags:
+    return soup.get_text()
 
 data = json.load(source_file)
 for i in xrange(0, index):
     count =  data["items"][i]["answer_count"]
     json_list.append({
-        "body": delete_tag(data["items"][i]["body"],invalid_tags).prettify(formatter="html"),
-        # "body": BeautifulSoup(data["items"][i]["body"], "html.parser").get_text(),
-        # use the below one if you want to delete the multi line block
-        # "body": delete_pre(data["items"][i]["body"],invalid_tags).get_text(),
+        "body": delete_tag(data["items"][i]["body"],valid_tags),
         "tags": data["items"][i]["tags"],
         "title": data["items"][i]["title"],
         "answer_count":count,
@@ -74,10 +64,7 @@ for i in xrange(0, index):
     })
     for j in xrange(0, count):
         json_list[i]["answers"].append({
-            "body": delete_tag(data["items"][i]["answers"][j]["body"], invalid_tags).prettify(formatter="html"),
-            # "body": BeautifulSoup(data["items"][i]["answers"][j]["body"], "html.parser").get_text(),
-            # use the below one if you want to delete the multi line block
-            # "body": delete_pre(data["items"][i]["answers"][j]["body"], invalid_tags).get_text(),
+            "body": delete_tag(data["items"][i]["answers"][j]["body"], valid_tags),
             "tags": data["items"][i]["answers"][j]["tags"],
             "title": data["items"][i]["answers"][j]["title"],
             "link": data["items"][i]["answers"][j]["link"],
