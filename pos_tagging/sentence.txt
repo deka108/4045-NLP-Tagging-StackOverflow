@@ -1,0 +1,10 @@
+Changing the springloaded version in my pom.xml did the trick.
+I thought I should add my two pence worth on this topic.
+Recently I hit the same issue trying to upgrade an ancient app to 2.4.4.
+Once it is loaded, the static initializer of class C is invoked.
+What is the correct way to perform this test?
+Now the main method, we printed the value of dependsOnA of class B.
+This works because the .equals() contract guarantees that for any object o, o.equals(null) is always false.
+How would Random.ints() be supposed to handle such a request?
+Since these are Iterables, you can call the iterator() method more than once.
+We wanted consistent, predictable behavior for what happens if you call iterator() twice.
