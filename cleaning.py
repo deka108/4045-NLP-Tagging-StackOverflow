@@ -3,30 +3,30 @@ import io , json
 
 # change the path later on
 datapath_java = [
-'data//data_2011-01-01-2011-06-30_java.json',
-'data//data_2011-07-01-2011-12-31_java.json',
-'data//data_2012-01-01-2012-06-30_java.json',
-'data//data_2012-07-01-2012-12-31_java.json',
-'data//data_2013-01-01-2013-06-30_java.json',
-'data//data_2013-07-01-2013-12-31_java.json',
-'data//data_2014-01-01-2014-06-30_java.json',
-'data//data_2014-07-01-2014-12-31_java.json',
-'data//data_2015-01-01-2015-06-30_java.json',
-'data//data_2015-07-01-2015-12-31_java.json'
+'data\\data_2011-01-01-2011-06-30_java.json',
+'data\\data_2011-07-01-2011-12-31_java.json',
+'data\\data_2012-01-01-2012-06-30_java.json',
+'data\\data_2012-07-01-2012-12-31_java.json',
+'data\\data_2013-01-01-2013-06-30_java.json',
+'data\\data_2013-07-01-2013-12-31_java.json',
+'data\\data_2014-01-01-2014-06-30_java.json',
+'data\\data_2014-07-01-2014-12-31_java.json',
+'data\\data_2015-01-01-2015-06-30_java.json',
+'data\\data_2015-07-01-2015-12-31_java.json'
 ]
 
 # change the path later on
 datapath = [
-'data//data_2011-01-01-2011-06-30.json',
-'data//data_2011-07-01-2011-12-31.json',
-'data//data_2012-01-01-2012-06-30.json',
-'data//data_2012-07-01-2012-12-31.json',
-'data//data_2013-01-01-2013-06-30.json',
-'data//data_2013-07-01-2013-12-31.json',
-'data//data_2014-01-01-2014-06-30.json',
-'data//data_2014-07-01-2014-12-31.json',
-'data//data_2015-01-01-2015-06-30.json',
-'data//data_2015-07-01-2015-12-31.json'
+'data\\data_2011-01-01-2011-06-30.json',
+'data\\data_2011-07-01-2011-12-31.json',
+'data\\data_2012-01-01-2012-06-30.json',
+'data\\data_2012-07-01-2012-12-31.json',
+'data\\data_2013-01-01-2013-06-30.json',
+'data\\data_2013-07-01-2013-12-31.json',
+'data\\data_2014-01-01-2014-06-30.json',
+'data\\data_2014-07-01-2014-12-31.json',
+'data\\data_2015-01-01-2015-06-30.json',
+'data\\data_2015-07-01-2015-12-31.json'
 ]
 valid_tags = ["code","pre","blockquote"]
 json_list = []
@@ -34,7 +34,7 @@ index = 100
 # change the index
 source_file = io.open(datapath_java[2], "r", encoding="utf-8")
 # change the path
-dest_file = io.open("data//parsed.json", "w+", encoding="utf-8")
+dest_file = io.open("data\\parsed.json", "w+", encoding="utf-8")
 
 def delete_tag(html, valid_tags):
     soup = BeautifulSoup(html, "html.parser")
