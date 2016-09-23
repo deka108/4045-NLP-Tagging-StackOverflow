@@ -108,7 +108,7 @@ if __name__ == '__main__':
                 output_arr.append({
                     'tokens': clean(ans['body']),
                     'question_id': item['question_id'],
-                    'answer_id': item['answer_id'],
+                    'answer_id': ans['answer_id'],
                     })
 
     if output_filename:
