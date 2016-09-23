@@ -28,7 +28,7 @@ datapath = [
 'data\\data_2015-01-01-2015-06-30.json',
 'data\\data_2015-07-01-2015-12-31.json'
 ]
-valid_tags = ["code","pre","blockquote"]
+valid_tags = ["p", "code", "pre", "blockquote"]
 json_list = []
 index = 100
 # change the index
