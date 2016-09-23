@@ -85,22 +85,31 @@ if __name__ == '__main__':
         elif opt == '-o':
             output_filename = val
 
-    assert os.path.isfile(input_filename)
+    assert os.path.isfile(input_filename), 'Example usage: python preprocess.py -i <json_inputfile> [-o <json_outputfile>]'
 
     output = {'items': []}
     with open(input_filename, encoding='UTF-8', mode='r') as input_fileptr:
         json_data = json.load(input_fileptr)
 
+        output_arr = output['items']
         for item in json_data['items']:
             entry = {}
 
             entry['tokens'] = clean(item['body'])
-
             entry['question_id'] = item['question_id']
             if 'answer_id' in item:
                 entry['answer_id'] = item['answer_id']
 
-            output['items'].append(entry)
+            output_arr.append(entry)
+
+
+            # Nested post
+            for ans in item['answers']:
+                output_arr.append({
+                    'tokens': clean(ans['body']),
+                    'question_id': item['question_id'],
+                    'answer_id': item['answer_id'],
+                    })
 
     if output_filename:
         with open(output_filename, encoding='UTF-8', mode='w') as output_fileptr:
