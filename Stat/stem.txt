@@ -1,0 +1,22 @@
+
+ The 20 most frequent words are :
+1. 791 use
+2. 351 java
+3. 322 class
+4. 288 code
+5. 287 method
+6. 264 n't
+7. 246 object
+8. 232 like
+9. 224 type
+10. 205 one
+11. 198 need
+12. 192 valu
+13. 190 implement
+14. 176 test
+15. 168 string
+16. 162 exampl
+17. 160 time
+18. 159 chang
+19. 158 differ
+20. 156 would
