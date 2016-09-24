@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import io
 import pprint
 from getopt import getopt
 
@@ -96,6 +97,7 @@ if __name__ == '__main__':
             entry = {}
 
             entry['tokens'] = clean(item['body'])
+            entry['answer_count'] = item['answer_count']
             entry['question_id'] = item['question_id']
             if 'answer_id' in item:
                 entry['answer_id'] = item['answer_id']
@@ -111,7 +113,6 @@ if __name__ == '__main__':
                     'answer_id': ans['answer_id'],
                     })
 
-    if output_filename:
         with open(output_filename, encoding='UTF-8', mode='w') as output_fileptr:
             json.dump(output, output_fileptr)
 
