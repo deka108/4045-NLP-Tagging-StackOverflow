@@ -10,20 +10,24 @@ questions_list = []
 # change the index
 with io.open('processed.json', "r", encoding="utf-8") as source_file:
     data = pandas.read_json(source_file)
-# change the path
-#
 
 def len_of_posts(data):
-    i=0
+    i=-1
     total=0
+    questions_id=''
     for item in data['items']:
-        count = 0
+        if questions_id != item['question_id']:
+            if i >=0:
+                # change path for another data
+                with open("Stat\\post length.txt", "a+") as len_file:
+                    len_file.write("length of pos {} : {}\n".format(i, count))
+            i += 1
+            count = 0
+            questions_id = item['question_id']
         for token in item['tokens']:
             count += len(re.findall(r'^\w+',token))
-        total +=count
-        with open("Stat\\post length.txt", "a+") as len_file:
-            len_file.write("length of pos {} : {}\n".format(i,count))
-        i += 1
+        total += count
+    # change path for another data
     with open("Stat\\post length.txt", "a+") as len_file:
         len_file.write("total length:{} \n".format(total))
 
@@ -34,12 +38,10 @@ def get_statistics(data):
     num_of_answers = 0
     answer_file = []
     for item in data["items"]:
-        questions_list.append({
-            'answer_count' : item["answer_count"]
-        })
-        answer_file.append(item["answer_count"])
-        num_of_answers += item["answer_count"]
-        item_count += 1
+        if 'answer_count' in item:
+            answer_file.append(item["answer_count"])
+            num_of_answers += item["answer_count"]
+            item_count += 1
 
     with open("Stat\\statistic.txt", "a+") as stat_file:
         if os.stat("Stat\\statistic.txt").st_size != 0:
