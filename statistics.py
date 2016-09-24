@@ -29,8 +29,9 @@ def len_of_posts(data):
         total += count
     # change path for another data
     with open("Stat\\post length.txt", "a+") as len_file:
+        len_file.write("length of pos {} : {}\n".format(i, count))
         len_file.write("total length:{} \n".format(total))
-
+    # change path for another data
 
 def get_statistics(data):
     info = {}

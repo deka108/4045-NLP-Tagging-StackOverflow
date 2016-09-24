@@ -1,1 +1,1 @@
-{'total questions': 200, 'total answers': 1572}
+{'answers': 786, 'questions': 100}
