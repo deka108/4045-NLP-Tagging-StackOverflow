@@ -42,6 +42,7 @@ datapath_java = [
     'data/data_2015-01-01-2015-06-30_java.json',
     'data/data_2015-07-01-2015-12-31_java.json'
 ]
+stat_file_path = "Stat/all_statistic.txt"
 
 def flatten(node):
     result = []
@@ -88,12 +89,17 @@ def clean(html_str):
 
 def preprocess_json(input_filename):
     output = {'items': []}
+    total_answer = 0
+    total_question = 0
 
     with io.open(input_filename, encoding='UTF-8', mode='r') as input_fileptr:
         json_data = json.load(input_fileptr)
+        questions = json_data.get('items')
 
         output_arr = output['items']
-        for item in json_data['items']:
+        total_question += len(questions)
+
+        for item in questions:
             entry = {}
 
             entry['tokens'] = clean(item['body'])
@@ -107,6 +113,8 @@ def preprocess_json(input_filename):
             # Nested post
             answers = item.get('answers')
             if answers:
+                total_answer += len(answers)
+
                 for ans in answers:
                     output_arr.append({
                         'tokens': clean(ans['body']),
@@ -115,7 +123,7 @@ def preprocess_json(input_filename):
                     })
             else:
                 print entry['question_id'], 'in', input_filename,\
-                    ' does not have answers'
+                    'does not have any answers'
 
     output_filename = input_filename.replace('data/data',
                                              'preprocessed/preprocessed')
@@ -125,8 +133,35 @@ def preprocess_json(input_filename):
             output_fileptr.write(unicode(json.dumps(output)))
     else:
         print(json.dumps(output, indent=4))
+        
+    return total_question, total_answer
 
 
 if __name__ == '__main__':
+    agg_total_answer = 0
+    agg_total_question = 0
+
+    open(stat_file_path, "w").close()
+
     for input_path in datapath_java:
-        preprocess_json(input_path)
+        total_question, total_answer = preprocess_json(input_path)
+
+        with open(stat_file_path, "a") as stat_file:
+            stat_file.write(input_path + "\n")
+            stat_file.write("Total question posts: " + str(total_question) +
+                            "\n")
+            stat_file.write("Total answer posts: " + str(total_answer) +
+                            "\n")
+            stat_file.write("Total posts: " + str(total_question +
+                                                 total_answer) + "\n")
+
+        agg_total_question += total_question
+        agg_total_answer += total_answer
+
+    with open(stat_file_path, "a") as stat_file:
+        stat_file.write("Aggregate total question posts: " +
+                        str(agg_total_question) + "\n")
+        stat_file.write("Aggregate total answer posts: " +
+                        str(agg_total_answer) + "\n")
+        stat_file.write("Aggregate total posts: " +
+                        str(agg_total_question + agg_total_answer) + "\n")

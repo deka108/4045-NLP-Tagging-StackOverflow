@@ -1,0 +1,43 @@
+data/data_2011-01-01-2011-06-30_java.json
+Total question posts: 100
+Total answer posts: 1024
+Total posts: 1124
+data/data_2011-07-01-2011-12-31_java.json
+Total question posts: 100
+Total answer posts: 1006
+Total posts: 1106
+data/data_2012-01-01-2012-06-30_java.json
+Total question posts: 100
+Total answer posts: 786
+Total posts: 886
+data/data_2012-07-01-2012-12-31_java.json
+Total question posts: 100
+Total answer posts: 778
+Total posts: 878
+data/data_2013-01-01-2013-06-30_java.json
+Total question posts: 100
+Total answer posts: 657
+Total posts: 757
+data/data_2013-07-01-2013-12-31_java.json
+Total question posts: 100
+Total answer posts: 744
+Total posts: 844
+data/data_2014-01-01-2014-06-30_java.json
+Total question posts: 100
+Total answer posts: 676
+Total posts: 776
+data/data_2014-07-01-2014-12-31_java.json
+Total question posts: 100
+Total answer posts: 578
+Total posts: 678
+data/data_2015-01-01-2015-06-30_java.json
+Total question posts: 100
+Total answer posts: 515
+Total posts: 615
+data/data_2015-07-01-2015-12-31_java.json
+Total question posts: 100
+Total answer posts: 480
+Total posts: 580
+Aggregate total question posts: 1000
+Aggregate total answer posts: 7244
+Aggregate total posts: 8244
