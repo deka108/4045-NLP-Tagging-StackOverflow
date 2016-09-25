@@ -121,14 +121,16 @@ if __name__ == '__main__':
 
             output_arr.append(entry)
 
+            answers = item.get('answers')
 
-            # Nested post
-            for ans in item['answers']:
-                output_arr.append({
-                    'tokens': clean(ans['body']),
-                    'question_id': item['question_id'],
-                    'answer_id': ans['answer_id'],
-                    })
+            if answers:
+                # Nested post
+                for ans in item['answers']:
+                    output_arr.append({
+                        'tokens': clean(ans['body']),
+                        'question_id': item['question_id'],
+                        'answer_id': ans['answer_id'],
+                        })
 
     if output_filename:
         with io.open(output_filename, encoding='UTF-8', mode='w') as output_fileptr:

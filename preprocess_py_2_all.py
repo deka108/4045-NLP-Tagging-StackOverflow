@@ -42,6 +42,7 @@ datapath_java = [
     'data/data_2015-01-01-2015-06-30_java.json',
     'data/data_2015-07-01-2015-12-31_java.json'
 ]
+
 stat_file_path = "Stat/all_statistic.txt"
 
 def flatten(node):
@@ -133,7 +134,7 @@ def preprocess_json(input_filename):
             output_fileptr.write(unicode(json.dumps(output)))
     else:
         print(json.dumps(output, indent=4))
-        
+
     return total_question, total_answer
 
 
