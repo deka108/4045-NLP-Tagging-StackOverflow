@@ -31,16 +31,16 @@ REJECTED_TAG = {
     }
 
 datapath_java = [
-    'data\\data_2011-01-01-2011-06-30_java.json',
-    'data\\data_2011-07-01-2011-12-31_java.json',
-    'data\\data_2012-01-01-2012-06-30_java.json',
-    'data\\data_2012-07-01-2012-12-31_java.json',
-    'data\\data_2013-01-01-2013-06-30_java.json',
-    'data\\data_2013-07-01-2013-12-31_java.json',
-    'data\\data_2014-01-01-2014-06-30_java.json',
-    'data\\data_2014-07-01-2014-12-31_java.json',
-    'data\\data_2015-01-01-2015-06-30_java.json',
-    'data\\data_2015-07-01-2015-12-31_java.json'
+    'data/data_2011-01-01-2011-06-30_java.json',
+    'data/data_2011-07-01-2011-12-31_java.json',
+    'data/data_2012-01-01-2012-06-30_java.json',
+    'data/data_2012-07-01-2012-12-31_java.json',
+    'data/data_2013-01-01-2013-06-30_java.json',
+    'data/data_2013-07-01-2013-12-31_java.json',
+    'data/data_2014-01-01-2014-06-30_java.json',
+    'data/data_2014-07-01-2014-12-31_java.json',
+    'data/data_2015-01-01-2015-06-30_java.json',
+    'data/data_2015-07-01-2015-12-31_java.json'
 ]
 
 def flatten(node):
@@ -86,28 +86,11 @@ def clean(html_str):
     return result
 
 
-if __name__ == '__main__':
-    pp = pprint.PrettyPrinter(indent=4)
-
-    args = sys.argv[1:]
-    parsed, args = getopt(args, 'i:o:')
-
-    input_filename = ''
-    output_filename = ''
-    for opt, val in parsed:
-        if opt == '-i':
-            input_filename = val
-        elif opt == '-o':
-            output_filename = val
-
-    assert os.path.isfile(input_filename), 'Example usage: python preprocess.py -i <json_inputfile> [-o <json_outputfile>]'
-
+def preprocess_json(input_filename):
     output = {'items': []}
+
     with io.open(input_filename, encoding='UTF-8', mode='r') as input_fileptr:
         json_data = json.load(input_fileptr)
-
-    # with open(input_filename, encoding='UTF-8', mode='r') as input_fileptr:
-    #     json_data = json.load(input_fileptr)
 
         output_arr = output['items']
         for item in json_data['items']:
@@ -121,21 +104,29 @@ if __name__ == '__main__':
 
             output_arr.append(entry)
 
-
             # Nested post
-            for ans in item['answers']:
-                output_arr.append({
-                    'tokens': clean(ans['body']),
-                    'question_id': item['question_id'],
-                    'answer_id': ans['answer_id'],
+            answers = item.get('answers')
+            if answers:
+                for ans in answers:
+                    output_arr.append({
+                        'tokens': clean(ans['body']),
+                        'question_id': item['question_id'],
+                        'answer_id': ans['answer_id'],
                     })
+            else:
+                print entry['question_id'], 'in', input_filename,\
+                    ' does not have answers'
 
+    output_filename = input_filename.replace('data/data',
+                                             'preprocessed/preprocessed')
     if output_filename:
-        with io.open(output_filename, encoding='UTF-8', mode='w') as output_fileptr:
+        with io.open(output_filename, encoding='UTF-8',
+                     mode='w') as output_fileptr:
             output_fileptr.write(unicode(json.dumps(output)))
-
-        # with open(output_filename, encoding='UTF-8', mode='w') as output_fileptr:
-        #     json.dump(output, output_fileptr)
-
     else:
         print(json.dumps(output, indent=4))
+
+
+if __name__ == '__main__':
+    for input_path in datapath_java:
+        preprocess_json(input_path)

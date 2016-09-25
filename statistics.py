@@ -11,6 +11,7 @@ questions_list = []
 with io.open('processed.json', "r", encoding="utf-8") as source_file:
     data = pandas.read_json(source_file)
 
+
 def len_of_posts(data):
     i=-1
     total=0
@@ -32,6 +33,7 @@ def len_of_posts(data):
         len_file.write("length of pos {} : {}\n".format(i, count))
         len_file.write("total length:{} \n".format(total))
     # change path for another data
+
 
 def get_statistics(data):
     info = {}
@@ -59,6 +61,7 @@ def get_statistics(data):
 
     return answer_file
 
+
 def create_histo(data):
     # change the upper limit if you want to make bigger histogram e.g.
     # e.g. 12 means that answer counts above 12 will be combined with 12
@@ -79,6 +82,7 @@ def create_histo(data):
     # plt.show()
     # change the save path for other pict
     plt.savefig('Stat\\histogram.png')
+
 
 len_of_posts(data)
 stats_file = get_statistics(data)

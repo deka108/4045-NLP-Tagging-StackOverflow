@@ -99,7 +99,8 @@
 						var qnDiv = document.createElement("div");
 						qnDiv.className = "question";
 						var qnHeading = document.createElement("h2"); 
-						qnHeading.innerHTML = "Question " + i + ":";
+						qnHeading.innerHTML = "Question " + i + ": " +
+                                qn.question_id;
 						qnDiv.appendChild(qnHeading);
 
 						// Insert SO link to the question
@@ -110,35 +111,39 @@
 						qnLink.href = qn.link;
 						qnLink.innerHTML = qn.link;
 						qnSpan.appendChild(qnLink);
-						qnSpan.insertAdjacentHTML("beforeend", "<br/>Answer count: " + qn.answer_count);
+						qnSpan.insertAdjacentHTML("beforeend",
+                                "<br/>Answer count: " + qn.answer_count);
 						qnDiv.appendChild(qnSpan);
 						
 						// Insert question body
 						qnDiv.insertAdjacentHTML('beforeend', qn.body);
 
-						qn.answers.forEach(function (ans, j) {
-							// Create answer div
-							var ansDiv = document.createElement("div");
-							ansDiv.className = "answer";
-							var ansHeading = document.createElement("h4");
-							ansHeading.innerHTML = "Answer " + j + ":"; 
-							ansDiv.appendChild(ansHeading);
+                        if (qn.answers) {
+                            qn.answers.forEach(function (ans, j) {
+                                // Create answer div
+                                var ansDiv = document.createElement("div");
+                                ansDiv.className = "answer";
+                                var ansHeading = document.createElement("h4");
+                                ansHeading.innerHTML = "Answer " + j + ": " +
+                                        ans.answer_id;
+                                ansDiv.appendChild(ansHeading);
 
-							// Insert SO link to the answer
-							var ansSpan = document.createElement("span");
-							ansSpan.className = "answer-span";
-							ansSpan.innerHTML = "Link: ";
-							var ansLink = document.createElement("a");
-							ansLink.href = ans.link;
-							ansLink.innerHTML = ans.link;
-							ansSpan.appendChild(ansLink);
-							ansDiv.appendChild(ansSpan);
+                                // Insert SO link to the answer
+                                var ansSpan = document.createElement("span");
+                                ansSpan.className = "answer-span";
+                                ansSpan.innerHTML = "Link: ";
+                                var ansLink = document.createElement("a");
+                                ansLink.href = ans.link;
+                                ansLink.innerHTML = ans.link;
+                                ansSpan.appendChild(ansLink);
+                                ansDiv.appendChild(ansSpan);
 
-							// Insert answer body
-				 			ansDiv.insertAdjacentHTML("beforeend", ans.body);
+                                // Insert answer body
+                                ansDiv.insertAdjacentHTML("beforeend", ans.body);
 
-				 			qnDiv.appendChild(ansDiv);
-						});
+                                qnDiv.appendChild(ansDiv);
+                            });
+                        }
 
 						container.appendChild(qnDiv);
 					});
