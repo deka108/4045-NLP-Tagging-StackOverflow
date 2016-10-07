@@ -1,0 +1,21 @@
+The 20 most frequent words are :
+1. 6688 use
+2. 3563 java
+3. 3197 method
+4. 3193 class
+5. 2565 code
+6. 2049 like
+7. 1880 one
+8. 1760 work
+9. 1731 valu
+10. 1730 object
+11. 1726 file
+12. 1640 need
+13. 1500 get
+14. 1467 type
+15. 1442 call
+16. 1411 also
+17. 1407 exampl
+18. 1366 case
+19. 1357 way
+20. 1333 make
