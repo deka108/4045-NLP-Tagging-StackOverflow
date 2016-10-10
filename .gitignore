@@ -2,3 +2,6 @@
 .idea/
 
 .DS_Store
+
+stanford-ner.zip
+stanford-ner/*
