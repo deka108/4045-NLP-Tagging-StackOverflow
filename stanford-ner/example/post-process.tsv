@@ -1,145 +1,145 @@
-I
-used
-System
-nanoTime
-for
-measurements
-As
-suggested
-in
-the
-comments
-,
-printing
-only
-System
-out
-print
-takes
-7.8871
-seconds
-,
-whereas
-System
-out
-print
-gives
-#code
-Providing
-actual
-default
-implementations
-.
-Example
-:
-Iterator
-remove
-Allowing
-for
-JDK
-API
-evolution
-.
-Example
-:
-Iterable
-forEach
-Using
-String
-format
-is
-even
-slower
-,
-by
-an
-order
-of
-magnitude
-or
-so
-Why
-is
-String
-chars
-a
-stream
-of
-ints
-in
-Java
-8
-?
-If
-you
-only
-need
-a
-negation
-of
-String
-isEmpty
-you
-can
-also
-use
-StringPredicates
-notEmpty
-.
-The
-behavior
-of
-String
-split
--LRB-
-which
-calls
-Pattern
-split
--RRB-
-changes
-between
-Java
-7
-and
-Java
-8
-.
-Let
-us
-compare
-the
-code
-of
-Pattern
-split
-of
-the
-reference
-implemetation
-in
-Java
-7
-and
-Java
-8
-.
-Notice
-that
-the
-#code
-is
-not
-around
-the
-lambda
-expression
-,
-but
-rather
-around
-the
-whole
-forEach
-method
-.
+I	O
+used	O
+System	B
+nanoTime	I
+for	O
+measurements	O
+As	O
+suggested	O
+in	O
+the	O
+comments	O
+,	O
+printing	O
+only	O
+System	B
+out	I
+print	I
+takes	O
+7.8871	O
+seconds	O
+,	O
+whereas	O
+System	B
+out	I
+print	I
+gives	O
+#code	O
+Providing	O
+actual	O
+default	O
+implementations	O
+.	O
+Example	O
+:	O
+Iterator	B
+remove	I
+Allowing	O
+for	O
+JDK	O
+API	O
+evolution	O
+.	O
+Example	O
+:	O
+Iterable	B
+forEach	I
+Using	O
+String	B
+format	I
+is	O
+even	O
+slower	O
+,	O
+by	O
+an	O
+order	O
+of	O
+magnitude	O
+or	O
+so	O
+Why	O
+is	O
+String	B
+chars	I
+a	O
+stream	O
+of	O
+ints	O
+in	O
+Java	O
+8	O
+?	O
+If	O
+you	O
+only	O
+need	O
+a	O
+negation	O
+of	O
+String	B
+isEmpty	I
+you	O
+can	O
+also	O
+use	O
+StringPredicates	B
+notEmpty	I
+.	O
+The	O
+behavior	O
+of	O
+String	B
+split	I
+-LRB-	O
+which	O
+calls	O
+Pattern	B
+split	I
+-RRB-	O
+changes	O
+between	O
+Java	O
+7	O
+and	O
+Java	O
+8	O
+.	O
+Let	O
+us	O
+compare	O
+the	O
+code	O
+of	O
+Pattern	B
+split	I
+of	O
+the	O
+reference	O
+implemetation	O
+in	O
+Java	O
+7	O
+and	O
+Java	O
+8	O
+.	O
+Notice	O
+that	O
+the	O
+#code	O
+is	O
+not	O
+around	O
+the	O
+lambda	O
+expression	O
+,	O
+but	O
+rather	O
+around	O
+the	O
+whole	O
+forEach	B
+method	O
+.	O
