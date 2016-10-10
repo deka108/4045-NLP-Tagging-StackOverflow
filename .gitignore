@@ -3,4 +3,5 @@
 
 .DS_Store
 
-ner/stanford-ner-2015-12-09.zip
+stanford-ner.zip
+stanford-ner/*
