@@ -1,0 +1,5 @@
+API Mention Classifier
+To do the required API Mention recognition, which is a case of NER (Named Entity Recognition), we use Stanford NER[1]. It provides an implementation of a linear chain Conditional Random Field (CRF). Using the annotated data with the IBO entity tag, we train the model to be able to recognize the structure of an API mention.
+After the model is trained, we will test the model and refine as necessary on the feature and specifics of the training to achieve higher precision on the test data.
+
+1. Jenny Rose Finkel, Trond Grenager, and Christopher Manning. 2005. Incorporating Non-local Information into Information Extraction Systems by Gibbs Sampling. Proceedings of the 43nd Annual Meeting of the Association for Computational Linguistics (ACL 2005), pp. 363-370. http://nlp.stanford.edu/~manning/papers/gibbscrf3.pdf
