@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 import json
 import pprint
@@ -30,6 +31,22 @@ REJECTED_TAG = {
     'img',
     }
 
+strsyn_matcher = re.compile('"(?:\\\\"|[^"])*"')
+charsyn_matcher = re.compile("'(?:\\\\.|.)?'")
+parentheses_matcher = re.compile('\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*[^()]*\\)')
+
+def simplify(code_str):
+    # print('--------------------------------------------------------------')
+    # print(code_str)
+    code_str = strsyn_matcher.sub('_str', code_str)
+    # print(code_str)
+    code_str = charsyn_matcher.sub('_char', code_str)
+    # print(code_str)
+    code_str = parentheses_matcher.sub('(_exprs)', code_str)
+    # print(code_str)
+    return code_str
+
+
 def flatten(node):
     assert isinstance(node, Tag) or isinstance(node, NavigableString), 'expected class Tag or NavigableString, got %s instead' % str(type(node))
 
@@ -47,11 +64,11 @@ def flatten(node):
 
             for child in node.children:
                 temp.append(flatten(child))
-            temp = list(filter(('').__ne__, temp))
+            temp = list(filter(''.__ne__, temp))
             result = ' '.join(temp)
 
         elif tag_name == 'code':
-            result = node.string.strip()
+            result = simplify(node.string.strip())
 
         else:
             # I have no idea what to do here
