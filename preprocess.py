@@ -120,12 +120,16 @@ if __name__ == '__main__':
 
             output_arr.append(entry)
 
-    if output_filename:
-        with open(output_filename, encoding='UTF-8', mode='w') as output_fileptr:
-            json.dump(output,
-                output_fileptr,
-                indent=4,
-                )
+    if not output_filename:
+        f_out = input_filename.split("/")[1]
+        f_out = f_out[:len(f_out) - len('.json')] + ".txt"
+        output_filename = os.path.join("api_preprocessed", f_out)
 
-    else:
-        print(json.dumps(output, indent=4))
+    with open(output_filename, encoding='UTF-8', mode='w') as output_fileptr:
+        json.dump(output,
+            output_fileptr,
+            indent=4,
+            )
+
+    # else:
+    #     print(json.dumps(output, indent=4))
