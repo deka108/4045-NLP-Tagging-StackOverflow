@@ -1,7 +1,7 @@
 import os
+import re
 import sys
 import json
-import io
 import pprint
 from getopt import getopt
 
@@ -15,62 +15,79 @@ ACCEPTED_TAG = {
     'span',
     'ol',
     'ul',
-    'a',
     }
 
-IGNORED_TAG = {
+NO_REPR = {
+    'p',
     'span',
     'ol',
     'ul',
-    'a',
     }
 
 REJECTED_TAG = {
     'pre',
     'blockquote',
+    'a',
+    'img',
     }
 
+strsyn_matcher = re.compile('"(?:\\\\"|[^"])*"')
+charsyn_matcher = re.compile("'(?:\\\\.|.)?'")
+parentheses_matcher = re.compile('\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*[^()]*\\)')
+
+def simplify(code_str):
+    # print('--------------------------------------------------------------')
+    # print(code_str)
+    code_str = strsyn_matcher.sub('_str', code_str)
+    # print(code_str)
+    code_str = charsyn_matcher.sub('_char', code_str)
+    # print(code_str)
+    code_str = parentheses_matcher.sub('(_exprs)', code_str)
+    # print(code_str)
+    return code_str
+
+
 def flatten(node):
-    result = []
+    assert isinstance(node, Tag) or isinstance(node, NavigableString), 'expected class Tag or NavigableString, got %s instead' % str(type(node))
+
     if isinstance(node, Tag):
         tag_name = node.name
 
         if tag_name in REJECTED_TAG:
-            result.append('#%s' % tag_name)
+            result = '#%s' % tag_name
 
         elif tag_name in ACCEPTED_TAG:
-
-            if tag_name not in IGNORED_TAG:
-                result.append('#%s' % tag_name)
+            temp = []
+            if tag_name not in NO_REPR:
+                # only <li> for now
+                temp.append('#%s' % tag_name)
 
             for child in node.children:
-                result.extend(flatten(child))
+                temp.append(flatten(child))
+            temp = list(filter(''.__ne__, temp))
+            result = ' '.join(temp)
 
         elif tag_name == 'code':
-            result.append(node.__str__())
+            result = simplify(node.string.strip())
 
         else:
             # I have no idea what to do here
-            pass
+            result = ''
+
+        return result
 
     elif isinstance(node, NavigableString):
-        stripped_str = node.string.strip()
-
-        if stripped_str:
-            tokens = nltk.word_tokenize(stripped_str)
-            result.extend(tokens)
-
-    return result
+        return node.string.strip()
 
 
 def clean(html_str):
     souped = bsoup(html_str.strip(), 'html.parser')
 
-    result = []
+    temp = []
     for element in souped.find_all(True, recursive=False):
-        result.extend(flatten(element))
+        temp.append(flatten(element))
 
-    return result
+    return ' '.join(temp)
 
 if __name__ == '__main__':
     pp = pprint.PrettyPrinter(indent=4)
@@ -96,25 +113,19 @@ if __name__ == '__main__':
         for item in json_data['items']:
             entry = {}
 
-            entry['tokens'] = clean(item['body'])
-            entry['answer_count'] = item['answer_count']
+            entry['cleaned'] = clean(item['body'])
             entry['question_id'] = item['question_id']
             if 'answer_id' in item:
                 entry['answer_id'] = item['answer_id']
 
             output_arr.append(entry)
 
-
-            # Nested post
-            for ans in item['answers']:
-                output_arr.append({
-                    'tokens': clean(ans['body']),
-                    'question_id': item['question_id'],
-                    'answer_id': ans['answer_id'],
-                    })
-
+    if output_filename:
         with open(output_filename, encoding='UTF-8', mode='w') as output_fileptr:
-            json.dump(output, output_fileptr)
+            json.dump(output,
+                output_fileptr,
+                indent=4,
+                )
 
     else:
         print(json.dumps(output, indent=4))
