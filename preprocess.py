@@ -77,6 +77,7 @@ def flatten(node):
             pre_txt = node.text
             matches = oneline_matcher.match(pre_txt)
 
+            result = '#pre'
             if matches is not None:
                 result = simplify(pre_txt.strip())
 
