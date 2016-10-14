@@ -16,20 +16,17 @@ REJECTED_TAG = {
 
 strsyn_matcher = re.compile('"(?:\\\\"|[^"])*"')
 charsyn_matcher = re.compile("'(?:\\\\.|.)?'")
-parentheses_matcher = re.compile('\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*[^()]*\\)')
+template_matcher = re.compile('(\\w+)\\s*<[^<>]*(?:<[^<>]*(?:<[^<>]*(?:<[^<>]*(?:<[^<>]*(?:<[^<>]*(?:<[^<>]*>[^<>]*)*>[^<>]*)*>[^<>]*)*>[^<>]*)*>[^<>]*)*>[^<>]*)*[^<>]*>')
+methodcall_matcher = re.compile('(\\w+)\\s*\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*[^()]*\\)')
 oneline_matcher = re.compile('^[^;]+;\\w*$|^[^\\n]+\\n?$')
 link_matcher = re.compile('https?://')
 whitespaces_matcher = re.compile('\\s+')
 
 def simplify(code_str):
-    # print('--------------------------------------------------------------')
-    # print(code_str)
-    code_str = strsyn_matcher.sub('_str', code_str)
-    # print(code_str)
-    code_str = charsyn_matcher.sub('_char', code_str)
-    # print(code_str)
-    code_str = parentheses_matcher.sub('(_exprs)', code_str)
-    # print(code_str)
+    code_str = strsyn_matcher.sub('StringLiteral', code_str)
+    code_str = charsyn_matcher.sub('CharLiteral', code_str)
+    code_str = template_matcher.sub('\\1<T>', code_str)
+    code_str = methodcall_matcher.sub('\\1(args)', code_str)
     return code_str
 
 
