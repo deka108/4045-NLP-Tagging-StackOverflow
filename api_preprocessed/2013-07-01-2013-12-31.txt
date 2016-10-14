@@ -155,10 +155,10 @@ Question-20358883, answer-20358917
 Very simply: Arrays.asList(args)
 
 Question-20358883, answer-20358920
-Fixed size List The easiest way, that I know of, is to create a fixed-size single element List with Arrays.asList(T...) like // Returns a List backed by a varargs T. return Arrays.asList(args); Variable size List If it needs vary in size you can construct an ArrayList and the fixed-size List like return new ArrayList<T>(Arrays.asList(args)); and (in Java 7+) you can use the diamond operator <> to make it return new ArrayList<T>(Arrays.asList(args));
+Fixed size List The easiest way, that I know of, is to create a fixed-size single element List with Arrays.asList(T...) like // Returns a List backed by a varargs T. return Arrays.asList(args); Variable size List If it needs vary in size you can construct an ArrayList and the fixed-size List like return new ArrayList<T>(args); and (in Java 7+) you can use the diamond operator <> to make it return new ArrayList<T>(args);
 
 Question-20358883, answer-20358928
-You can use the utility method Arrays.asList and feed that result into a new ArrayList . ArrayList<T> list = new ArrayList<T>(Arrays.asList(args)); Other options: ArrayList<T> list = new ArrayList<T>(Collections.nCopies(args)); and ArrayList<T> list = new ArrayList<T>(Collections.singletonList(args)); #li ArrayList(Collection) constructor. #li Arrays.asList method. #li Collections.nCopies method. #li Collections.singletonList method.
+You can use the utility method Arrays.asList and feed that result into a new ArrayList . ArrayList<T> list = new ArrayList<T>(args); Other options: ArrayList<T> list = new ArrayList<T>(args); and ArrayList<T> list = new ArrayList<T>(args); #li ArrayList(Collection) constructor. #li Arrays.asList method. #li Collections.nCopies method. #li Collections.singletonList method.
 
 Question-20358883, answer-29784337
 The other answers all use Arrays.asList(args) , which returns an unmodifiable list (an UnsupportedOperationException is thrown if you try to add or remove an element). To get a mutable list you can wrap the returned list in a new ArrayList as a couple of answers point out, but a cleaner solution is to use Guava's Lists.newArrayList() (available since at least Guava 10 , released in 2011). For example: Lists.newArrayList(args);

@@ -20,7 +20,7 @@ Question-16232833
 I'm using Spring MVC for a simple JSON API, with @ResponseBody based approach like the following. (I already have a service layer producing JSON directly.) #pre Question is, in the given scenario, what is the simplest, cleanest way to respond with a HTTP 400 error ? I did come across approaches like: return new ResponseEntity(args); ...but I can't use it here since my method's return type is String, not ResponseEntity.
 
 Question-15430247
-The usual constructor of ArrayList is: ArrayList<T> list = new ArrayList<T>(); But there is also an overloaded constructor with a parameter for its initial capacity: ArrayList<T> list = new ArrayList<T>(20); Why is it useful to create an ArrayList with an initial capacity when we can append to it as we please?
+The usual constructor of ArrayList is: ArrayList<T> list = new ArrayList<T>(args); But there is also an overloaded constructor with a parameter for its initial capacity: ArrayList<T> list = new ArrayList<T>(args); Why is it useful to create an ArrayList with an initial capacity when we can append to it as we please?
 
 Question-14846920
 What are some of the situations where I can use Collections.emptyMap(args) ? The Documentation says I can use this method if I want my collection to be immutable. Why would I want an immutable empty collection? What is the point?
@@ -38,7 +38,7 @@ Question-15940234
 I'm relative new to the webservices world and my research seems to have confused me more than enlighten me, my problem is that I was given a library(jar) which I have to extend with some webservice functionality. This library will be shared to other developers, and among the classes in the jar will be classes that have a method which calls a webservice (that essentially sets an attribute of the class, does some business logic, like storing the object in a db, etc and sends back the object with those modifications). I want to make the call to this service as simple as possible, hopefully as simple so that the developer using the class only need to do. #pre I have been studying JAX-WS to use on the server but seems to me that I don't need to create a wsimport in the server nor the wsimport on the client, since I know that both have the classes, I just need some interaction between classes shared in both the server and the client. How do you think makes sense to do the webservice and the call in the class?
 
 Question-16148575
-I am trying to build a HashMap which will have integer as keys and objects as values. My syntax is: HashMap<T> myMap = new HashMap<T>(); However, the error returned is - Syntax error on token "int", Dimensions expected after this token - I don't understand why I should add a dimension (ie: making the int into an array) since I only need to store a digit as key. What could I do? Thanks in advance! :)
+I am trying to build a HashMap which will have integer as keys and objects as values. My syntax is: HashMap<T> myMap = new HashMap<T>(args); However, the error returned is - Syntax error on token "int", Dimensions expected after this token - I don't understand why I should add a dimension (ie: making the int into an array) since I only need to store a digit as key. What could I do? Thanks in advance! :)
 
 Question-15182496, answer-15182578
 The other answers explain why, but here is how: new Random(args).nextInt(args) The first 6 numbers that the above random generates are: #pre and the first 6 numbers that new Random(args).nextInt(args) generates are: #pre Then just add those numbers to the integer representation of the character ` (which is 96): #pre
@@ -119,7 +119,7 @@ Question-15156857, answer-15157021
 You must use doThrow(args).when(args).methodReturningVoid(args); and not doThrow(args).when(args); This is explained in the documentation
 
 Question-16232833, answer-16250729
-change your return type to ResponseEntity<T> , then you can use below for 400 return new ResponseEntity<T>(HttpStatus.BAD_REQUEST); and for correct request return new ResponseEntity<T>(json,HttpStatus.OK); UPDATE 1 after spring 4.1 there are helper methods in ResponseEntity could be used as return ResponseEntity.status(args).body(args); and return ResponseEntity.ok(args);
+change your return type to ResponseEntity<T> , then you can use below for 400 return new ResponseEntity<T>(args); and for correct request return new ResponseEntity<T>(args); UPDATE 1 after spring 4.1 there are helper methods in ResponseEntity could be used as return ResponseEntity.status(args).body(args); and return ResponseEntity.ok(args);
 
 Question-14833008, answer-14833048
 You need to escape the dot if you want to split on a literal dot: String extensionRemoved = filename.split(args)[0]; Otherwise you are splitting on the regex . , which means "any character". Note the double backslash needed to create a single backslash in the regex. You're getting an ArrayIndexOutOfBoundsException because your input string is just a dot, ie StringLiteral , which is an edge case that produces an empty array when split on dot; split(regex) removes all trailing blanks from the result, but since splitting a dot on a dot leaves only two blanks, after trailing blanks are removed you're left with an empty array. To avoid getting an ArrayIndexOutOfBoundsException for this edge case, use the overloaded version of split(regex, limit) , which has a second parameter that is the size limit for the resulting array. When limit is negative , the behaviour of removing trailing blanks from the resulting array is disabled: StringLiteral.split(args) // returns an array of two blanks, ie [StringLiteral, StringLiteral] ie, when filename is just a dot StringLiteral , calling filename.split(args)[0] will return a blank, but calling filename.split(args)[0] will throw an ArrayIndexOutOfBoundsException .
@@ -206,25 +206,25 @@ Question-14316487, answer-14316543
 A very simple implementation with String.split() : #pre
 
 Question-16148575, answer-16148593
-Use Integer instead. HashMap<T> myMap = new HashMap<T>(); Java will automatically autobox your int primitive values to Integer objects. Read more about autoboxing from Oracle Java documentations.
+Use Integer instead. HashMap<T> myMap = new HashMap<T>(args); Java will automatically autobox your int primitive values to Integer objects. Read more about autoboxing from Oracle Java documentations.
 
 Question-16148575, answer-16148619
-use int as Object not as primitive type HashMap<T> myMap = new HashMap<T>();
+use int as Object not as primitive type HashMap<T> myMap = new HashMap<T>(args);
 
 Question-16148575, answer-16148647
-Please use HashMap<T> myMap = new HashMap<T>();
+Please use HashMap<T> myMap = new HashMap<T>(args);
 
 Question-16148575, answer-16149127
 You can't use a primitive because HashMap use object internally for the key. So you can only use an object that inherits from Object (that is any object). That is the function put() in HashMap and as you can see it uses Object for K: #pre The expression "k = e.key" should make it clear. I suggest to use a wrapper like Integer and autoboxing.
 
 Question-16148575, answer-16149160
-HashMap does not allow primitive data types as arguments. It can only accept objects so HashMap<T> myMap = new HashMap<T>(); will not work. You have to change the declaration to HashMap<T> myMap = new HashMap<T>(); so even when you do the following myMap.put(args); The primitive data type is autoboxed to an Integer object. 8(args) === boxing ===> 8(args) You can read more on autoboxing here #a
+HashMap does not allow primitive data types as arguments. It can only accept objects so HashMap<T> myMap = new HashMap<T>(args); will not work. You have to change the declaration to HashMap<T> myMap = new HashMap<T>(args); so even when you do the following myMap.put(args); The primitive data type is autoboxed to an Integer object. 8(args) === boxing ===> 8(args) You can read more on autoboxing here #a
 
 Question-16148575, answer-18481387
 If you code in Android, there is SparseArray , mapping integer to object.
 
 Question-16148575, answer-20454885
-For everybody who codes Java for Android devices and ends up here: use SparseArray for better performance private final SparseArray<T> myMap = new SparseArray<T>(); with this you can use int instead of Integer like #pre
+For everybody who codes Java for Android devices and ends up here: use SparseArray for better performance private final SparseArray<T> myMap = new SparseArray<T>(args); with this you can use int instead of Integer like #pre
 
 Question-16148575, answer-32866218
 The main reason with HashMap not allowing primitive as keys is that HashMap is designed in such a way that for comparing the keys, it makes use of equals() method, and a method can be called only on an object not on a primitive. Thus when int is autoboxed to Integer, Hashmap can call equals() method on Integer object. That is why, you should use Integer instead of int. I mean hashmap throws an error while putting int as a key (Don't know the meaning of the error that is thrown) And if you think that, you can make Map performance faster by making a primitive as a key, there is a library called FastUtil which contains a Map implementation with int type as a key. Because of this, it is much faster than Hashmap

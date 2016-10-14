@@ -221,7 +221,7 @@ Question-5031614, answer-26826084
 #li If you have a business key , then you should use that for equals / hashCode . #li If you don't have a business key, you should not leave it with the default Object equals and hashCode implementations because that does not work after you merge and entity. #li You can use the entity identifier as suggested in this post . The only catch is that you need to use a hashCode implementation that always return the same value, like this: #pre
 
 Question-5554217, answer-17300003
-Another way is to use an array as a type, e.g.: MyClass[] mcArray = gson.fromJson(args); This way you avoid all the hassle with the Type object, and if you really need a list you can always convert the array to a list by: List<T> mcList = Arrays.asList(args); IMHO this is much more readable. And to make it be an actual list (that can be modified, see limitations of Arrays.asList(args) ) then just do the following: List<T> mcList = new ArrayList<T>(Arrays.asList(args));
+Another way is to use an array as a type, e.g.: MyClass[] mcArray = gson.fromJson(args); This way you avoid all the hassle with the Type object, and if you really need a list you can always convert the array to a list by: List<T> mcList = Arrays.asList(args); IMHO this is much more readable. And to make it be an actual list (that can be modified, see limitations of Arrays.asList(args) ) then just do the following: List<T> mcList = new ArrayList<T>(args);
 
 Question-5673260, answer-5673356
 #pre Generally speaking, when you have response.getOutputStream(args) , you can write anything there. You can pass this output stream as a place to put generated PDF to your generator. Also, if you know what file type you are sending, you can set response.setContentType(args);

@@ -53,7 +53,7 @@ Question-7488643, answer-7488683
 You can first split them using String.split(args) , and then convert the returned String array to an ArrayList using Arrays.asList(args)
 
 Question-7488643, answer-7488710
-Arrays.asList returns a fixed-size List backed by the array. If you want a normal mutable java.util.ArrayList you need to do this: List<T> list = new ArrayList<T>(Arrays.asList(args)); Or, using Guava : List<T> list = Lists.newArrayList(args); Using a Splitter gives you more flexibility in how you split the string and gives you the ability to, for example, skip empty strings in the results and trim results. It also has less weird behavior than String.split as well as not requiring you to split by regex (that's just one option).
+Arrays.asList returns a fixed-size List backed by the array. If you want a normal mutable java.util.ArrayList you need to do this: List<T> list = new ArrayList<T>(args); Or, using Guava : List<T> list = Lists.newArrayList(args); Using a Splitter gives you more flexibility in how you split the string and gives you the ability to, for example, skip empty strings in the results and trim results. It also has less weird behavior than String.split as well as not requiring you to split by regex (that's just one option).
 
 Question-7693324, answer-7693341
 To convert a String to a Long (object), use Long.valueOf(args).longValue(args); See link
