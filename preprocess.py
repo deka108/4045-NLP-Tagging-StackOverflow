@@ -9,21 +9,6 @@ import nltk
 from bs4 import BeautifulSoup as bsoup
 from bs4.element import Tag, NavigableString, Comment
 
-ACCEPTED_TAG = {
-    'p',
-    'li',
-    'span',
-    'ol',
-    'ul',
-    }
-
-NO_REPR = {
-    'p',
-    'span',
-    'ol',
-    'ul',
-    }
-
 REJECTED_TAG = {
     'blockquote',
     'img',
@@ -34,6 +19,7 @@ charsyn_matcher = re.compile("'(?:\\\\.|.)?'")
 parentheses_matcher = re.compile('\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*[^()]*\\)')
 oneline_matcher = re.compile('^[^;]+;\\w*$|^[^\\n]+\\n?$')
 link_matcher = re.compile('https?://')
+whitespaces_matcher = re.compile('\\s+')
 
 def simplify(code_str):
     # print('--------------------------------------------------------------')
@@ -57,17 +43,6 @@ def flatten(node):
         if tag_name in REJECTED_TAG:
             result = '#%s' % tag_name
 
-        elif tag_name in ACCEPTED_TAG:
-            temp = []
-            if tag_name not in NO_REPR:
-                # only <li> for now
-                temp.append('#%s' % tag_name)
-
-            for child in node.children:
-                temp.append(flatten(child))
-            temp = list(filter(''.__ne__, temp))
-            result = ' '.join(temp)
-
         elif tag_name == 'code':
             # textContent only
             result = simplify(node.text.strip())
@@ -90,6 +65,17 @@ def flatten(node):
             if matches is None:
                 result = a_txt.strip()
 
+        else:
+            temp = []
+            if tag_name == 'li':
+                # only <li> for now
+                temp.append('#%s' % tag_name)
+
+            for child in node.children:
+                temp.append(flatten(child))
+            temp = list(filter(''.__ne__, temp))
+            result = ' '.join(temp)
+
         return result
 
     elif isinstance(node, NavigableString):
@@ -103,7 +89,9 @@ def clean(html_str):
     for element in souped.find_all(True, recursive=False):
         temp.append(flatten(element))
 
-    return ' '.join(temp)
+    result = ' '.join(temp)
+    result = whitespaces_matcher.sub(' ', result)
+    return result
 
 if __name__ == '__main__':
     pp = pprint.PrettyPrinter(indent=4)
