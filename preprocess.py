@@ -25,7 +25,6 @@ NO_REPR = {
     }
 
 REJECTED_TAG = {
-    'pre',
     'blockquote',
     'a',
     'img',
@@ -34,6 +33,7 @@ REJECTED_TAG = {
 strsyn_matcher = re.compile('"(?:\\\\"|[^"])*"')
 charsyn_matcher = re.compile("'(?:\\\\.|.)?'")
 parentheses_matcher = re.compile('\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*[^()]*\\)')
+oneline_matcher = re.compile('^[^;]+;\\w*$|^[^\\n]+\\n?$')
 
 def simplify(code_str):
     # print('--------------------------------------------------------------')
@@ -53,6 +53,7 @@ def flatten(node):
     if isinstance(node, Tag):
         tag_name = node.name
 
+        result = ''
         if tag_name in REJECTED_TAG:
             result = '#%s' % tag_name
 
@@ -68,11 +69,16 @@ def flatten(node):
             result = ' '.join(temp)
 
         elif tag_name == 'code':
-            result = simplify(node.string.strip())
+            # textContent only
+            result = simplify(node.text.strip())
 
-        else:
-            # I have no idea what to do here
-            result = ''
+        elif tag_name == 'pre':
+            # one line textContent only
+            pre_txt = node.text
+            matches = oneline_matcher.match(pre_txt)
+
+            if matches is not None:
+                result = simplify(pre_txt.strip())
 
         return result
 
@@ -106,14 +112,19 @@ if __name__ == '__main__':
     assert os.path.isfile(input_filename), 'Example usage: python preprocess.py -i <json_inputfile> [-o <json_outputfile>]'
 
     output = {'items': []}
+    output_txts = []
     with open(input_filename, encoding='UTF-8', mode='r') as input_fileptr:
         json_data = json.load(input_fileptr)
 
         output_arr = output['items']
         for item in json_data['items']:
             entry = {}
+            cleaned_body = clean(item['body'])
 
-            entry['cleaned'] = clean(item['body'])
+            output_txts.append('Question-%d%s' % (int(item['question_id']), ', answer-%d' % int(item['answer_id']) if 'answer_id' in item else ''))
+            output_txts.append('%s\n' % cleaned_body)
+
+            entry['cleaned'] = cleaned_body
             entry['question_id'] = item['question_id']
             if 'answer_id' in item:
                 entry['answer_id'] = item['answer_id']
@@ -121,15 +132,16 @@ if __name__ == '__main__':
             output_arr.append(entry)
 
     if not output_filename:
-        f_out = input_filename.split("/")[1]
-        f_out = f_out[:len(f_out) - len('.json')] + ".txt"
-        output_filename = os.path.join("api_preprocessed", f_out)
+        print(json.dumps(output, indent=4))
 
-    with open(output_filename, encoding='UTF-8', mode='w') as output_fileptr:
-        json.dump(output,
-            output_fileptr,
-            indent=4,
-            )
+    elif output_filename[-4:] == 'json':
+        with open(output_filename, encoding='UTF-8', mode='w') as output_fileptr:
+            json.dump(output,
+                output_fileptr,
+                indent=4,
+                )
 
-    # else:
-    #     print(json.dumps(output, indent=4))
+    elif output_filename[-3:] == 'txt':
+        with open(output_filename, encoding='UTF-8', mode='w') as output_fileptr:
+            output_str = '\n'.join(output_txts)
+            output_fileptr.write(output_str)
