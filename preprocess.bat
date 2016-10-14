@@ -1,6 +1,6 @@
-python preprocess.py -i api_mention/data_2011-01-01-2011-06-30_java_api_mention.json -o api_preprocessed/2011-07-01-2011-12-31.txt
-python preprocess.py -i api_mention/data_2011-07-01-2011-12-31_java_api_mention.json -o api_preprocessed/2012-01-01-2012-06-30.txt
-python preprocess.py -i api_mention/data_2012-01-01-2012-06-30_java_api_mention.json -o api_preprocessed/2012-07-01-2012-12-31.txt
+python preprocess.py -i api_mention/data_2011-01-01-2011-06-30_java_api_mention.json -o api_preprocessed/2011-01-01-2011-06-30.txt
+python preprocess.py -i api_mention/data_2011-07-01-2011-12-31_java_api_mention.json -o api_preprocessed/2011-07-01-2011-12-31.txt
+python preprocess.py -i api_mention/data_2012-01-01-2012-06-30_java_api_mention.json -o api_preprocessed/2012-01-01-2012-06-30.txt
 python preprocess.py -i api_mention/data_2012-07-01-2012-12-31_java_api_mention.json -o api_preprocessed/2012-07-01-2012-12-31.txt
 python preprocess.py -i api_mention/data_2013-01-01-2013-06-30_java_api_mention.json -o api_preprocessed/2013-01-01-2013-06-30.txt
 python preprocess.py -i api_mention/data_2013-07-01-2013-12-31_java_api_mention.json -o api_preprocessed/2013-07-01-2013-12-31.txt
