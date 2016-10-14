@@ -26,7 +26,6 @@ NO_REPR = {
 
 REJECTED_TAG = {
     'blockquote',
-    'a',
     'img',
     }
 
@@ -34,6 +33,7 @@ strsyn_matcher = re.compile('"(?:\\\\"|[^"])*"')
 charsyn_matcher = re.compile("'(?:\\\\.|.)?'")
 parentheses_matcher = re.compile('\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*(?:\\([^()]*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*\\)[^()]*)*[^()]*\\)')
 oneline_matcher = re.compile('^[^;]+;\\w*$|^[^\\n]+\\n?$')
+link_matcher = re.compile('https?://')
 
 def simplify(code_str):
     # print('--------------------------------------------------------------')
@@ -80,6 +80,15 @@ def flatten(node):
             result = '#pre'
             if matches is not None:
                 result = simplify(pre_txt.strip())
+
+        elif tag_name == 'a':
+            # one line textContent only
+            a_txt = node.text
+            matches = link_matcher.match(a_txt)
+
+            result = '#a'
+            if matches is None:
+                result = a_txt.strip()
 
         return result
 
