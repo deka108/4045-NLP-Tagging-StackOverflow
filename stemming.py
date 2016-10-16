@@ -66,20 +66,19 @@ def preprocess(file_paths, after,choice):
         lst = Counter(json_new['tokens'])
         return lst
     else:
-        with io.open('output_api_text.txt','w+',encoding='utf-8') as dest:
-            source = fileinput.input(file_paths)
-            for line in source:
-                sentence = line.split()
-                for word in sentence:
-                    if re.match('^\w+[\.\,\?\!\:\;]$', word):
-                        word = strip_punctuation(word)
-                    if re.match('^\w+', word) and word.lower() not in stopword:
-                        if isinstance(word,str):
-                            word = word.decode('utf-8')
-                        if after:
-                            json_new['tokens'].append(stemmer.stem(word))
-                        else:
-                            json_new['tokens'].append(word)
+        source = fileinput.input(file_paths)
+        for line in source:
+            sentence = line.split()
+            for word in sentence:
+                if re.match('^\w+[\.\,\?\!\:\;]$', word):
+                    word = strip_punctuation(word)
+                if re.match('^\w+', word) and word.lower() not in stopword:
+                    if isinstance(word,str):
+                        word = word.decode('utf-8')
+                    if after:
+                        json_new['tokens'].append(stemmer.stem(word))
+                    else:
+                        json_new['tokens'].append(word)
             source.close()
         lst = Counter(json_new['tokens'])
         return lst
