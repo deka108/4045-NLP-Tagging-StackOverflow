@@ -307,7 +307,7 @@ I-api_mention	1261	1265	args
 I-api_mention	1265	1266	)
 O	1267	1273	method
 O	1274	1276	of
-O	1277	1286	ArrayList
+B-api_mention	1277	1286	ArrayList
 O	1287	1289	is
 O	1290	1297	defined
 O	1298	1304	inside
@@ -790,9 +790,9 @@ O	3345	3348	How
 O	3349	3351	do
 B-api_mention	3352	3358	atomic
 O	3359	3360	/
-B-api_mention	3361	3369	volatile
+O	3361	3369	volatile
 O	3370	3371	/
-B-api_mention	3372	3384	synchronized
+O	3372	3384	synchronized
 O	3385	3389	work
 O	3390	3400	internally
 O	3400	3401	?
@@ -844,7 +844,7 @@ O	3581	3588	threads
 O	3589	3595	cannot
 O	3596	3601	enter
 O	3602	3603	a
-B-api_mention	3604	3616	synchronized
+O	3604	3616	synchronized
 O	3617	3622	block
 O	3623	3625	at
 O	3626	3629	the
@@ -896,7 +896,7 @@ O	3809	3816	reading
 O	3817	3820	and
 O	3821	3828	writing
 O	3829	3831	to
-B-api_mention	3832	3840	volatile
+O	3832	3840	volatile
 O	3841	3850	variables
 O	3851	3852	/
 B-api_mention	3853	3859	atomic
@@ -1004,7 +1004,7 @@ O	4268	4271	the
 O	4272	4277	chars
 O	4278	4280	in
 O	4281	4282	a
-O	4283	4289	String
+B-api_mention	4283	4289	String
 O	4289	4290	,
 O	4291	4295	this
 O	4295	4296	:
@@ -1131,11 +1131,11 @@ O	4851	4852	s
 O	4853	4856	the
 O	4857	4867	difference
 O	4868	4875	between
-O	4876	4880	java
-O	4880	4881	.
-O	4881	4885	lang
-O	4885	4886	.
-O	4886	4892	String
+B-api_mention	4876	4880	java
+I-api_mention	4880	4881	.
+I-api_mention	4881	4885	lang
+I-api_mention	4885	4886	.
+I-api_mention	4886	4892	String
 O	4893	4894	'
 O	4894	4895	s
 B-api_mention	4896	4903	replace
@@ -1161,7 +1161,7 @@ O	4973	4979	simple
 O	4980	4993	substitutions
 O	4994	4998	like
 O	4998	4999	,
-B-api_mention	5000	5007	replace
+O	5000	5007	replace
 O	5008	5009	.
 O	5010	5014	with
 O	5015	5016	/
@@ -1449,7 +1449,7 @@ O	6254	6262	14060804
 
 O	6263	6264	#
 O	6264	6266	li
-B-api_mention	6267	6274	Strings
+O	6267	6274	Strings
 O	6275	6278	are
 O	6279	6288	immutable
 O	6289	6291	in
@@ -1474,7 +1474,7 @@ O	6388	6394	clears
 O	6395	6397	it
 O	6398	6401	and
 O	6402	6407	since
-B-api_mention	6408	6415	Strings
+O	6408	6415	Strings
 O	6416	6419	are
 O	6420	6424	used
 O	6425	6427	in
@@ -4668,8 +4668,8 @@ O	20893	20894	#
 O	20894	20897	pre
 O	20898	20907	Basically
 O	20908	20911	the
-O	20912	20913	.
-B-api_mention	20913	20918	split
+B-api_mention	20912	20913	.
+I-api_mention	20913	20918	split
 I-api_mention	20918	20919	(
 I-api_mention	20919	20920	)
 O	20921	20927	method
@@ -4705,7 +4705,7 @@ O	21059	21061	to
 O	21062	21064	be
 O	21065	21070	after
 O	21071	21072	a
-O	21073	21077	List
+B-api_mention	21073	21077	List
 O	21078	21080	of
 O	21081	21088	Strings
 O	21089	21095	rather
@@ -4864,12 +4864,12 @@ O	21735	21742	example
 O	21742	21743	:
 O	21744	21745	#
 O	21745	21748	pre
-O	21749	21757	Splitter
-O	21757	21758	.
-O	21758	21763	split
-O	21763	21764	(
-O	21764	21768	args
-O	21768	21769	)
+B-api_mention	21749	21757	Splitter
+I-api_mention	21757	21758	.
+I-api_mention	21758	21763	split
+I-api_mention	21763	21764	(
+I-api_mention	21764	21768	args
+I-api_mention	21768	21769	)
 O	21770	21777	returns
 O	21778	21780	an
 O	21781	21789	Iterable
@@ -4952,7 +4952,7 @@ O	22120	22128	solution
 O	22128	22129	.
 
 O	22130	22133	See
-O	22134	22142	Splitter
+B-api_mention	22134	22142	Splitter
 O	22143	22156	documentation
 O	22157	22159	in
 O	22160	22165	Guava
@@ -5001,7 +5001,7 @@ O	22365	22366	.
 
 O	22367	22372	While
 O	22373	22374	a
-O	22375	22387	ListIterator
+B-api_mention	22375	22387	ListIterator
 O	22388	22391	can
 O	22392	22394	be
 O	22395	22399	used
@@ -5092,7 +5092,7 @@ O	22740	22746	object
 O	22747	22751	only
 O	22752	22756	from
 O	22757	22760	the
-O	22761	22765	List
+B-api_mention	22761	22765	List
 O	22766	22775	interface
 O	22775	22776	,
 O	22777	22780	see
@@ -5101,7 +5101,7 @@ O	22785	22786	:
 O	22787	22792	where
 O	22793	22795	as
 O	22796	22797	a
-O	22798	22810	ListIterator
+B-api_mention	22798	22810	ListIterator
 O	22811	22817	allows
 O	22818	22821	you
 O	22822	22824	to
@@ -5137,7 +5137,7 @@ O	22953	22958	other
 O	22959	22963	than
 O	22964	22969	those
 O	22970	22972	of
-O	22973	22981	Iterator
+B-api_mention	22973	22981	Iterator
 O	22981	22982	.
 
 O	22983	22987	Also
@@ -5167,7 +5167,7 @@ O	23088	23100	respectively
 O	23101	23102	)
 O	23103	23110	Methods
 O	23111	23113	in
-O	23114	23126	ListIterator
+B-api_mention	23114	23126	ListIterator
 O	23126	23127	:
 O	23128	23129	#
 O	23129	23131	li
@@ -5224,10 +5224,10 @@ O	23297	23300	can
 O	23300	23301	'
 O	23301	23302	t
 O	23303	23306	get
-O	23307	23319	ListIterator
+B-api_mention	23307	23319	ListIterator
 O	23320	23326	object
 O	23327	23331	from
-O	23332	23335	Set
+B-api_mention	23332	23335	Set
 O	23336	23345	interface
 O	23345	23346	.
 
@@ -6313,7 +6313,7 @@ O	27943	27945	In
 O	27946	27950	fact
 O	27950	27951	,
 O	27952	27955	the
-O	27956	27967	InetAddress
+B-api_mention	27956	27967	InetAddress
 O	27968	27971	API
 O	27972	27980	provides
 O	27981	27988	methods
@@ -6535,7 +6535,7 @@ O	28866	28869	the
 O	28870	28878	identity
 O	28878	28879	,
 O	28880	28882	as
-O	28883	28889	Object
+B-api_mention	28883	28889	Object
 O	28890	28894	does
 O	28895	28898	not
 O	28899	28903	have
@@ -6622,8 +6622,8 @@ O	29188	29196	compares
 O	29197	29204	content
 O	29204	29205	)
 O	29205	29206	,
-B-api_mention	29207	29213	array1
-I-api_mention	29213	29214	.
+O	29207	29213	array1
+B-api_mention	29213	29214	.
 I-api_mention	29214	29220	equals
 I-api_mention	29220	29221	(
 I-api_mention	29221	29225	args
@@ -6773,8 +6773,8 @@ O	29800	29801	-
 O	29801	29808	8777279
 
 O	29809	29815	array1
-O	29815	29816	.
-B-api_mention	29816	29822	equals
+B-api_mention	29815	29816	.
+I-api_mention	29816	29822	equals
 I-api_mention	29822	29823	(
 I-api_mention	29823	29827	args
 I-api_mention	29827	29828	)
@@ -6828,8 +6828,8 @@ O	29992	29998	arrays
 O	29998	29999	.
 
 O	30000	30009	Similarly
-B-api_mention	30010	30015	array
-I-api_mention	30015	30016	.
+O	30010	30015	array
+B-api_mention	30015	30016	.
 I-api_mention	30016	30024	toString
 I-api_mention	30024	30025	(
 I-api_mention	30025	30029	args
@@ -6844,12 +6844,12 @@ O	30058	30061	you
 O	30062	30066	need
 O	30067	30069	to
 O	30070	30073	use
-O	30074	30080	Arrays
-O	30080	30081	.
-O	30081	30089	toString
-O	30089	30090	(
-O	30090	30094	args
-O	30094	30095	)
+B-api_mention	30074	30080	Arrays
+I-api_mention	30080	30081	.
+I-api_mention	30081	30089	toString
+I-api_mention	30089	30090	(
+I-api_mention	30090	30094	args
+I-api_mention	30094	30095	)
 O	30096	30097	.
 
 O	30099	30107	Question
@@ -6979,8 +6979,8 @@ O	30645	30646	.
 
 O	30647	30650	The
 O	30651	30657	array1
-O	30657	30658	.
-B-api_mention	30658	30664	equals
+B-api_mention	30657	30658	.
+I-api_mention	30658	30664	equals
 I-api_mention	30664	30665	(
 I-api_mention	30665	30669	args
 I-api_mention	30669	30670	)
@@ -7008,8 +7008,8 @@ O	30776	30778	as
 O	30779	30781	in
 O	30782	30785	the
 O	30786	30792	Object
-O	30792	30793	.
-B-api_mention	30793	30799	equals
+B-api_mention	30792	30793	.
+I-api_mention	30793	30799	equals
 I-api_mention	30799	30800	(
 I-api_mention	30800	30804	args
 I-api_mention	30804	30805	)
@@ -7437,7 +7437,7 @@ O	32735	32737	no
 O	32738	32744	longer
 O	32745	32750	equal
 O	32751	32753	to
-B-api_mention	32754	32761	current
+O	32754	32761	current
 O	32762	32763	)
 O	32763	32764	,
 O	32765	32769	read
@@ -7512,7 +7512,7 @@ O	33094	33095	-
 O	33095	33109	incrementation
 O	33110	33112	is
 O	33113	33116	not
-O	33117	33123	atomic
+B-api_mention	33117	33123	atomic
 O	33123	33124	.
 
 O	33125	33128	The
@@ -7737,7 +7737,7 @@ O	34110	34115	every
 O	34116	34125	execution
 O	34125	34126	,
 O	34127	34129	so
-B-api_mention	34130	34142	synchronized
+O	34130	34142	synchronized
 O	34143	34154	effectively
 O	34155	34158	has
 O	34159	34161	no

@@ -43,8 +43,8 @@ O	187	188	,
 O	189	192	the
 O	193	198	first
 O	199	204	input
-O	204	205	.
-B-api_mention	205	213	nextLine
+B-api_mention	204	205	.
+I-api_mention	205	213	nextLine
 I-api_mention	213	214	(
 I-api_mention	214	218	args
 I-api_mention	218	219	)
@@ -54,8 +54,8 @@ O	231	234	and
 O	235	238	the
 O	239	245	second
 O	246	251	input
-O	251	252	.
-B-api_mention	252	260	nextLine
+B-api_mention	251	252	.
+I-api_mention	252	260	nextLine
 I-api_mention	260	261	(
 I-api_mention	261	265	args
 I-api_mention	265	266	)
@@ -86,8 +86,8 @@ O	374	378	lies
 O	379	381	in
 O	382	387	using
 O	388	393	input
-O	393	394	.
-B-api_mention	394	401	nextInt
+B-api_mention	393	394	.
+I-api_mention	394	401	nextInt
 I-api_mention	401	402	(
 I-api_mention	402	406	args
 I-api_mention	406	407	)
@@ -103,8 +103,8 @@ O	431	435	both
 O	436	443	string1
 O	444	445	=
 O	446	451	input
-O	451	452	.
-B-api_mention	452	460	nextLine
+B-api_mention	451	452	.
+I-api_mention	452	460	nextLine
 I-api_mention	460	461	(
 I-api_mention	461	465	args
 I-api_mention	465	466	)
@@ -112,8 +112,8 @@ O	467	470	and
 O	471	478	string2
 O	479	480	=
 O	481	486	input
-O	486	487	.
-B-api_mention	487	495	nextLine
+B-api_mention	486	487	.
+I-api_mention	487	495	nextLine
 I-api_mention	495	496	(
 I-api_mention	496	500	args
 I-api_mention	500	501	)
@@ -1286,7 +1286,7 @@ O	5283	5287	flow
 O	5287	5288	"
 O	5289	5292	and
 O	5293	5302	implement
-O	5303	5308	SLF4J
+B-api_mention	5303	5308	SLF4J
 O	5309	5310	(
 O	5310	5315	which
 O	5316	5321	seems
@@ -1368,7 +1368,7 @@ O	5670	5672	or
 O	5673	5677	more
 O	5678	5684	faster
 O	5685	5689	than
-O	5690	5693	JUL
+B-api_mention	5690	5693	JUL
 O	5693	5694	'
 O	5694	5695	s
 O	5695	5696	.
@@ -1410,7 +1410,7 @@ O	5835	5836	#
 O	5836	5838	li
 O	5839	5848	Execution
 O	5849	5853	time
-O	5854	5859	SLF4J
+B-api_mention	5854	5859	SLF4J
 O	5859	5860	,
 O	5861	5868	backend
 O	5869	5876	Logback
@@ -2161,7 +2161,7 @@ O	9080	9083	you
 O	9084	9090	couple
 O	9091	9093	it
 O	9094	9098	with
-O	9099	9106	Logback
+B-api_mention	9099	9106	Logback
 O	9106	9107	.
 
 O	9108	9112	Even
@@ -3414,8 +3414,8 @@ O	14692	14696	that
 O	14697	14700	the
 O	14701	14711	underlying
 O	14712	14714	fw
-O	14714	14715	.
-B-api_mention	14715	14720	close
+B-api_mention	14714	14715	.
+I-api_mention	14715	14720	close
 I-api_mention	14720	14721	(
 I-api_mention	14721	14725	args
 I-api_mention	14725	14726	)
@@ -3435,8 +3435,8 @@ O	14789	14796	through
 O	14797	14800	the
 O	14801	14809	wrapping
 O	14810	14812	bw
-O	14812	14813	.
-B-api_mention	14813	14818	close
+B-api_mention	14812	14813	.
+I-api_mention	14813	14818	close
 I-api_mention	14818	14819	(
 I-api_mention	14819	14823	args
 I-api_mention	14823	14824	)
@@ -4270,10 +4270,10 @@ O	18504	18506	if
 O	18507	18510	one
 O	18511	18514	can
 O	18515	18518	use
-B-api_mention	18519	18531	synchronized
-I-api_mention	18531	18532	(
-I-api_mention	18532	18536	args
-I-api_mention	18536	18537	)
+O	18519	18531	synchronized
+O	18531	18532	(
+O	18532	18536	args
+O	18536	18537	)
 O	18538	18539	.
 
 O	18540	18542	In
@@ -4299,10 +4299,10 @@ O	18632	18635	the
 O	18636	18646	vulnerable
 O	18647	18651	area
 O	18652	18653	(
-B-api_mention	18653	18665	synchronized
-I-api_mention	18665	18666	(
-I-api_mention	18666	18670	this
-I-api_mention	18670	18671	)
+O	18653	18665	synchronized
+O	18665	18666	(
+O	18666	18670	this
+O	18670	18671	)
 O	18671	18672	{
 O	18672	18673	.
 O	18673	18674	.
@@ -4994,11 +4994,11 @@ O	22007	22014	usually
 O	22015	22018	has
 O	22019	22022	all
 O	22023	22026	the
-B-api_mention	22027	22031	find
-I-api_mention	22031	22032	…
-I-api_mention	22032	22033	(
-I-api_mention	22033	22034	…
-I-api_mention	22034	22035	)
+O	22027	22031	find
+O	22031	22032	…
+O	22032	22033	(
+O	22033	22034	…
+O	22034	22035	)
 O	22036	22043	methods
 O	22044	22050	copied
 O	22051	22055	from
@@ -5712,7 +5712,7 @@ O	25316	25317	'
 O	25317	25318	t
 O	25319	25323	want
 O	25324	25327	the
-O	25328	25338	Observable
+B-api_mention	25328	25338	Observable
 O	25339	25344	class
 O	25345	25347	to
 O	25348	25350	be
@@ -5789,13 +5789,13 @@ O	25649	25657	referred
 O	25658	25660	to
 O	25661	25663	as
 O	25664	25667	the
-O	25668	25676	Observer
+B-api_mention	25668	25676	Observer
 O	25676	25677	.
 
 O	25678	25687	Therefore
 O	25687	25688	,
 O	25689	25692	the
-O	25693	25703	Observable
+B-api_mention	25693	25703	Observable
 O	25704	25709	class
 O	25710	25714	will
 O	25715	25719	have
@@ -5811,7 +5811,7 @@ O	25744	25745	.
 O	25746	25755	instances
 O	25756	25768	implementing
 O	25769	25772	the
-O	25773	25781	Observer
+B-api_mention	25773	25781	Observer
 O	25782	25791	interface
 O	25792	25799	methods
 O	25800	25803	you
@@ -5854,7 +5854,7 @@ O	25962	25964	is
 O	25965	25968	how
 O	25969	25973	will
 O	25974	25977	the
-O	25978	25988	Observable
+B-api_mention	25978	25988	Observable
 O	25989	25994	class
 O	25995	25999	know
 O	26000	26003	who
@@ -5864,7 +5864,7 @@ O	26017	26018	?
 
 O	26019	26021	So
 O	26022	26025	the
-O	26026	26036	Observable
+B-api_mention	26026	26036	Observable
 O	26037	26042	class
 O	26043	26047	must
 O	26048	26053	offer
@@ -5917,7 +5917,7 @@ O	26299	26311	notification
 O	26312	26318	method
 O	26319	26321	of
 O	26322	26325	the
-O	26326	26334	Observer
+B-api_mention	26326	26334	Observer
 O	26335	26344	interface
 O	26345	26347	of
 O	26348	26352	each
@@ -6265,7 +6265,7 @@ O	27971	27974	and
 O	27975	27978	one
 O	27979	27983	with
 O	27984	27986	an
-B-api_mention	27987	27993	Object
+O	27987	27993	Object
 O	27994	28002	argument
 O	28002	28003	,
 O	28004	28006	in
@@ -6338,7 +6338,7 @@ O	28342	28343	,
 O	28344	28347	and
 O	28348	28351	the
 O	28352	28357	extra
-B-api_mention	28358	28364	Object
+O	28358	28364	Object
 O	28365	28368	arg
 O	28369	28371	to
 O	28372	28383	potentially
@@ -6349,10 +6349,10 @@ O	28401	28412	information
 O	28413	28414	(
 O	28414	28420	passed
 O	28421	28428	through
-O	28429	28444	notifyObservers
-O	28444	28445	(
-O	28445	28449	args
-O	28449	28450	)
+B-api_mention	28429	28444	notifyObservers
+I-api_mention	28444	28445	(
+I-api_mention	28445	28449	args
+I-api_mention	28449	28450	)
 O	28451	28452	.
 
 O	28454	28462	Question
@@ -6420,7 +6420,7 @@ O	28768	28770	to
 O	28771	28778	strings
 O	28778	28779	.
 
-O	28780	28786	String
+B-api_mention	28780	28786	String
 O	28787	28800	concatenation
 O	28801	28803	is
 O	28804	28815	implemented
@@ -6472,8 +6472,8 @@ B-api_mention	29032	29045	StringBuilder
 O	29046	29056	internally
 O	29057	29060	and
 O	29061	29065	uses
-O	29066	29067	.
-B-api_mention	29067	29073	append
+B-api_mention	29066	29067	.
+I-api_mention	29067	29073	append
 I-api_mention	29073	29074	(
 I-api_mention	29074	29078	args
 I-api_mention	29078	29079	)
@@ -7237,7 +7237,7 @@ O	32542	32544	in
 O	32544	32545	"
 O	32546	32552	method
 O	32553	32555	of
-B-api_mention	32556	32560	enum
+O	32556	32560	enum
 O	32561	32562	.
 
 O	32563	32565	It
@@ -7256,7 +7256,7 @@ O	32620	32627	returns
 O	32628	32631	the
 O	32632	32636	name
 O	32637	32639	of
-B-api_mention	32640	32644	enum
+O	32640	32644	enum
 O	32645	32653	constant
 O	32654	32656	as
 O	32657	32659	it
@@ -8467,8 +8467,8 @@ O	37741	37746	press
 O	37747	37752	Enter
 O	37753	37754	,
 O	37755	37760	input
-O	37760	37761	.
-B-api_mention	37761	37768	nextInt
+B-api_mention	37760	37761	.
+I-api_mention	37761	37768	nextInt
 I-api_mention	37768	37769	(
 I-api_mention	37769	37773	args
 I-api_mention	37773	37774	)
@@ -8488,8 +8488,8 @@ O	37822	37823	.
 
 O	37824	37828	When
 O	37829	37834	input
-O	37834	37835	.
-B-api_mention	37835	37843	nextLine
+B-api_mention	37834	37835	.
+I-api_mention	37835	37843	nextLine
 I-api_mention	37843	37844	(
 I-api_mention	37844	37848	args
 I-api_mention	37848	37849	)
@@ -8517,16 +8517,16 @@ O	37932	37939	Instead
 O	37939	37940	,
 O	37941	37944	use
 O	37945	37950	input
-O	37950	37951	.
-B-api_mention	37951	37959	nextLine
+B-api_mention	37950	37951	.
+I-api_mention	37951	37959	nextLine
 I-api_mention	37959	37960	(
 I-api_mention	37960	37964	args
 I-api_mention	37964	37965	)
 O	37966	37977	immediately
 O	37978	37983	after
 O	37984	37989	input
-O	37989	37990	.
-B-api_mention	37990	37997	nextInt
+B-api_mention	37989	37990	.
+I-api_mention	37990	37997	nextInt
 I-api_mention	37997	37998	(
 I-api_mention	37998	38002	args
 I-api_mention	38002	38003	)
@@ -8544,8 +8544,8 @@ O	38043	38047	does
 O	38048	38052	that
 O	38053	38060	because
 O	38061	38066	input
-O	38066	38067	.
-B-api_mention	38067	38074	nextInt
+B-api_mention	38066	38067	.
+I-api_mention	38067	38074	nextInt
 I-api_mention	38074	38075	(
 I-api_mention	38075	38079	args
 I-api_mention	38079	38080	)
@@ -8568,8 +8568,8 @@ O	38149	38151	by
 O	38152	38158	adding
 O	38159	38161	an
 O	38162	38167	input
-O	38167	38168	.
-B-api_mention	38168	38176	nextLine
+B-api_mention	38167	38168	.
+I-api_mention	38168	38176	nextLine
 I-api_mention	38176	38177	(
 I-api_mention	38177	38181	args
 I-api_mention	38181	38182	)
@@ -8689,15 +8689,15 @@ O	38655	38663	24907860
 O	38664	38671	Instead
 O	38672	38674	of
 O	38675	38680	input
-O	38680	38681	.
-B-api_mention	38681	38689	nextLine
+B-api_mention	38680	38681	.
+I-api_mention	38681	38689	nextLine
 I-api_mention	38689	38690	(
 I-api_mention	38690	38694	args
 I-api_mention	38694	38695	)
 O	38696	38699	use
 O	38700	38705	input
-O	38705	38706	.
-B-api_mention	38706	38710	next
+B-api_mention	38705	38706	.
+I-api_mention	38706	38710	next
 I-api_mention	38710	38711	(
 I-api_mention	38711	38715	args
 I-api_mention	38715	38716	)
@@ -8880,7 +8880,7 @@ O	39467	39470	and
 O	39471	39473	go
 O	39474	39476	on
 O	39477	39481	with
-O	39482	39491	Closeable
+B-api_mention	39482	39491	Closeable
 O	39491	39492	.
 
 O	39493	39496	Use
@@ -10213,11 +10213,11 @@ O	45747	45748	(
 O	45748	45752	args
 O	45752	45753	)
 O	45754	45758	file
-O	45758	45759	.
-O	45759	45765	delete
-O	45765	45766	(
-O	45766	45770	args
-O	45770	45771	)
+B-api_mention	45758	45759	.
+I-api_mention	45759	45765	delete
+I-api_mention	45765	45766	(
+I-api_mention	45766	45770	args
+I-api_mention	45770	45771	)
 O	45771	45772	;
 O	45773	45778	Using
 O	45779	45781	an
@@ -10290,7 +10290,7 @@ O	46103	46105	is
 O	46106	46118	unstructured
 O	46119	46120	,
 O	46121	46127	unlike
-B-api_mention	46128	46140	synchronized
+O	46128	46140	synchronized
 O	46141	46151	constructs
 O	46152	46153	-
 O	46153	46154	-
@@ -10450,7 +10450,7 @@ O	46922	46928	oracle
 O	46929	46942	documentation
 O	46943	46947	page
 O	46948	46953	about
-O	46954	46967	ReentrantLock
+B-api_mention	46954	46967	ReentrantLock
 O	46968	46969	:
 O	46970	46971	#
 O	46971	46981	blockquote
@@ -10733,7 +10733,7 @@ O	48302	48303	.
 
 O	48304	48305	#
 O	48305	48307	li
-O	48308	48311	JUL
+B-api_mention	48308	48311	JUL
 O	48312	48316	didn
 O	48316	48317	'
 O	48317	48318	t
@@ -10786,7 +10786,7 @@ O	48478	48479	.
 
 O	48480	48481	#
 O	48481	48483	li
-O	48484	48487	JUL
+B-api_mention	48484	48487	JUL
 O	48488	48491	isn
 O	48491	48492	'
 O	48492	48493	t
@@ -10830,7 +10830,7 @@ O	48699	48710	effectively
 O	48711	48713	re
 O	48713	48714	-
 O	48714	48726	implementing
-O	48727	48730	JUL
+B-api_mention	48727	48730	JUL
 O	48731	48733	if
 O	48734	48735	I
 O	48736	48746	understood
@@ -10857,7 +10857,7 @@ O	48836	48837	.
 
 O	48838	48847	Therefore
 O	48848	48853	using
-O	48854	48859	SLF4J
+B-api_mention	48854	48859	SLF4J
 O	48860	48861	(
 O	48861	48866	which
 O	48867	48869	is
@@ -10944,7 +10944,7 @@ O	49251	49252	Y
 O	49253	49254	(
 O	49254	49257	for
 O	49258	49265	example
-O	49266	49269	JUL
+B-api_mention	49266	49269	JUL
 O	49269	49270	)
 O	49270	49271	,
 O	49272	49276	even
@@ -11005,7 +11005,7 @@ O	49517	49520	all
 O	49521	49525	that
 O	49526	49527	I
 O	49528	49533	think
-O	49534	49537	JUL
+B-api_mention	49534	49537	JUL
 O	49538	49540	is
 O	49541	49543	at
 O	49544	49549	least
@@ -11223,7 +11223,7 @@ O	50559	50563	when
 O	50564	50567	you
 O	50568	50574	cannot
 O	50575	50581	modify
-B-api_mention	50582	50586	enum
+O	50582	50586	enum
 O	50587	50594	classes
 O	50595	50597	as
 O	50598	50600	it
