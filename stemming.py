@@ -79,7 +79,7 @@ def preprocess(file_paths, after,choice):
                         json_new['tokens'].append(stemmer.stem(word))
                     else:
                         json_new['tokens'].append(word)
-            source.close()
+        source.close()
         lst = Counter(json_new['tokens'])
         return lst
 
