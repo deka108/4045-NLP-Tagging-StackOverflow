@@ -21,15 +21,18 @@ preprocessed_path_java = [
     'preprocessed/preprocessed_2015-01-01-2015-06-30_java.json',
     'preprocessed/preprocessed_2015-07-01-2015-12-31_java.json'
 ]
+FILE_DEST = 'Stat\\'
+# FILE_DEST = 'Stat_API\\'
+
 def read_json(file_path):
     with io.open(file_path, "r", encoding="utf-8") as source_file:
         data = pandas.read_json(source_file)
     return data
 
-def len_of_posts(dataset):
+def len_of_posts(dataset,path):
     total_all = 0
     for file_path in dataset:
-        len_file = open("Stat\\post length.txt", "a+")
+        len_file = open(path + "post length.txt", "a+")
         len_file.write("DATA : {}".format(file_path))
         total = 0
         i = -1
@@ -53,9 +56,9 @@ def len_of_posts(dataset):
     len_file.close()
 
 
-def get_statistics(dataset):
+def get_statistics(dataset,path):
     answer_file = []
-    with open("Stat\\statistic.txt", "w+") as del_file:
+    with open(path +"statistic.txt", "w+") as del_file:
         del_file.write('')
     for file_path in dataset:
         item_count = 0
@@ -67,8 +70,8 @@ def get_statistics(dataset):
                 num_of_answers += item["answer_count"]
                 item_count += 1
 
-        with open("Stat\\statistic.txt", "a+") as stat_file:
-            if os.stat("Stat\\statistic.txt").st_size != 0:
+        with open(path+"statistic.txt", "a+") as stat_file:
+            if os.stat(path+ "statistic.txt").st_size != 0:
                 for line in stat_file:
                     ques,ans = (item.strip('}') for item in line.split(','))
                     ques = int(ques.split(':')[1]) + item_count
@@ -76,7 +79,7 @@ def get_statistics(dataset):
                 print("1.2.3.4.5 {} , {}".format(item_count,num_of_answers))
                 print ques,ans
                 info = dict(zip(('total questions','total answers'),(ques,ans)))
-                with open ("Stat\\statistic.txt", "w+") as temp_file:
+                with open (path +"statistic.txt", "w+") as temp_file:
                     temp_file.write(str(info))
             else:
                 print 'yes'
@@ -85,7 +88,7 @@ def get_statistics(dataset):
     return answer_file
 
 
-def create_histo(data):
+def create_histo(data,path):
     # change the upper limit if you want to make bigger histogram e.g.
     # e.g. 12 means that answer counts above 12 will be combined with 12
     upper_limit = 20
@@ -104,11 +107,11 @@ def create_histo(data):
     plt.title('Answer Distribution')
     # plt.show()
     # change the save path for other pict
-    plt.savefig('Stat\\histogram.png')
+    plt.savefig(path+'histogram.png')
 
 
-len_of_posts(preprocessed_path_java)
-stats_file = get_statistics(preprocessed_path_java)
-create_histo(stats_file)
+len_of_posts(api_preprocessed_path,FILE_DEST)
+stats_file = get_statistics(api_preprocessed_path,FILE_DEST)
+create_histo(stats_file,FILE_DEST)
 
 
