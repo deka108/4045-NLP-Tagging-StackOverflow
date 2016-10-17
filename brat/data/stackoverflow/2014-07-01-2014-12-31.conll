@@ -738,7 +738,7 @@ O	3281	3284	can
 O	3285	3287	we
 O	3288	3294	define
 O	3295	3296	a
-O	3297	3303	Marker
+B-api_mention	3297	3303	Marker
 O	3304	3313	interface
 O	3314	3318	then
 O	3318	3319	?
@@ -784,10 +784,10 @@ O	3493	3494	#
 O	3494	3496	li
 O	3497	3500	How
 O	3501	3504	are
-O	3505	3516	Annotations
+B-api_mention	3505	3516	Annotations
 O	3517	3523	better
 O	3524	3528	than
-O	3529	3535	Marker
+B-api_mention	3529	3535	Marker
 O	3536	3546	Interfaces
 O	3546	3547	?
 
@@ -969,7 +969,7 @@ O	4303	4304	-
 O	4304	4312	26549659
 
 O	4313	4319	Google
-O	4320	4325	Guava
+B-api_mention	4320	4325	Guava
 O	4326	4329	has
 O	4330	4331	a
 O	4332	4341	predicate
@@ -1529,7 +1529,7 @@ O	6921	6927	method
 O	6928	6932	from
 O	6933	6939	Apache
 O	6940	6947	Commons
-O	6948	6959	StringUtils
+B-api_mention	6948	6959	StringUtils
 O	6960	6961	:
 B-api_mention	6962	6973	StringUtils
 I-api_mention	6973	6974	.
@@ -7194,7 +7194,7 @@ O	33377	33382	angle
 O	33383	33391	brackets
 O	33392	33396	when
 O	33397	33404	calling
-O	33405	33414	emptyList
+B-api_mention	33405	33414	emptyList
 O	33415	33416	.
 
 O	33417	33421	This
@@ -7228,13 +7228,13 @@ I-api_mention	33530	33531	(
 I-api_mention	33531	33535	args
 I-api_mention	33535	33536	)
 O	33536	33537	;
-O	33538	33547	emptyList
-O	33547	33548	<
-O	33548	33549	T
-O	33549	33550	>
-O	33550	33551	(
-O	33551	33555	args
-O	33555	33556	)
+B-api_mention	33538	33547	emptyList
+I-api_mention	33547	33548	<
+I-api_mention	33548	33549	T
+I-api_mention	33549	33550	>
+I-api_mention	33550	33551	(
+I-api_mention	33551	33555	args
+I-api_mention	33555	33556	)
 O	33557	33559	is
 O	33560	33563	not
 O	33564	33571	correct
@@ -7399,7 +7399,7 @@ O	34232	34234	by
 O	34235	34238	bit
 O	34238	34239	.
 
-O	34240	34251	Collections
+B-api_mention	34240	34251	Collections
 O	34252	34254	is
 O	34255	34258	the
 O	34259	34263	name
@@ -7414,9 +7414,9 @@ O	34285	34292	Javadoc
 O	34293	34294	:
 O	34295	34296	#
 O	34296	34306	blockquote
-O	34307	34316	emptyList
-O	34316	34317	(
-O	34317	34318	)
+B-api_mention	34307	34316	emptyList
+I-api_mention	34316	34317	(
+I-api_mention	34317	34318	)
 O	34319	34321	is
 O	34322	34325	the
 O	34326	34330	name
