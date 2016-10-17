@@ -2,11 +2,33 @@ import json
 import os
 ##################################################
 
-question_index = []
+question_index = [0,7,9,17,18,21,22,28,32,35,45,62,68,99]
 
 answer_index = {
     # question_index : list of answer_index
     # example
+    0: [2,],
+    1: [0,2,3,4,],
+    9: [0,1,2,3,4,5,6,],
+    10: [2,7,10,],
+    12: [1,2,],
+    18: [0,5,6,7,9,10,11,],
+    19: [5,],
+    21: [0,],
+    22: [2,],
+    23: [0,3],
+    28: [0,7,8,10,],
+    32: [0,1,2,3,5,],
+    34: [1,3,5,],
+    35: [0,1,2,3,],
+    41: [1,2,],
+    45: [0,8,],
+    55: [0,4,],
+    58: [0,],
+    59: [3,],
+    62: [0,],
+    98: [0,],
+    99: [0,1,2,3,4,5,6,8,],
 }
 
 ##################################################
@@ -69,4 +91,4 @@ def extract_api_mention_post(index):
             target.write(json.dumps({"items": items}))
 
 # Uncomment and change index of the data path
-# extract_api_mention_post(7)
+extract_api_mention_post(4)

@@ -1,14 +1,14 @@
 import os
+import re
 import sys
 import time
 import math
 import random
 
-import csv
-
 from getopt import getopt
 
 if '__main__' == __name__:
+    digit_matcher = re.compile('\\d{6,}')
     test_ratio = 0.3
     args = sys.argv[1:]
     opts, args = getopt(args, '', ['conll='])
@@ -21,15 +21,16 @@ if '__main__' == __name__:
     for conll_filename in conll_inputs.split(','):
         post = []
         with open(conll_filename, encoding='UTF-8', mode='r') as conll_file:
-            for line in conll_file:
-                line = line.strip()
-                if not line:
-                    continue
+            conll_filecontents = list(filter('\n'.__ne__, conll_file.readlines()))
+            for i in range(len(conll_filecontents)):
+                line = conll_filecontents[i].strip()
                 name_entity, _, _, token = line.split('\t')
-                if 'Question' == token:
-                    if post:
+                if 'Question' == token and i + 2 < len(conll_filecontents):
+                    next_token = conll_filecontents[i + 1].split('\t')[-1][:-1] # strip newline
+                    next2_token = conll_filecontents[i + 2].split('\t')[-1][:-1] # strip newline
+                    if post and '-' == next_token and digit_matcher.match(next2_token) is not None:
                         post_list.append(post)
-                    post = []
+                        post = []
                 post.append((token, name_entity))
             if post:
                 post_list.append(post)

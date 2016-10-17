@@ -5,7 +5,6 @@ import json
 import pprint
 from getopt import getopt
 
-import nltk
 from bs4 import BeautifulSoup as bsoup
 from bs4.element import Tag, NavigableString, Comment
 
