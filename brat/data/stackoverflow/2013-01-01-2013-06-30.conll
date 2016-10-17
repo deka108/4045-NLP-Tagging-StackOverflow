@@ -1063,7 +1063,7 @@ O	4926	4929	not
 O	4930	4934	just
 O	4935	4941	access
 O	4942	4945	the
-O	4946	4971	PersistenceManagerFactory
+B-api_mention	4946	4971	PersistenceManagerFactory
 O	4972	4980	directly
 O	4980	4981	?
 
@@ -3356,7 +3356,7 @@ I-api_mention	14989	14990	)
 O	14991	14998	returns
 O	14999	15001	an
 O	15002	15007	empty
-O	15008	15014	String
+B-api_mention	15008	15014	String
 O	15015	15016	.
 
 O	15017	15018	#
@@ -4436,7 +4436,7 @@ O	19576	19578	no
 O	19579	19583	much
 O	19584	19587	use
 O	19588	19591	for
-O	19592	19599	forEach
+B-api_mention	19592	19599	forEach
 O	19600	19602	in
 O	19603	19607	pure
 O	19608	19610	FP
@@ -5028,7 +5028,7 @@ O	22238	22244	common
 O	22245	22255	functional
 O	22256	22266	interfaces
 O	22267	22271	like
-O	22272	22280	Consumer
+B-api_mention	22272	22280	Consumer
 O	22281	22284	don
 O	22284	22285	'
 O	22285	22286	t
@@ -5841,13 +5841,13 @@ O	25964	25969	fixes
 O	25970	25971	a
 O	25972	25978	number
 O	25979	25981	of
-O	25982	25988	Stream
+B-api_mention	25982	25988	Stream
 O	25989	25992	API
 O	25993	26001	problems
 O	26001	26002	,
 O	26003	26012	including
 O	26013	26025	implementing
-O	26026	26034	Iterable
+B-api_mention	26026	26034	Iterable
 O	26035	26036	.
 
 O	26037	26041	That
@@ -6002,8 +6002,8 @@ O	26795	26803	argument
 O	26804	26805	(
 O	26805	26807	ie
 O	26807	26808	,
-B-api_mention	26809	26813	list
-I-api_mention	26813	26814	.
+O	26809	26813	list
+B-api_mention	26813	26814	.
 I-api_mention	26814	26821	forEach
 I-api_mention	26821	26822	(
 I-api_mention	26822	26826	args
@@ -6121,8 +6121,8 @@ O	27339	27349	impression
 O	27349	27350	,
 O	27351	27355	that
 B-api_mention	27356	27364	Iterable
-O	27364	27365	#
-B-api_mention	27365	27372	forEach
+I-api_mention	27364	27365	#
+I-api_mention	27365	27372	forEach
 O	27373	27375	in
 O	27376	27387	combination
 O	27388	27392	with
@@ -6322,8 +6322,8 @@ O	28283	28286	the
 O	28287	28296	semantics
 O	28297	28299	of
 B-api_mention	28300	28308	Iterable
-O	28308	28309	#
-B-api_mention	28309	28316	forEach
+I-api_mention	28308	28309	#
+I-api_mention	28309	28316	forEach
 O	28317	28321	from
 O	28322	28325	the
 O	28326	28335	semantics
@@ -6345,8 +6345,8 @@ O	28390	28393	the
 O	28394	28400	syntax
 O	28401	28403	of
 B-api_mention	28404	28412	Iterable
-O	28412	28413	#
-B-api_mention	28413	28420	forEach
+I-api_mention	28412	28413	#
+I-api_mention	28413	28420	forEach
 O	28421	28422	,
 O	28423	28425	it
 O	28426	28431	makes
@@ -6401,8 +6401,8 @@ O	28662	28666	mean
 O	28666	28667	,
 O	28668	28672	that
 B-api_mention	28673	28681	Iterable
-O	28681	28682	#
-B-api_mention	28682	28689	forEach
+I-api_mention	28681	28682	#
+I-api_mention	28682	28689	forEach
 O	28690	28696	should
 O	28697	28699	be
 O	28700	28710	considered
@@ -6440,8 +6440,8 @@ O	28848	28852	each
 O	28853	28858	loops
 O	28859	28863	with
 B-api_mention	28864	28872	Iterable
-O	28872	28873	#
-B-api_mention	28873	28880	forEach
+I-api_mention	28872	28873	#
+I-api_mention	28873	28880	forEach
 O	28881	28882	,
 O	28883	28888	where
 O	28889	28891	it
@@ -6453,9 +6453,9 @@ O	28905	28910	Since
 O	28911	28914	the
 O	28915	28924	downsides
 O	28925	28927	of
-O	28928	28936	Iterable
-O	28936	28937	#
-O	28937	28944	forEach
+B-api_mention	28928	28936	Iterable
+I-api_mention	28936	28937	#
+I-api_mention	28937	28944	forEach
 O	28945	28949	have
 O	28950	28957	already
 O	28958	28962	been
@@ -6477,8 +6477,8 @@ O	29035	29039	want
 O	29040	29042	to
 O	29043	29046	use
 B-api_mention	29047	29055	Iterable
-O	29055	29056	#
-B-api_mention	29056	29063	forEach
+I-api_mention	29055	29056	#
+I-api_mention	29056	29063	forEach
 O	29064	29065	:
 O	29066	29067	#
 O	29067	29069	li
@@ -6494,8 +6494,8 @@ O	29106	29115	described
 O	29116	29121	above
 O	29121	29122	,
 B-api_mention	29123	29131	Iterable
-O	29131	29132	#
-B-api_mention	29132	29139	forEach
+I-api_mention	29131	29132	#
+I-api_mention	29132	29139	forEach
 O	29140	29143	can
 O	29144	29148	make
 O	29149	29153	your
@@ -6570,8 +6570,8 @@ O	29492	29495	sub
 O	29495	29496	-
 O	29496	29503	classes
 O	29503	29504	:
-B-api_mention	29505	29510	joins
-I-api_mention	29510	29511	.
+O	29505	29510	joins
+B-api_mention	29510	29511	.
 I-api_mention	29511	29518	forEach
 I-api_mention	29518	29519	(
 I-api_mention	29519	29523	args
@@ -6720,8 +6720,8 @@ O	30266	30270	this
 O	30271	30277	thread
 O	30277	30278	,
 B-api_mention	30279	30287	Iterable
-O	30287	30288	#
-B-api_mention	30288	30295	forEach
+I-api_mention	30287	30288	#
+I-api_mention	30288	30295	forEach
 O	30296	30300	does
 O	30301	30308	already
 O	30309	30316	provide
@@ -6802,8 +6802,8 @@ O	30698	30700	be
 O	30701	30709	replaced
 O	30710	30714	with
 B-api_mention	30715	30723	Iterable
-O	30723	30724	#
-B-api_mention	30724	30731	forEach
+I-api_mention	30723	30724	#
+I-api_mention	30724	30731	forEach
 O	30732	30733	.
 
 O	30734	30736	To
@@ -6868,8 +6868,8 @@ O	30979	30985	client
 O	30985	30986	"
 O	30986	30987	,
 B-api_mention	30988	30996	Iterable
-O	30996	30997	#
-B-api_mention	30997	31004	forEach
+I-api_mention	30996	30997	#
+I-api_mention	30997	31004	forEach
 O	31005	31016	outperforms
 O	31017	31020	the
 O	31021	31032	traditional
@@ -6877,7 +6877,7 @@ O	31033	31036	for
 O	31037	31041	loop
 O	31042	31046	over
 O	31047	31049	an
-O	31050	31059	ArrayList
+B-api_mention	31050	31059	ArrayList
 O	31059	31060	,
 O	31061	31064	but
 O	31065	31067	is
@@ -6937,8 +6937,8 @@ O	31325	31335	functional
 O	31336	31345	interface
 O	31346	31348	of
 B-api_mention	31349	31357	Iterable
-O	31357	31358	#
-B-api_mention	31358	31365	forEach
+I-api_mention	31357	31358	#
+I-api_mention	31358	31365	forEach
 O	31366	31368	in
 O	31369	31377	parallel
 O	31378	31383	using
@@ -6953,8 +6953,8 @@ O	31426	31427	.
 
 O	31428	31433	Since
 B-api_mention	31434	31444	Collection
-O	31444	31445	#
-B-api_mention	31445	31459	parallelStream
+I-api_mention	31444	31445	#
+I-api_mention	31445	31459	parallelStream
 I-api_mention	31459	31460	(
 I-api_mention	31460	31464	args
 I-api_mention	31464	31465	)
@@ -10736,11 +10736,11 @@ O	48793	48799	answer
 O	48799	48800	-
 O	48800	48808	14513598
 
-O	48809	48813	java
-O	48813	48814	.
-O	48814	48818	util
-O	48818	48819	.
-O	48819	48825	Random
+B-api_mention	48809	48813	java
+I-api_mention	48813	48814	.
+I-api_mention	48814	48818	util
+I-api_mention	48818	48819	.
+I-api_mention	48819	48825	Random
 O	48826	48828	is
 O	48829	48832	not
 O	48833	48837	much
@@ -10861,7 +10861,7 @@ O	49354	49356	If
 O	49357	49360	you
 O	49361	49367	remove
 O	49368	49371	the
-O	49372	49382	AtomicLong
+B-api_mention	49372	49382	AtomicLong
 O	49383	49386	and
 O	49387	49390	the
 O	49391	49402	undisclosed
@@ -13111,15 +13111,15 @@ O	59619	59632	StringLiteral
 O	59633	59634	.
 
 O	59635	59639	From
-O	59640	59651	Collections
+B-api_mention	59640	59651	Collections
 O	59651	59652	-
-O	59652	59660	emptySet
+B-api_mention	59652	59660	emptySet
 O	59660	59661	-
-O	59661	59672	Collections
+B-api_mention	59661	59672	Collections
 O	59672	59673	-
-O	59673	59682	emptyList
+B-api_mention	59673	59682	emptyList
 O	59682	59683	-
-O	59683	59694	Collections
+B-api_mention	59683	59694	Collections
 O	59695	59696	#
 O	59696	59706	blockquote
 O	59707	59711	Note
@@ -13621,7 +13621,7 @@ O	61923	61924	.
 O	61925	61930	Order
 O	61931	61938	depends
 O	61939	61941	on
-O	61942	61951	compareTo
+B-api_mention	61942	61951	compareTo
 O	61952	61958	method
 O	61958	61959	.
 
@@ -13933,10 +13933,10 @@ B-api_mention	63322	63335	StringBuilder
 O	63335	63336	.
 
 O	63337	63347	StrBuilder
-B-api_mention	63347	63348	.
-I-api_mention	63348	63356	appendLn
-I-api_mention	63356	63357	(
-I-api_mention	63357	63358	)
+O	63347	63348	.
+O	63348	63356	appendLn
+O	63356	63357	(
+O	63357	63358	)
 
 O	63360	63368	Question
 O	63368	63369	-
@@ -14886,9 +14886,9 @@ O	67493	67495	is
 O	67495	67496	:
 O	67497	67498	#
 O	67498	67501	pre
-O	67502	67509	Integer
-O	67509	67510	.
-B-api_mention	67510	67518	parseInt
+B-api_mention	67502	67509	Integer
+I-api_mention	67509	67510	.
+I-api_mention	67510	67518	parseInt
 I-api_mention	67518	67519	(
 I-api_mention	67519	67523	args
 I-api_mention	67523	67524	)
@@ -15140,7 +15140,7 @@ O	68529	68532	use
 O	68533	68534	a
 O	68535	68542	wrapper
 O	68543	68547	like
-O	68548	68555	Integer
+B-api_mention	68548	68555	Integer
 O	68556	68559	and
 O	68560	68570	autoboxing
 O	68570	68571	.
@@ -15339,7 +15339,7 @@ O	69346	69349	use
 O	69350	69353	int
 O	69354	69361	instead
 O	69362	69364	of
-O	69365	69372	Integer
+B-api_mention	69365	69372	Integer
 O	69373	69377	like
 O	69378	69379	#
 O	69379	69382	pre
@@ -15408,9 +15408,9 @@ O	69658	69661	int
 O	69662	69664	is
 O	69665	69674	autoboxed
 O	69675	69677	to
-O	69678	69685	Integer
+B-api_mention	69678	69685	Integer
 O	69685	69686	,
-B-api_mention	69687	69694	Hashmap
+O	69687	69694	Hashmap
 O	69695	69698	can
 O	69699	69703	call
 B-api_mention	69704	69710	equals
@@ -15418,7 +15418,7 @@ I-api_mention	69710	69711	(
 I-api_mention	69711	69712	)
 O	69713	69719	method
 O	69720	69722	on
-O	69723	69730	Integer
+B-api_mention	69723	69730	Integer
 O	69731	69737	object
 O	69737	69738	.
 
@@ -15429,7 +15429,7 @@ O	69750	69751	,
 O	69752	69755	you
 O	69756	69762	should
 O	69763	69766	use
-O	69767	69774	Integer
+B-api_mention	69767	69774	Integer
 O	69775	69782	instead
 O	69783	69785	of
 O	69786	69789	int
@@ -15509,4 +15509,4 @@ O	70108	70110	is
 O	70111	70115	much
 O	70116	70122	faster
 O	70123	70127	than
-B-api_mention	70128	70135	Hashmap
+O	70128	70135	Hashmap

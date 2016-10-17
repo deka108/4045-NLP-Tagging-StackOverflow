@@ -2398,7 +2398,7 @@ O	10725	10726	.
 O	10727	10728	#
 O	10728	10731	pre
 O	10732	10737	Above
-B-api_mention	10738	10747	getRandom
+O	10738	10747	getRandom
 O	10748	10753	takes
 O	10754	10756	no
 O	10757	10765	argument
@@ -2649,8 +2649,8 @@ O	11817	11822	above
 O	11822	11823	,
 O	11824	11828	when
 O	11829	11834	using
-B-api_mention	11835	11844	Functions
-I-api_mention	11844	11845	.
+O	11835	11844	Functions
+B-api_mention	11844	11845	.
 I-api_mention	11845	11853	identity
 I-api_mention	11853	11854	(
 I-api_mention	11854	11858	args
@@ -2660,7 +2660,7 @@ O	11864	11867	the
 O	11868	11871	key
 O	11872	11874	to
 O	11875	11878	the
-O	11879	11882	Map
+B-api_mention	11879	11882	Map
 O	11882	11883	,
 O	11884	11888	then
 O	11889	11890	I
@@ -2685,8 +2685,8 @@ O	11983	11989	typing
 O	11990	11996	issues
 O	11996	11997	.
 
-B-api_mention	11998	12007	Functions
-I-api_mention	12007	12008	.
+O	11998	12007	Functions
+B-api_mention	12007	12008	.
 I-api_mention	12008	12016	identity
 I-api_mention	12016	12017	(
 I-api_mention	12017	12021	args
@@ -2723,8 +2723,8 @@ O	12171	12172	I
 O	12173	12178	ended
 O	12179	12181	up
 O	12182	12190	ditching
-B-api_mention	12191	12200	Functions
-I-api_mention	12200	12201	.
+O	12191	12200	Functions
+B-api_mention	12200	12201	.
 I-api_mention	12201	12209	identity
 I-api_mention	12209	12210	(
 I-api_mention	12210	12214	args
@@ -2824,10 +2824,10 @@ O	12567	12570	The
 O	12571	12577	object
 O	12578	12582	your
 O	12583	12589	method
-B-api_mention	12590	12604	decompressGZIP
-I-api_mention	12604	12605	(
-I-api_mention	12605	12609	args
-I-api_mention	12609	12610	)
+O	12590	12604	decompressGZIP
+O	12604	12605	(
+O	12605	12609	args
+O	12609	12610	)
 O	12611	12616	needs
 O	12617	12619	is
 O	12620	12621	a
@@ -6010,7 +6010,7 @@ O	27447	27451	Java
 O	27452	27460	language
 O	27460	27461	.
 
-O	27462	27468	String
+B-api_mention	27462	27468	String
 O	27469	27477	literals
 O	27478	27480	in
 O	27481	27484	the
@@ -6061,7 +6061,7 @@ O	27691	27692	#
 O	27692	27695	img
 O	27696	27700	Note
 O	27701	27702	:
-O	27703	27709	String
+B-api_mention	27703	27709	String
 O	27710	27718	literals
 O	27719	27722	are
 O	27723	27729	stored
@@ -6270,7 +6270,7 @@ O	28694	28695	#
 O	28695	28697	li
 O	28698	28700	As
 O	28701	28706	other
-O	28707	28714	Objects
+B-api_mention	28707	28714	Objects
 O	28715	28720	using
 O	28721	28724	new
 O	28725	28732	keyword
@@ -6411,7 +6411,7 @@ O	29360	29363	the
 O	29364	29378	implementation
 O	29379	29381	of
 O	29382	29385	the
-O	29386	29393	println
+B-api_mention	29386	29393	println
 O	29394	29397	and
 O	29398	29401	the
 O	29402	29408	number
@@ -8519,7 +8519,7 @@ O	38277	38281	with
 O	38282	38283	a
 O	38284	38288	Java
 O	38289	38290	8
-O	38291	38297	Stream
+B-api_mention	38291	38297	Stream
 O	38298	38299	,
 O	38300	38303	but
 O	38304	38306	it
@@ -10611,11 +10611,11 @@ O	47329	47337	18987738
 O	47338	47341	You
 O	47342	47345	can
 O	47346	47349	use
-B-api_mention	47350	47356	IsNull
-I-api_mention	47356	47357	.
-I-api_mention	47357	47366	nullValue
-I-api_mention	47366	47367	(
-I-api_mention	47367	47368	)
+O	47350	47356	IsNull
+O	47356	47357	.
+O	47357	47366	nullValue
+O	47366	47367	(
+O	47367	47368	)
 O	47369	47375	method
 O	47375	47376	:
 O	47377	47378	#
@@ -11370,8 +11370,8 @@ O	50817	50824	similar
 O	50825	50835	conversion
 O	50836	50842	method
 B-api_mention	50843	50853	Throwables
-O	50853	50854	#
-B-api_mention	50854	50863	propagate
+I-api_mention	50853	50854	#
+I-api_mention	50854	50863	propagate
 I-api_mention	50863	50864	(
 I-api_mention	50864	50873	Throwable
 I-api_mention	50873	50874	)
