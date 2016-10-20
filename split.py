@@ -9,7 +9,7 @@ from getopt import getopt
 
 if '__main__' == __name__:
     digit_matcher = re.compile('\\d{6,}')
-    test_ratio = 0.3
+    K = 4
     args = sys.argv[1:]
     opts, args = getopt(args, '', ['conll='])
     conll_inputs=''
@@ -36,14 +36,23 @@ if '__main__' == __name__:
                 post_list.append(post)
     random.shuffle(post_list)
     dataset_size = len(post_list)
-    test_size = int(test_ratio * dataset_size)
-    train_size = dataset_size - test_size
-    train_list = post_list[:train_size]
-    test_list = post_list[-test_size:]
-    with open('train.tsv', mode='w', encoding='UTF-8') as train_file, open('test.tsv', mode='w', encoding='UTF-8') as test_file:
-        for post in train_list:
-            for token, name_entity in post:
-                train_file.write('%s\t%s\n' % (token, name_entity))
-        for post in test_list:
-            for token, name_entity in post:
-                test_file.write('%s\t%s\n' % (token, name_entity))
+
+    # don't mind this folks
+    partition_sizes = ([dataset_size // K + 1] * (dataset_size % K)) + ([dataset_size // K] * (K - (dataset_size % K)))
+
+    previous_last = 0
+    for k in range(K):
+        # hax
+        train_list = post_list[:previous_last] + post_list[previous_last+partition_sizes[k]:]
+        test_list = post_list[previous_last:previous_last+partition_sizes[k]]
+        previous_last = previous_last + partition_sizes[k]
+
+        assert len(train_list) + len(test_list) == dataset_size, 'sumting wong!'
+
+        with open('train/train-%d.tsv' % k, mode='w', encoding='UTF-8') as train_file, open('train/test-%d.tsv' % k, mode='w', encoding='UTF-8') as test_file:
+            for post in train_list:
+                for token, name_entity in post:
+                    train_file.write('%s\t%s\n' % (token, name_entity))
+            for post in test_list:
+                for token, name_entity in post:
+                    test_file.write('%s\t%s\n' % (token, name_entity))
