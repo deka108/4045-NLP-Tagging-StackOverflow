@@ -9,6 +9,7 @@ from getopt import getopt
 
 if '__main__' == __name__:
     digit_matcher = re.compile('\\d{6,}')
+    question_ptn = re.compile("Question-\d+")
     K = 4
     args = sys.argv[1:]
     opts, args = getopt(args, '', ['conll='])
@@ -18,6 +19,8 @@ if '__main__' == __name__:
             conll_inputs=value
     assert conll_inputs, 'Provide .conll file(s)!, e.g.:\npython train.py --conll=file1.conll,file2.conll,file3.conll'
     post_list = []
+    post_text_list = []
+
     for conll_filename in conll_inputs.split(','):
         post = []
         with open(conll_filename, encoding='UTF-8', mode='r') as conll_file:
@@ -34,8 +37,23 @@ if '__main__' == __name__:
                 post.append((token, name_entity))
             if post:
                 post_list.append(post)
-    random.shuffle(post_list)
+
+        txt_filename = conll_filename[:-len("conll")] + "txt"
+        with open(txt_filename, encoding='UTF-8', mode='r') as txt_file:
+            lines = txt_file.readlines()
+            post_body = ''
+            for i in range(len(lines)):
+                if (question_ptn.match(lines[i]) and i != 0):
+                    post_text_list.append(post_body)
+                    post_body = lines[i]
+                else:
+                    post_body += lines[i]
+            post_text_list.append(post_body)
+    
+    # random.shuffle(post_list)
     dataset_size = len(post_list)
+    indices = list(range(dataset_size))
+    random.shuffle(indices)
 
     # don't mind this folks
     partition_sizes = ([dataset_size // K + 1] * (dataset_size % K)) + ([dataset_size // K] * (K - (dataset_size % K)))
@@ -43,18 +61,22 @@ if '__main__' == __name__:
     previous_last = 0
     for k in range(K):
         # hax
-        train_list = post_list[:previous_last] + post_list[previous_last+partition_sizes[k]:]
-        test_list = post_list[previous_last:previous_last+partition_sizes[k]]
+        train_indices = indices[:previous_last] + indices[previous_last + partition_sizes[k]:]
+        test_indices = indices[previous_last:previous_last + partition_sizes[k]]
+
+        train_list = [post_list[i] for i in train_indices]
+        test_list = [post_list[i] for i in test_indices]
+        test_text_list = [post_text_list[i] for i in test_indices]
+        
         previous_last = previous_last + partition_sizes[k]
 
         assert len(train_list) + len(test_list) == dataset_size, 'sumting wong!'
 
         with open('train/test-%d.txt' % k, mode='w', encoding='UTF-8') as txt_file:
             for post in test_list:
-                txt_file.write(' '.join(list(map(lambda tup: tup[0], post))) )
-                txt_file.write('\n\n')
+                txt_file.write(''.join(test_text_list))
 
-        with open('train/train-%d.tsv' % k, mode='w', encoding='UTF-8') as train_file, open('train/test-%d.tsv' % k, mode='w', encoding='UTF-8') as test_file:
+        with open('train/train-%d.tsv' % k, mode='w', encoding='UTF-8') as train_file, open('train/dtest-%d.tsv' % k, mode='w', encoding='UTF-8') as test_file:
             for post in train_list:
                 for token, name_entity in post:
                     train_file.write('%s\t%s\n' % (token, name_entity))
