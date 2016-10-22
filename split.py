@@ -74,8 +74,7 @@ if '__main__' == __name__:
         assert len(train_list) + len(test_list) == dataset_size, 'sumting wong!'
 
         with open('train/test-%d.txt' % k, mode='w', encoding='UTF-8') as txt_file:
-            for post in test_list:
-                txt_file.write(''.join(test_text_list))
+            txt_file.write(''.join(test_text_list))
 
         with open('train/train-%d.tsv' % k, mode='w', encoding='UTF-8') as train_file, open('train/test-%d.tsv' % k, mode='w', encoding='UTF-8') as test_file:
             for post in train_list:
