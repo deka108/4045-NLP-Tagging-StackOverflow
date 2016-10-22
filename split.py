@@ -53,6 +53,8 @@ if '__main__' == __name__:
     # random.shuffle(post_list)
     dataset_size = len(post_list)
     indices = list(range(dataset_size))
+
+    random.seed(42)
     random.shuffle(indices)
 
     # don't mind this folks
@@ -60,7 +62,6 @@ if '__main__' == __name__:
 
     previous_last = 0
     for k in range(K):
-        # hax
         train_indices = indices[:previous_last] + indices[previous_last + partition_sizes[k]:]
         test_indices = indices[previous_last:previous_last + partition_sizes[k]]
 
@@ -76,7 +77,7 @@ if '__main__' == __name__:
             for post in test_list:
                 txt_file.write(''.join(test_text_list))
 
-        with open('train/train-%d.tsv' % k, mode='w', encoding='UTF-8') as train_file, open('train/dtest-%d.tsv' % k, mode='w', encoding='UTF-8') as test_file:
+        with open('train/train-%d.tsv' % k, mode='w', encoding='UTF-8') as train_file, open('train/test-%d.tsv' % k, mode='w', encoding='UTF-8') as test_file:
             for post in train_list:
                 for token, name_entity in post:
                     train_file.write('%s\t%s\n' % (token, name_entity))
