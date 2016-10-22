@@ -1,0 +1,1 @@
+python2 brat/tools/anntoconll_utf8.py brat/data/stackoverflow/*.txt
