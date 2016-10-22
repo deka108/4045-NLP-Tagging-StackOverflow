@@ -48,7 +48,7 @@ T47	api_mention 6202 6208	String
 T48	api_mention 42027 42033	String
 T49	api_mention 6211 6231	String.valueOf(args)
 T50	api_mention 41926 41941	Pattern.quote()
-T51	api_mention 6353 6376	String(char[], boolean)
+T51	api_mention 6353 6359	String
 T52	api_mention 42048 42060	.split(args)
 T53	api_mention 41820 41827	split()
 T54	api_mention 6452 6476	Character.toString(args)
@@ -342,3 +342,5 @@ T285	api_mention 36530 36542	append(args)
 T342	api_mention 9117 9121	List
 T343	api_mention 39551 39556	run()
 T344	api_mention 39581 39587	Thread
+T345	api_mention 18973 18990	gethostname(args)
+T346	api_mention 3703 3715	.split(args)

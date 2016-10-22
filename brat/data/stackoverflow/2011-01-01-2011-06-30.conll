@@ -264,7 +264,7 @@ O	1256	1265	character
 O	1266	1267	X
 O	1268	1272	from
 O	1273	1274	a
-O	1275	1281	String
+B-api_mention	1275	1281	String
 O	1282	1284	in
 O	1285	1289	Java
 O	1289	1290	?
@@ -279,8 +279,8 @@ O	1315	1319	what
 O	1320	1321	I
 O	1322	1326	want
 O	1326	1327	:
-B-api_mention	1328	1331	str
-I-api_mention	1331	1332	.
+O	1328	1331	str
+B-api_mention	1331	1332	.
 I-api_mention	1332	1339	replace
 I-api_mention	1339	1340	(
 I-api_mention	1340	1344	args
@@ -392,9 +392,9 @@ O	1824	1825	(
 O	1825	1837	immutability
 O	1837	1838	)
 O	1839	1842	for
-O	1843	1847	List
+B-api_mention	1843	1847	List
 O	1848	1849	/
-O	1850	1853	Set
+B-api_mention	1850	1853	Set
 O	1854	1864	operations
 O	1865	1866	#
 O	1866	1868	li
@@ -695,7 +695,7 @@ O	3164	3169	other
 O	3170	3174	hash
 O	3174	3175	-
 O	3175	3180	based
-O	3181	3191	Collection
+B-api_mention	3181	3191	Collection
 O	3192	3193	.
 
 O	3194	3206	Consequently
@@ -1417,7 +1417,7 @@ O	6306	6309	has
 O	6310	6313	the
 O	6314	6318	leak
 O	6319	6321	in
-O	6322	6334	GossipRouter
+B-api_mention	6322	6334	GossipRouter
 O	6334	6335	.
 
 O	6336	6337	#
@@ -1692,7 +1692,7 @@ O	7651	7654	all
 O	7655	7663	extended
 O	7664	7668	Weak
 O	7668	7669	/
-B-api_mention	7669	7682	SoftReference
+O	7669	7682	SoftReference
 O	7683	7687	that
 O	7688	7693	might
 O	7694	7698	keep
@@ -2920,7 +2920,7 @@ O	13245	13248	get
 O	13249	13252	int
 O	13253	13260	instead
 O	13261	13263	of
-O	13264	13271	Integer
+B-api_mention	13264	13271	Integer
 O	13272	13275	you
 O	13276	13279	can
 O	13280	13283	use
@@ -2981,7 +2981,7 @@ O	13490	13494	does
 O	13495	13498	not
 O	13499	13506	contain
 O	13507	13509	an
-O	13510	13517	Integer
+B-api_mention	13510	13517	Integer
 O	13517	13518	,
 O	13519	13522	you
 O	13523	13527	have
@@ -7007,7 +7007,7 @@ O	31064	31067	the
 O	31068	31074	kicker
 O	31074	31075	.
 
-O	31076	31090	StringBuilders
+B-api_mention	31076	31090	StringBuilders
 O	31091	31092	,
 O	31093	31095	as
 O	31096	31105	mentioned
@@ -8181,13 +8181,13 @@ O	36204	36206	li
 O	36207	36210	Use
 O	36211	36214	the
 B-api_mention	36215	36222	HashMap
-I-api_mention	36222	36223	(
-I-api_mention	36223	36226	int
-I-api_mention	36227	36242	initialCapacity
-I-api_mention	36242	36243	,
-I-api_mention	36244	36249	float
-I-api_mention	36250	36260	loadFactor
-I-api_mention	36260	36261	)
+O	36222	36223	(
+O	36223	36226	int
+O	36227	36242	initialCapacity
+O	36242	36243	,
+O	36244	36249	float
+O	36250	36260	loadFactor
+O	36260	36261	)
 O	36262	36273	constructor
 O	36274	36276	to
 O	36277	36281	tune
@@ -8849,7 +8849,7 @@ O	39470	39471	'
 O	39471	39473	ll
 O	39474	39479	often
 O	39480	39483	use
-O	39484	39498	AtomicIntegers
+B-api_mention	39484	39498	AtomicIntegers
 O	39499	39502	for
 O	39503	39511	counting
 O	39512	39515	and
@@ -11089,15 +11089,15 @@ O	49237	49240	our
 O	49241	49252	application
 O	49253	49258	needs
 O	49259	49260	(
-O	49261	49267	equals
-O	49267	49268	(
-O	49268	49272	args
-O	49272	49273	)
+B-api_mention	49261	49267	equals
+I-api_mention	49267	49268	(
+I-api_mention	49268	49272	args
+I-api_mention	49272	49273	)
 O	49274	49277	and
-O	49278	49286	hashCode
-O	49286	49287	(
-O	49287	49291	args
-O	49291	49292	)
+B-api_mention	49278	49286	hashCode
+I-api_mention	49286	49287	(
+I-api_mention	49287	49291	args
+I-api_mention	49291	49292	)
 O	49293	49295	in
 O	49296	49306	particular
 O	49306	49307	)
@@ -11116,10 +11116,10 @@ O	49346	49351	point
 O	49352	49361	regarding
 O	49362	49367	calls
 O	49368	49370	to
-O	49371	49378	setUuid
-O	49378	49379	(
-O	49379	49383	args
-O	49383	49384	)
+B-api_mention	49371	49378	setUuid
+I-api_mention	49378	49379	(
+I-api_mention	49379	49383	args
+I-api_mention	49383	49384	)
 O	49385	49391	method
 O	49391	49392	.
 
@@ -11864,7 +11864,7 @@ O	52364	52368	able
 O	52369	52371	to
 O	52372	52378	create
 O	52379	52380	a
-O	52381	52385	File
+B-api_mention	52381	52385	File
 O	52386	52394	instance
 O	52395	52398	and
 O	52399	52403	call

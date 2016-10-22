@@ -990,7 +990,7 @@ O	4317	4318	e
 O	4318	4319	.
 O	4319	4320	g
 O	4320	4321	.
-B-api_mention	4322	4335	StringLiteral
+O	4322	4335	StringLiteral
 O	4336	4337	)
 O	4337	4338	.
 
@@ -999,7 +999,7 @@ O	4343	4346	can
 O	4347	4348	I
 O	4349	4355	obtain
 O	4356	4357	a
-O	4358	4371	LocalDateTime
+B-api_mention	4358	4371	LocalDateTime
 O	4372	4380	instance
 O	4381	4385	from
 O	4386	4389	the
@@ -1073,7 +1073,7 @@ O	4717	4721	have
 O	4722	4723	a
 O	4724	4728	list
 O	4729	4731	of
-B-api_mention	4732	4738	Person
+O	4732	4738	Person
 O	4739	4745	object
 O	4746	4749	and
 O	4750	4751	I
@@ -1086,8 +1086,8 @@ O	4779	4782	the
 O	4783	4787	same
 O	4788	4792	name
 O	4792	4793	,
-B-api_mention	4794	4801	persons
-I-api_mention	4801	4802	.
+O	4794	4801	persons
+B-api_mention	4801	4802	.
 I-api_mention	4802	4808	stream
 I-api_mention	4808	4809	(
 I-api_mention	4809	4813	args
@@ -1106,7 +1106,7 @@ O	4852	4860	equality
 O	4861	4866	check
 O	4867	4870	for
 O	4871	4872	a
-B-api_mention	4873	4879	Person
+O	4873	4879	Person
 O	4880	4886	object
 O	4886	4887	,
 O	4888	4890	so
@@ -1115,8 +1115,8 @@ O	4893	4897	need
 O	4898	4907	something
 O	4908	4912	like
 O	4912	4913	,
-B-api_mention	4914	4921	persons
-I-api_mention	4921	4922	.
+O	4914	4921	persons
+B-api_mention	4921	4922	.
 I-api_mention	4922	4928	stream
 I-api_mention	4928	4929	(
 I-api_mention	4929	4933	args
@@ -1242,8 +1242,8 @@ O	5452	5457	would
 O	5458	5460	be
 O	5461	5463	to
 O	5464	5467	use
-B-api_mention	5468	5474	things
-I-api_mention	5474	5475	.
+O	5468	5474	things
+B-api_mention	5474	5475	.
 I-api_mention	5475	5481	stream
 I-api_mention	5481	5482	(
 I-api_mention	5482	5486	args
@@ -1313,8 +1313,8 @@ O	5728	5732	with
 O	5733	5735	is
 O	5736	5740	this
 O	5740	5741	:
-B-api_mention	5742	5748	things
-I-api_mention	5748	5749	.
+O	5742	5748	things
+B-api_mention	5748	5749	.
 I-api_mention	5749	5755	stream
 I-api_mention	5755	5756	(
 I-api_mention	5756	5760	args
@@ -1683,7 +1683,7 @@ O	7199	7201	is
 O	7202	7208	static
 O	7208	7209	.
 O	7210	7212	If
-O	7213	7219	concat
+B-api_mention	7213	7219	concat
 O	7220	7224	were
 O	7225	7227	an
 O	7228	7236	instance
@@ -1808,7 +1808,7 @@ O	7682	7683	.
 O	7683	7684	t
 O	7684	7685	.
 O	7686	7691	using
-B-api_mention	7692	7705	StringLiteral
+O	7692	7705	StringLiteral
 O	7706	7707	+
 O	7708	7709	n
 O	7710	7713	and
@@ -2018,9 +2018,9 @@ O	8618	8620	is
 O	8621	8627	almost
 O	8628	8637	identical
 O	8638	8640	to
-O	8641	8648	Integer
-O	8648	8649	#
-B-api_mention	8649	8657	toString
+B-api_mention	8641	8648	Integer
+I-api_mention	8648	8649	#
+I-api_mention	8649	8657	toString
 I-api_mention	8657	8658	(
 I-api_mention	8658	8662	args
 I-api_mention	8662	8663	)
@@ -2312,19 +2312,19 @@ O	10036	10044	assembly
 O	10045	10049	code
 O	10050	10059	generated
 O	10060	10063	for
-O	10064	10070	IntStr
-O	10070	10071	#
-O	10071	10086	integerToString
-O	10086	10087	(
-O	10087	10091	args
-O	10091	10092	)
+B-api_mention	10064	10070	IntStr
+I-api_mention	10070	10071	#
+I-api_mention	10071	10086	integerToString
+I-api_mention	10086	10087	(
+I-api_mention	10087	10091	args
+I-api_mention	10091	10092	)
 O	10093	10096	and
-O	10097	10103	IntStr
-O	10103	10104	#
-O	10104	10118	stringBuilder0
-O	10118	10119	(
-O	10119	10123	args
-O	10123	10124	)
+B-api_mention	10097	10103	IntStr
+I-api_mention	10103	10104	#
+I-api_mention	10104	10118	stringBuilder0
+I-api_mention	10118	10119	(
+I-api_mention	10119	10123	args
+I-api_mention	10123	10124	)
 O	10125	10127	is
 O	10128	10131	far
 O	10132	10136	more
@@ -2339,12 +2339,12 @@ O	10170	10173	the
 O	10174	10178	code
 O	10179	10188	generated
 O	10189	10192	for
-O	10193	10199	IntStr
-O	10199	10200	#
-O	10200	10215	integerToString
-O	10215	10216	(
-O	10216	10220	args
-O	10220	10221	)
+B-api_mention	10193	10199	IntStr
+I-api_mention	10199	10200	#
+I-api_mention	10200	10215	integerToString
+I-api_mention	10215	10216	(
+I-api_mention	10216	10220	args
+I-api_mention	10220	10221	)
 O	10222	10225	was
 O	10226	10233	similar
 O	10234	10237	for
@@ -4439,7 +4439,7 @@ O	19616	19620	does
 O	19621	19624	not
 O	19625	19630	exist
 O	19631	19633	in
-O	19634	19640	RxJava
+B-api_mention	19634	19640	RxJava
 O	19640	19641	,
 O	19642	19645	but
 O	19646	19648	if
@@ -5570,11 +5570,11 @@ O	25031	25033	is
 O	25034	25036	an
 O	25037	25045	instance
 O	25046	25048	of
-O	25049	25053	java
-O	25053	25054	.
-O	25054	25058	util
-O	25058	25059	.
-O	25059	25063	Date
+B-api_mention	25049	25053	java
+I-api_mention	25053	25054	.
+I-api_mention	25054	25058	util
+I-api_mention	25058	25059	.
+I-api_mention	25059	25063	Date
 O	25064	25066	or
 O	25067	25069	it
 O	25069	25070	'
@@ -5793,7 +5793,7 @@ O	25992	25993	.
 O	25994	25997	You
 O	25998	26004	should
 O	26005	26008	use
-O	26009	26010	.
+B-api_mention	26009	26010	.
 
 B-api_mention	26011	26017	equals
 I-api_mention	26017	26018	(
@@ -5812,7 +5812,7 @@ O	26061	26064	int
 O	26065	26071	rather
 O	26072	26076	than
 B-api_mention	26077	26084	Integer
-O	26084	26085	.
+I-api_mention	26084	26085	.
 
 B-api_mention	26086	26094	parseInt
 O	26095	26096	:
@@ -7185,7 +7185,7 @@ I-api_mention	32128	32129	T
 I-api_mention	32129	32130	>
 O	32131	32136	where
 O	32137	32141	each
-O	32142	32152	TimeSeries
+B-api_mention	32142	32152	TimeSeries
 O	32153	32155	is
 O	32156	32167	essentially
 O	32168	32169	a
@@ -7656,7 +7656,7 @@ O	34159	34165	better
 O	34166	34172	result
 O	34172	34173	.
 
-O	34174	34182	Iterable
+B-api_mention	34174	34182	Iterable
 O	34183	34186	has
 O	34187	34188	a
 B-api_mention	34189	34200	spliterator
@@ -8382,7 +8382,7 @@ O	37367	37373	answer
 O	37373	37374	-
 O	37374	37382	22561690
 
-O	37383	37393	Comparator
+B-api_mention	37383	37393	Comparator
 O	37394	37396	is
 O	37397	37398	a
 O	37399	37409	functional
@@ -9329,7 +9329,7 @@ O	41577	41583	result
 O	41584	41586	in
 O	41587	41590	the
 O	41591	41597	string
-B-api_mention	41598	41611	StringLiteral
+O	41598	41611	StringLiteral
 O	41612	41613	.
 
 O	41614	41617	The
@@ -9524,7 +9524,7 @@ O	42393	42396	see
 O	42397	42405	complete
 O	42406	42410	list
 O	42411	42413	of
-O	42414	42422	Patterns
+B-api_mention	42414	42422	Patterns
 O	42423	42426	for
 O	42427	42437	Formatting
 O	42438	42441	and
@@ -9854,7 +9854,7 @@ O	43800	43803	use
 O	43804	43814	Predicates
 O	43815	43819	from
 O	43820	43827	Eclipse
-O	43828	43839	Collections
+B-api_mention	43828	43839	Collections
 O	43840	43841	#
 O	43841	43844	pre
 O	43845	43847	If
@@ -10126,7 +10126,7 @@ O	45093	45094	a
 O	45095	45104	committer
 O	45105	45108	for
 O	45109	45116	Eclipse
-O	45117	45128	Collections
+B-api_mention	45117	45128	Collections
 O	45128	45129	.
 
 O	45131	45139	Question
@@ -10505,17 +10505,17 @@ I-api_mention	46531	46533	of
 I-api_mention	46533	46534	(
 I-api_mention	46534	46538	args
 I-api_mention	46538	46539	)
-O	46540	46541	.
-O	46541	46544	map
-O	46544	46545	(
-O	46545	46549	args
-O	46549	46550	)
-O	46551	46552	.
-O	46552	46555	map
-O	46555	46556	(
-O	46556	46560	args
-O	46560	46561	)
-B-api_mention	46562	46563	.
+I-api_mention	46540	46541	.
+I-api_mention	46541	46544	map
+I-api_mention	46544	46545	(
+I-api_mention	46545	46549	args
+I-api_mention	46549	46550	)
+I-api_mention	46551	46552	.
+I-api_mention	46552	46555	map
+I-api_mention	46555	46556	(
+I-api_mention	46556	46560	args
+I-api_mention	46560	46561	)
+I-api_mention	46562	46563	.
 I-api_mention	46563	46572	findFirst
 I-api_mention	46572	46573	(
 I-api_mention	46573	46577	args
@@ -12462,8 +12462,8 @@ O	55698	55699	.
 O	55700	55701	#
 O	55701	55711	blockquote
 O	55712	55714	In
-B-api_mention	55715	55728	StringLiteral
-I-api_mention	55728	55729	.
+O	55715	55728	StringLiteral
+B-api_mention	55728	55729	.
 I-api_mention	55729	55734	split
 I-api_mention	55734	55735	(
 I-api_mention	55735	55739	args
@@ -12501,7 +12501,7 @@ O	55887	55891	when
 O	55892	55895	you
 O	55896	55901	split
 O	55902	55904	on
-B-api_mention	55905	55918	StringLiteral
+O	55905	55918	StringLiteral
 O	55919	55922	you
 O	55923	55926	got
 O	55927	55928	a
@@ -12947,8 +12947,8 @@ O	57866	57874	listener
 O	57875	57877	on
 O	57878	57882	view
 O	57883	57885	by
-B-api_mention	57886	57893	anyView
-I-api_mention	57893	57894	.
+O	57886	57893	anyView
+B-api_mention	57893	57894	.
 I-api_mention	57894	57912	setOnClickListener
 I-api_mention	57912	57913	(
 I-api_mention	57913	57917	args
@@ -13448,7 +13448,7 @@ O	60388	60396	analysis
 O	60397	60399	of
 O	60400	60403	the
 O	60404	60408	Java
-O	60409	60415	Lambda
+B-api_mention	60409	60415	Lambda
 O	60416	60423	Mailing
 O	60424	60428	list
 O	60429	60431	to
@@ -13618,11 +13618,11 @@ O	61223	61225	to
 B-api_mention	61226	61233	Streams
 I-api_mention	61233	61234	.
 I-api_mention	61234	61240	concat
-I-api_mention	61240	61241	(
-I-api_mention	61241	61247	Stream
-I-api_mention	61247	61248	,
-I-api_mention	61248	61254	Stream
-I-api_mention	61254	61255	)
+O	61240	61241	(
+B-api_mention	61241	61247	Stream
+O	61247	61248	,
+B-api_mention	61248	61254	Stream
+O	61254	61255	)
 O	61256	61259	But
 O	61260	61267	without
 O	61268	61271	any
@@ -13717,11 +13717,11 @@ O	61701	61703	to
 B-api_mention	61704	61710	Stream
 I-api_mention	61710	61711	.
 I-api_mention	61711	61717	concat
-I-api_mention	61717	61718	(
-I-api_mention	61718	61724	Stream
-I-api_mention	61724	61725	,
-I-api_mention	61725	61731	Stream
-I-api_mention	61731	61732	)
+O	61717	61718	(
+B-api_mention	61718	61724	Stream
+O	61724	61725	,
+B-api_mention	61725	61731	Stream
+O	61731	61732	)
 O	61733	61738	Later
 O	61738	61739	,
 O	61740	61742	it

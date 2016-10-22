@@ -855,8 +855,8 @@ O	3953	3954	?
 O	3955	3959	Java
 O	3960	3961	8
 O	3961	3962	:
-B-api_mention	3963	3968	joins
-I-api_mention	3968	3969	.
+O	3963	3968	joins
+B-api_mention	3968	3969	.
 I-api_mention	3969	3976	forEach
 I-api_mention	3976	3977	(
 I-api_mention	3977	3981	args
@@ -5012,7 +5012,7 @@ O	22145	22152	checked
 O	22153	22163	exceptions
 O	22164	22165	.
 
-O	22166	22173	Lambdas
+B-api_mention	22166	22173	Lambdas
 O	22174	22178	aren
 O	22178	22179	'
 O	22179	22180	t
@@ -5381,7 +5381,7 @@ O	23807	23809	an
 B-api_mention	23810	23825	ExecutorService
 O	23826	23827	.
 
-O	23828	23835	Streams
+B-api_mention	23828	23835	Streams
 O	23836	23839	are
 O	23840	23844	both
 O	23845	23856	automagical
@@ -5470,7 +5470,7 @@ O	24268	24269	.
 
 O	24270	24271	#
 O	24271	24273	li
-O	24274	24281	Streams
+B-api_mention	24274	24281	Streams
 O	24282	24284	in
 O	24285	24292	general
 O	24293	24296	are
@@ -5813,9 +5813,9 @@ O	25836	25837	.
 O	25838	25839	I
 O	25840	25849	recommend
 O	25850	25857	casting
-O	25858	25865	Streams
+B-api_mention	25858	25865	Streams
 O	25866	25870	into
-O	25871	25880	Iterables
+B-api_mention	25871	25880	Iterables
 O	25881	25885	with
 O	25886	25887	(
 B-api_mention	25887	25895	Iterable
@@ -5943,9 +5943,9 @@ O	26462	26473	performance
 O	26474	26485	assumptions
 O	26486	26491	built
 O	26492	26496	into
-O	26497	26504	Streams
+B-api_mention	26497	26504	Streams
 O	26505	26508	and
-O	26509	26521	Spliterators
+B-api_mention	26509	26521	Spliterators
 O	26521	26522	.
 
 O	26523	26524	#
@@ -7539,7 +7539,7 @@ O	33986	33993	streams
 O	33993	33994	:
 O	33995	33999	Java
 O	34000	34001	8
-O	34002	34008	Lambda
+B-api_mention	34002	34008	Lambda
 O	34009	34017	function
 O	34018	34022	that
 O	34023	34029	throws
@@ -7549,11 +7549,11 @@ O	34039	34040	?
 O	34041	34045	Java
 O	34046	34047	8
 O	34047	34048	:
-O	34049	34055	Lambda
+B-api_mention	34049	34055	Lambda
 O	34055	34056	-
-O	34056	34063	Streams
+B-api_mention	34056	34063	Streams
 O	34063	34064	,
-O	34065	34071	Filter
+B-api_mention	34065	34071	Filter
 O	34072	34074	by
 O	34075	34081	Method
 O	34082	34086	with
@@ -7568,7 +7568,7 @@ O	34132	34136	from
 O	34137	34143	inside
 O	34144	34148	Java
 O	34149	34150	8
-O	34151	34158	streams
+B-api_mention	34151	34158	streams
 O	34158	34159	?
 
 O	34160	34164	Java
@@ -9114,10 +9114,10 @@ O	41452	41454	as
 O	41455	41462	already
 O	41463	41472	mentioned
 O	41472	41473	,
-O	41474	41486	synchronized
-O	41486	41487	(
-O	41487	41491	args
-O	41491	41492	)
+B-api_mention	41474	41486	synchronized
+I-api_mention	41486	41487	(
+I-api_mention	41487	41491	args
+I-api_mention	41491	41492	)
 O	41493	41494	{
 O	41494	41495	}
 O	41496	41499	can
@@ -11653,11 +11653,11 @@ I-api_mention	53002	53006	when
 I-api_mention	53006	53007	(
 I-api_mention	53007	53011	args
 I-api_mention	53011	53012	)
-O	53012	53013	.
-O	53013	53032	methodReturningVoid
-O	53032	53033	(
-O	53033	53037	args
-O	53037	53038	)
+I-api_mention	53012	53013	.
+I-api_mention	53013	53032	methodReturningVoid
+I-api_mention	53032	53033	(
+I-api_mention	53033	53037	args
+I-api_mention	53037	53038	)
 O	53038	53039	;
 O	53040	53043	and
 O	53044	53047	not
@@ -12879,10 +12879,10 @@ B-api_mention	58490	58499	ArrayList
 O	58500	58501	#
 O	58501	58503	li
 B-api_mention	58504	58513	ArrayList
-I-api_mention	58513	58514	(
-I-api_mention	58514	58524	Collection
-I-api_mention	58525	58526	c
-I-api_mention	58526	58527	)
+O	58513	58514	(
+B-api_mention	58514	58524	Collection
+O	58525	58526	c
+O	58526	58527	)
 O	58528	58529	-
 O	58530	58536	builds
 O	58537	58538	a
@@ -12891,7 +12891,7 @@ O	58549	58560	initialized
 O	58561	58565	with
 O	58566	58574	elements
 O	58575	58577	of
-O	58578	58588	collection
+B-api_mention	58578	58588	collection
 O	58589	58590	c
 O	58590	58591	.
 
@@ -13918,7 +13918,7 @@ O	63242	63244	to
 O	63245	63248	use
 O	63249	63255	Apache
 O	63256	63263	Commons
-O	63264	63274	StrBuilder
+B-api_mention	63264	63274	StrBuilder
 O	63274	63275	,
 O	63276	63281	which
 O	63282	63285	has
@@ -13932,11 +13932,11 @@ O	63319	63321	in
 B-api_mention	63322	63335	StringBuilder
 O	63335	63336	.
 
-O	63337	63347	StrBuilder
-O	63347	63348	.
-O	63348	63356	appendLn
-O	63356	63357	(
-O	63357	63358	)
+B-api_mention	63337	63347	StrBuilder
+I-api_mention	63347	63348	.
+I-api_mention	63348	63356	appendLn
+I-api_mention	63356	63357	(
+I-api_mention	63357	63358	)
 
 O	63360	63368	Question
 O	63368	63369	-
@@ -14295,7 +14295,7 @@ O	64878	64880	of
 O	64881	64889	trailing
 O	64890	64895	zeros
 O	64896	64899	and
-O	64900	64906	Locale
+B-api_mention	64900	64906	Locale
 O	64907	64915	problems
 O	64915	64916	,
 O	64917	64921	then
@@ -15220,8 +15220,8 @@ O	68848	68850	do
 O	68851	68854	the
 O	68855	68864	following
 O	68865	68870	myMap
-O	68870	68871	.
-B-api_mention	68871	68874	put
+B-api_mention	68870	68871	.
+I-api_mention	68871	68874	put
 I-api_mention	68874	68875	(
 I-api_mention	68875	68879	args
 I-api_mention	68879	68880	)
@@ -15509,4 +15509,4 @@ O	70108	70110	is
 O	70111	70115	much
 O	70116	70122	faster
 O	70123	70127	than
-O	70128	70135	Hashmap
+B-api_mention	70128	70135	Hashmap

@@ -3709,7 +3709,7 @@ O	16069	16072	and
 O	16073	16080	convert
 O	16081	16085	data
 O	16086	16088	in
-O	16089	16095	Spring
+B-api_mention	16089	16095	Spring
 O	16096	16099	MVC
 O	16099	16100	.
 
@@ -3894,11 +3894,11 @@ O	16883	16884	:
 O	16885	16892	nothing
 O	16893	16897	like
 O	16898	16914	someSpringObject
-O	16914	16915	.
-O	16915	16938	registerCustomConverter
-O	16938	16939	(
-O	16939	16943	args
-O	16943	16944	)
+B-api_mention	16914	16915	.
+I-api_mention	16915	16938	registerCustomConverter
+I-api_mention	16938	16939	(
+I-api_mention	16939	16943	args
+I-api_mention	16943	16944	)
 O	16944	16945	;
 O	16946	16947	.
 
@@ -4982,7 +4982,7 @@ O	21950	21952	ID
 O	21953	21957	type
 O	21958	21960	to
 O	21961	21963	be
-O	21964	21968	Long
+B-api_mention	21964	21968	Long
 O	21969	21972	for
 O	21973	21984	consistency
 O	21984	21985	.
@@ -5802,7 +5802,7 @@ O	25715	25719	have
 O	25720	25721	a
 O	25722	25726	list
 O	25727	25729	of
-O	25730	25739	Observers
+B-api_mention	25730	25739	Observers
 O	25740	25741	(
 O	25741	25742	i
 O	25742	25743	.
@@ -5872,7 +5872,7 @@ O	26054	26058	some
 O	26059	26068	mechanism
 O	26069	26071	to
 O	26072	26077	allow
-O	26078	26087	Observers
+B-api_mention	26078	26087	Observers
 O	26088	26090	to
 O	26091	26099	register
 O	26100	26105	their
@@ -5890,7 +5890,7 @@ I-api_mention	26149	26150	)
 O	26151	26161	internally
 O	26162	26166	adds
 O	26167	26170	the
-O	26171	26179	Observer
+B-api_mention	26171	26179	Observer
 O	26180	26182	to
 O	26183	26186	the
 O	26187	26191	list
@@ -6265,7 +6265,7 @@ O	27971	27974	and
 O	27975	27978	one
 O	27979	27983	with
 O	27984	27986	an
-O	27987	27993	Object
+B-api_mention	27987	27993	Object
 O	27994	28002	argument
 O	28002	28003	,
 O	28004	28006	in
@@ -6300,13 +6300,13 @@ O	28163	28166	and
 O	28167	28172	calls
 O	28173	28176	the
 B-api_mention	28177	28183	update
-I-api_mention	28183	28184	(
-I-api_mention	28184	28194	Observable
-I-api_mention	28195	28196	o
-I-api_mention	28196	28197	,
-I-api_mention	28198	28204	Object
-I-api_mention	28205	28208	arg
-I-api_mention	28208	28209	)
+O	28183	28184	(
+B-api_mention	28184	28194	Observable
+O	28195	28196	o
+O	28196	28197	,
+B-api_mention	28198	28204	Object
+O	28205	28208	arg
+O	28208	28209	)
 O	28210	28216	method
 O	28217	28220	for
 O	28221	28225	each
@@ -6338,7 +6338,7 @@ O	28342	28343	,
 O	28344	28347	and
 O	28348	28351	the
 O	28352	28357	extra
-O	28358	28364	Object
+B-api_mention	28358	28364	Object
 O	28365	28368	arg
 O	28369	28371	to
 O	28372	28383	potentially
@@ -6495,7 +6495,7 @@ O	29119	29120	.
 O	29120	29122	11
 O	29122	29123	.
 
-O	29124	29130	String
+B-api_mention	29124	29130	String
 O	29131	29141	Conversion
 O	29142	29143	#
 O	29143	29153	blockquote
@@ -6518,7 +6518,7 @@ O	29215	29217	do
 O	29218	29219	a
 O	29220	29224	full
 O	29225	29232	wrapped
-O	29233	29239	String
+B-api_mention	29233	29239	String
 O	29240	29250	conversion
 O	29251	29256	first
 O	29256	29257	.
@@ -6555,7 +6555,7 @@ O	29409	29417	changing
 O	29418	29424	things
 O	29425	29429	into
 O	29430	29431	a
-O	29432	29445	StringBuilder
+B-api_mention	29432	29445	StringBuilder
 O	29446	29448	in
 O	29449	29452	the
 O	29453	29463	background
@@ -6745,8 +6745,8 @@ O	30367	30372	doesn
 O	30372	30373	'
 O	30373	30374	t
 O	30374	30375	:
-B-api_mention	30376	30382	import
-I-api_mention	30383	30390	android
+O	30376	30382	import
+B-api_mention	30383	30390	android
 I-api_mention	30390	30391	.
 I-api_mention	30391	30393	os
 I-api_mention	30393	30394	.
@@ -6881,11 +6881,11 @@ I-api_mention	30939	30940	)
 O	30941	30947	method
 O	30947	30948	:
 O	30949	30950	v
-O	30950	30951	.
-O	30951	30957	cancel
-O	30957	30958	(
-O	30958	30962	args
-O	30962	30963	)
+B-api_mention	30950	30951	.
+I-api_mention	30951	30957	cancel
+I-api_mention	30957	30958	(
+I-api_mention	30958	30962	args
+I-api_mention	30962	30963	)
 O	30963	30964	;
 O	30965	30968	How
 O	30969	30971	to
@@ -8659,8 +8659,8 @@ O	38531	38536	would
 O	38537	38539	be
 O	38540	38542	to
 O	38543	38547	call
-B-api_mention	38548	38555	scanner
-I-api_mention	38555	38556	.
+O	38548	38555	scanner
+B-api_mention	38555	38556	.
 I-api_mention	38556	38560	skip
 I-api_mention	38560	38561	(
 I-api_mention	38561	38565	args

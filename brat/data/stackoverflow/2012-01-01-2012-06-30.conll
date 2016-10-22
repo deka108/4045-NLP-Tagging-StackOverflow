@@ -230,11 +230,11 @@ O	942	943	.
 O	944	947	You
 O	948	951	can
 O	952	955	use
-O	956	960	java
-O	960	961	.
-O	961	965	util
-O	965	966	.
-B-api_mention	966	977	Collections
+B-api_mention	956	960	java
+I-api_mention	960	961	.
+I-api_mention	961	965	util
+I-api_mention	965	966	.
+I-api_mention	966	977	Collections
 I-api_mention	977	978	.
 I-api_mention	978	982	sort
 I-api_mention	982	983	(
@@ -321,7 +321,7 @@ O	1335	1339	this
 O	1340	1346	length
 O	1347	1355	property
 O	1356	1358	of
-O	1359	1364	Array
+B-api_mention	1359	1364	Array
 O	1365	1372	defined
 O	1372	1373	?
 
@@ -929,7 +929,7 @@ O	3969	3970	-
 O	3970	3978	10066590
 
 O	3979	3983	With
-O	3984	3991	Mockito
+B-api_mention	3984	3991	Mockito
 O	3991	3992	,
 O	3993	3994	I
 O	3995	3999	want
@@ -981,7 +981,7 @@ O	4168	4170	to
 O	4171	4173	do
 O	4174	4178	that
 O	4179	4183	with
-O	4184	4191	Mockito
+B-api_mention	4184	4191	Mockito
 O	4192	4193	?
 
 O	4195	4203	Question
@@ -1449,7 +1449,7 @@ O	6254	6262	14060804
 
 O	6263	6264	#
 O	6264	6266	li
-O	6267	6274	Strings
+B-api_mention	6267	6274	Strings
 O	6275	6278	are
 O	6279	6288	immutable
 O	6289	6291	in
@@ -1474,7 +1474,7 @@ O	6388	6394	clears
 O	6395	6397	it
 O	6398	6401	and
 O	6402	6407	since
-O	6408	6415	Strings
+B-api_mention	6408	6415	Strings
 O	6416	6419	are
 O	6420	6424	used
 O	6425	6427	in
@@ -1581,7 +1581,7 @@ O	6917	6924	console
 O	6925	6928	but
 O	6929	6931	if
 O	6932	6935	use
-O	6936	6941	Array
+B-api_mention	6936	6941	Array
 O	6942	6945	you
 O	6946	6949	won
 O	6949	6950	'
@@ -1704,7 +1704,7 @@ O	7517	7519	is
 O	7520	7524	also
 O	7525	7538	metacharacter
 O	7539	7541	in
-O	7542	7548	String
+B-api_mention	7542	7548	String
 O	7549	7557	literals
 O	7558	7561	and
 O	7562	7569	require
@@ -1753,8 +1753,8 @@ O	7737	7740	Use
 O	7741	7747	proper
 O	7748	7756	escaping
 O	7756	7757	:
-B-api_mention	7758	7764	string
-I-api_mention	7764	7765	.
+O	7758	7764	string
+B-api_mention	7764	7765	.
 I-api_mention	7765	7770	split
 I-api_mention	7770	7771	(
 I-api_mention	7771	7775	args
@@ -1777,8 +1777,8 @@ O	7837	7844	exactly
 O	7845	7849	this
 O	7850	7857	purpose
 O	7857	7858	:
-B-api_mention	7859	7865	string
-I-api_mention	7865	7866	.
+O	7859	7865	string
+B-api_mention	7865	7866	.
 I-api_mention	7866	7871	split
 I-api_mention	7871	7872	(
 I-api_mention	7872	7876	args
@@ -2188,15 +2188,15 @@ O	9700	9703	pre
 O	9704	9708	Then
 O	9709	9716	convert
 O	9717	9721	that
-O	9722	9725	Uri
+B-api_mention	9722	9725	Uri
 O	9726	9728	to
 O	9729	9734	ASCII
 O	9735	9741	string
 O	9741	9742	:
 O	9743	9749	urlStr
 O	9749	9750	=
-B-api_mention	9750	9753	uri
-I-api_mention	9753	9754	.
+O	9750	9753	uri
+B-api_mention	9753	9754	.
 I-api_mention	9754	9767	toASCIIString
 I-api_mention	9767	9768	(
 I-api_mention	9768	9772	args
@@ -2222,7 +2222,7 @@ O	9862	9871	converted
 O	9872	9874	it
 O	9875	9877	to
 O	9878	9883	ASCII
-O	9884	9890	String
+B-api_mention	9884	9890	String
 O	9891	9893	to
 O	9894	9898	make
 O	9899	9903	sure
@@ -2258,8 +2258,8 @@ O	10026	10029	The
 O	10030	10035	first
 O	10036	10039	one
 O	10040	10045	using
-B-api_mention	10046	10049	str
-I-api_mention	10049	10050	.
+O	10046	10049	str
+B-api_mention	10049	10050	.
 I-api_mention	10050	10056	charAt
 O	10057	10063	should
 O	10064	10066	be
@@ -2429,8 +2429,8 @@ O	10738	10739	:
 O	10740	10745	First
 O	10746	10748	of
 O	10749	10752	all
-B-api_mention	10753	10756	str
-I-api_mention	10756	10757	.
+O	10753	10756	str
+B-api_mention	10756	10757	.
 I-api_mention	10757	10768	toCharArray
 I-api_mention	10768	10769	(
 I-api_mention	10769	10773	args
@@ -2467,7 +2467,7 @@ O	10894	10896	in
 O	10897	10901	char
 O	10902	10907	array
 O	10908	10914	inside
-O	10915	10921	String
+B-api_mention	10915	10921	String
 O	10922	10927	class
 O	10928	10936	checking
 O	10937	10942	index
@@ -2505,7 +2505,7 @@ O	11063	11064	.
 O	11065	11068	But
 O	11069	11071	if
 O	11072	11075	the
-O	11076	11082	String
+B-api_mention	11076	11082	String
 O	11083	11085	is
 O	11086	11090	long
 O	11091	11097	enough
@@ -2608,8 +2608,8 @@ O	11489	11490	[
 O	11490	11491	]
 O	11492	11497	chars
 O	11498	11499	=
-B-api_mention	11500	11503	str
-I-api_mention	11503	11504	.
+O	11500	11503	str
+B-api_mention	11503	11504	.
 I-api_mention	11504	11515	toCharArray
 I-api_mention	11515	11516	(
 I-api_mention	11516	11520	args
@@ -2635,9 +2635,9 @@ O	11593	11595	of
 O	11596	11606	characters
 O	11607	11609	by
 O	11610	11617	calling
-O	11618	11624	System
-O	11624	11625	.
-O	11625	11634	arrayCopy
+B-api_mention	11618	11624	System
+I-api_mention	11624	11625	.
+I-api_mention	11625	11634	arrayCopy
 O	11635	11636	)
 O	11636	11637	.
 
@@ -2645,8 +2645,8 @@ O	11638	11643	Other
 O	11644	11648	than
 O	11649	11653	that
 O	11653	11654	,
-B-api_mention	11655	11658	str
-I-api_mention	11658	11659	.
+O	11655	11658	str
+B-api_mention	11658	11659	.
 I-api_mention	11659	11665	charAt
 I-api_mention	11665	11666	(
 I-api_mention	11666	11670	args
@@ -2779,7 +2779,7 @@ O	12199	12200	s
 O	12201	12202	(
 O	12202	12204	of
 O	12205	12210	which
-O	12211	12217	String
+B-api_mention	12211	12217	String
 O	12218	12220	is
 O	12221	12222	a
 O	12223	12231	subclass
@@ -2793,9 +2793,9 @@ O	12250	12254	take
 O	12255	12256	a
 O	12257	12261	pair
 O	12262	12264	of
-O	12265	12271	String
-O	12271	12272	'
-O	12272	12273	s
+B-api_mention	12265	12271	String
+I-api_mention	12271	12272	'
+I-api_mention	12272	12273	s
 O	12273	12274	)
 O	12274	12275	.
 
@@ -2819,7 +2819,7 @@ O	12359	12364	other
 O	12365	12369	hand
 O	12369	12370	,
 O	12371	12375	both
-O	12376	12382	String
+B-api_mention	12376	12382	String
 O	12383	12392	arguments
 O	12393	12395	to
 B-api_mention	12396	12408	replaceFirst
@@ -2868,7 +2868,7 @@ O	12599	12608	primitive
 O	12609	12613	char
 O	12614	12617	and
 O	12618	12619	a
-O	12620	12632	CharSequence
+B-api_mention	12620	12632	CharSequence
 O	12633	12635	as
 O	12636	12645	arguments
 O	12645	12646	.
@@ -4172,8 +4172,8 @@ O	18704	18706	is
 O	18707	18711	that
 O	18712	18717	after
 O	18718	18725	calling
-B-api_mention	18726	18730	list
-I-api_mention	18730	18731	.
+O	18726	18730	list
+B-api_mention	18730	18731	.
 I-api_mention	18731	18734	add
 I-api_mention	18734	18735	(
 I-api_mention	18735	18739	args
@@ -4182,8 +4182,8 @@ O	18741	18742	,
 O	18743	18744	a
 O	18745	18749	call
 O	18750	18752	to
-B-api_mention	18753	18757	list
-I-api_mention	18757	18758	.
+O	18753	18757	list
+B-api_mention	18757	18758	.
 I-api_mention	18758	18761	get
 I-api_mention	18761	18762	(
 I-api_mention	18762	18766	args
@@ -4707,7 +4707,7 @@ O	21065	21070	after
 O	21071	21072	a
 B-api_mention	21073	21077	List
 O	21078	21080	of
-O	21081	21088	Strings
+B-api_mention	21081	21088	Strings
 O	21089	21095	rather
 O	21096	21100	than
 O	21101	21103	an
@@ -4879,7 +4879,7 @@ O	21794	21796	if
 O	21797	21800	you
 O	21801	21805	need
 O	21806	21807	a
-O	21808	21812	List
+B-api_mention	21808	21812	List
 O	21812	21813	,
 O	21814	21818	wrap
 O	21819	21821	it
@@ -4899,7 +4899,7 @@ O	21870	21874	just
 O	21875	21877	go
 O	21878	21882	with
 O	21883	21886	the
-O	21887	21895	Iterable
+B-api_mention	21887	21895	Iterable
 O	21895	21896	,
 O	21897	21900	for
 O	21901	21908	example
@@ -4985,7 +4985,7 @@ O	22289	22291	li
 O	22292	22294	We
 O	22295	22298	can
 O	22299	22302	use
-O	22303	22311	Iterator
+B-api_mention	22303	22311	Iterator
 O	22312	22314	to
 O	22315	22323	traverse
 B-api_mention	22324	22327	Set
@@ -4996,7 +4996,7 @@ O	22341	22345	also
 B-api_mention	22346	22349	Map
 O	22350	22354	type
 O	22355	22357	of
-O	22358	22365	Objects
+B-api_mention	22358	22365	Objects
 O	22365	22366	.
 
 O	22367	22372	While
@@ -5008,19 +5008,19 @@ O	22395	22399	used
 O	22400	22402	to
 O	22403	22411	traverse
 O	22412	22415	for
-O	22416	22420	List
+B-api_mention	22416	22420	List
 O	22420	22421	-
 O	22421	22425	type
-O	22426	22433	Objects
+B-api_mention	22426	22433	Objects
 O	22433	22434	,
 O	22435	22438	but
 O	22439	22442	not
 O	22443	22446	for
-O	22447	22450	Set
+B-api_mention	22447	22450	Set
 O	22450	22451	-
 O	22451	22455	type
 O	22456	22458	of
-O	22459	22466	Objects
+B-api_mention	22459	22466	Objects
 O	22466	22467	.
 
 O	22468	22472	That
@@ -5380,7 +5380,7 @@ O	23963	23968	Swing
 O	23969	23973	when
 O	23974	23977	you
 O	23978	23984	create
-O	23985	23994	Component
+B-api_mention	23985	23994	Component
 O	23994	23995	,
 O	23996	23998	it
 O	23999	24001	is
@@ -5533,9 +5533,9 @@ O	24655	24656	/
 O	24656	24662	height
 O	24663	24666	and
 O	24667	24671	call
-O	24672	24679	repaint
-O	24679	24680	(
-O	24680	24681	)
+B-api_mention	24672	24679	repaint
+I-api_mention	24679	24680	(
+I-api_mention	24680	24681	)
 O	24682	24686	when
 O	24687	24690	you
 O	24691	24697	change
@@ -6371,7 +6371,7 @@ I-api_mention	28223	28227	args
 I-api_mention	28227	28228	)
 O	28229	28235	method
 O	28236	28238	of
-O	28239	28250	InetAddress
+B-api_mention	28239	28250	InetAddress
 O	28251	28256	class
 O	28257	28259	to
 O	28260	28266	figure
@@ -6870,7 +6870,7 @@ O	30152	30158	arrays
 O	30159	30161	is
 O	30162	30171	inherited
 O	30172	30176	from
-O	30177	30183	Object
+B-api_mention	30177	30183	Object
 O	30184	30185	,
 O	30186	30188	so
 O	30189	30191	it
@@ -7007,8 +7007,8 @@ O	30770	30775	equal
 O	30776	30778	as
 O	30779	30781	in
 O	30782	30785	the
-O	30786	30792	Object
-B-api_mention	30792	30793	.
+B-api_mention	30786	30792	Object
+I-api_mention	30792	30793	.
 I-api_mention	30793	30799	equals
 I-api_mention	30799	30800	(
 I-api_mention	30800	30804	args
@@ -7029,7 +7029,7 @@ I-api_mention	30861	30862	(
 I-api_mention	30862	30866	args
 I-api_mention	30866	30867	)
 O	30868	30872	from
-O	30873	30879	Object
+B-api_mention	30873	30879	Object
 O	30880	30883	and
 O	30884	30889	hence
 O	30890	30897	compare
@@ -7341,7 +7341,7 @@ O	32270	32274	java
 O	32275	32281	thread
 O	32282	32283	.
 
-O	32284	32297	AtomicInteger
+B-api_mention	32284	32297	AtomicInteger
 O	32298	32299	#
 O	32299	32302	pre
 O	32303	32306	The
@@ -7512,7 +7512,7 @@ O	33094	33095	-
 O	33095	33109	incrementation
 O	33110	33112	is
 O	33113	33116	not
-B-api_mention	33117	33123	atomic
+O	33117	33123	atomic
 O	33123	33124	.
 
 O	33125	33128	The

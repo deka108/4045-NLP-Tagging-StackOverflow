@@ -1,7 +1,7 @@
 T2	api_mention 52 69	getPassword(args)
 T1	api_mention 116 129	getText(args)
 T3	api_mention 626 636	URLEncoder
-T4	api_mention 966 988	Collections.sort(args)
+T4	api_mention 956 988	java.util.Collections.sort(args)
 T5	api_mention 745 754	SortedSet
 T6	api_mention 759 768	SortedMap
 T7	api_mention 1096 1108	ArrayList<T>
@@ -258,7 +258,6 @@ T264	api_mention 30074 30095	Arrays.toString(args)
 T201	api_mention 30015 30030	.toString(args)
 T206	api_mention 30657 30670	.equals(args)
 T207	api_mention 30786 30805	Object.equals(args)
-T215	api_mention 33117 33123	atomic
 T217	api_mention 22761 22765	List
 T265	api_mention 21073 21077	List
 T266	api_mention 9722 9725	Uri
@@ -280,3 +279,17 @@ T279	api_mention 6408 6415	Strings
 T280	api_mention 21808 21812	List
 T281	api_mention 21887 21895	Iterable
 T282	api_mention 28239 28250	InetAddress
+T215	api_mention 7542 7548	String
+T283	api_mention 32284 32297	AtomicInteger
+T284	api_mention 12211 12217	String
+T285	api_mention 12265 12273	String's
+T286	api_mention 12376 12382	String
+T287	api_mention 12620 12632	CharSequence
+T288	api_mention 3984 3991	Mockito
+T289	api_mention 4184 4191	Mockito
+T290	api_mention 22303 22311	Iterator
+T291	api_mention 22416 22420	List
+T292	api_mention 22426 22433	Objects
+T293	api_mention 22447 22450	Set
+T294	api_mention 22459 22466	Objects
+T295	api_mention 22358 22365	Objects

@@ -186,7 +186,6 @@ T238	api_mention 57568 57581	ArrayList.add
 T239	api_mention 57897 57904	List<T>
 T240	api_mention 58278 58298	ensureCapacity(args)
 T241	api_mention 58464 58475	ArrayList()
-T242	api_mention 58504 58527	ArrayList(Collection c)
 T243	api_mention 58539 58548	ArrayList
 T244	api_mention 58596 58619	ArrayList(int capacity)
 T245	api_mention 58631 58640	ArrayList
@@ -284,7 +283,7 @@ T343	api_mention 68696 68706	HashMap<T>
 T344	api_mention 68719 68735	HashMap<T>(args)
 T345	api_mention 68790 68800	HashMap<T>
 T346	api_mention 68813 68829	HashMap<T>(args)
-T347	api_mention 68871 68880	put(args)
+T347	api_mention 68870 68880	.put(args)
 T348	api_mention 69082 69093	SparseArray
 T349	api_mention 69230 69241	SparseArray
 T350	api_mention 69279 69293	SparseArray<T>
@@ -378,3 +377,20 @@ T120	api_mention 70128 70135	Hashmap
 T122	api_mention 41474 41492	synchronized(args)
 T123	api_mention 52988 53038	doThrow(args).when(args).methodReturningVoid(args)
 T124	api_mention 63264 63274	StrBuilder
+T125	api_mention 63337 63358	StrBuilder.appendLn()
+T126	api_mention 58504 58513	ArrayList
+T127	api_mention 58514 58524	Collection
+T128	api_mention 58578 58588	collection
+T129	api_mention 64900 64906	Locale
+T204	api_mention 34049 34055	Lambda
+T242	api_mention 34002 34008	Lambda
+T356	api_mention 34056 34063	Streams
+T359	api_mention 34065 34071	Filter
+T363	api_mention 34151 34158	streams
+T364	api_mention 22166 22173	Lambdas
+T378	api_mention 23828 23835	Streams
+T379	api_mention 24274 24281	Streams
+T393	api_mention 25858 25865	Streams
+T394	api_mention 25871 25880	Iterables
+T395	api_mention 26497 26504	Streams
+T396	api_mention 26509 26521	Spliterators

@@ -104,7 +104,7 @@ O	510	513	way
 O	514	516	to
 O	517	524	convert
 O	525	527	an
-O	528	536	Iterator
+B-api_mention	528	536	Iterator
 O	537	539	to
 O	540	541	a
 B-api_mention	542	548	Stream
@@ -417,7 +417,7 @@ O	1865	1871	before
 O	1872	1875	the
 O	1876	1882	method
 O	1883	1887	name
-O	1888	1897	emptyList
+B-api_mention	1888	1897	emptyList
 O	1898	1899	?
 
 O	1900	1901	(
@@ -589,7 +589,7 @@ O	2492	2495	was
 O	2496	2501	being
 O	2502	2508	taught
 O	2509	2513	that
-O	2514	2520	Marker
+B-api_mention	2514	2520	Marker
 O	2521	2530	interface
 O	2531	2533	in
 O	2534	2538	Java
@@ -1129,7 +1129,7 @@ O	5011	5019	parallel
 O	5020	5026	stream
 O	5026	5027	.
 
-O	5028	5034	Stream
+B-api_mention	5028	5034	Stream
 O	5035	5041	itself
 O	5042	5046	also
 O	5047	5050	has
@@ -2364,7 +2364,7 @@ O	10945	10946	,
 O	10947	10950	and
 O	10951	10954	use
 O	10955	10956	a
-O	10957	10970	StringBuilder
+B-api_mention	10957	10970	StringBuilder
 O	10971	10973	to
 O	10974	10984	accumulate
 O	10985	10988	the
@@ -3259,7 +3259,7 @@ O	14948	14952	this
 O	14953	14957	area
 O	14958	14959	-
 O	14960	14963	see
-O	14964	14981	DateTimeFieldType
+B-api_mention	14964	14981	DateTimeFieldType
 O	14982	14983	.
 
 O	14984	14987	The
@@ -3317,9 +3317,9 @@ O	15210	15213	310
 O	15214	15220	offers
 O	15221	15226	enums
 O	15227	15231	like
-O	15232	15241	DayOfWeek
+B-api_mention	15232	15241	DayOfWeek
 O	15242	15244	or
-O	15245	15250	Month
+B-api_mention	15245	15250	Month
 O	15251	15256	while
 O	15257	15261	Joda
 O	15261	15262	-
@@ -3612,10 +3612,10 @@ O	16660	16661	,
 O	16662	16665	for
 O	16666	16673	example
 O	16674	16682	property
-O	16682	16683	.
-O	16683	16699	withMaximumValue
-O	16699	16700	(
-O	16700	16701	)
+B-api_mention	16682	16683	.
+I-api_mention	16683	16699	withMaximumValue
+I-api_mention	16699	16700	(
+I-api_mention	16700	16701	)
 O	16702	16703	.
 
 O	16704	16712	Calendar
@@ -4110,7 +4110,7 @@ O	18998	18999	.
 
 O	19000	19005	While
 O	19006	19009	the
-O	19010	19020	PeriodType
+B-api_mention	19010	19020	PeriodType
 O	19021	19022	-
 O	19022	19025	API
 O	19026	19028	is
@@ -4267,7 +4267,7 @@ O	19718	19724	handle
 O	19725	19728	any
 O	19729	19733	kind
 O	19734	19736	of
-O	19737	19750	TemporalField
+B-api_mention	19737	19750	TemporalField
 O	19751	19759	provided
 O	19760	19763	the
 O	19764	19769	field
@@ -6753,7 +6753,7 @@ O	31247	31257	respective
 O	31258	31266	bytecode
 O	31266	31267	.
 
-O	31268	31274	Object
+B-api_mention	31268	31274	Object
 O	31274	31275	:
 B-api_mention	31276	31282	Object
 O	31283	31296	instantiation
@@ -6801,7 +6801,7 @@ O	31515	31520	their
 O	31521	31526	types
 O	31526	31527	.
 
-O	31528	31534	Arrays
+B-api_mention	31528	31534	Arrays
 O	31534	31535	:
 B-api_mention	31536	31541	Array
 O	31542	31549	Opcodes
@@ -7306,29 +7306,29 @@ O	33892	33903	constructor
 O	33904	33909	where
 O	33910	33911	A
 O	33912	33914	is
-O	33915	33921	String
+B-api_mention	33915	33921	String
 O	33922	33925	and
 O	33926	33927	B
 O	33928	33930	is
-O	33931	33938	Integer
+B-api_mention	33931	33938	Integer
 O	33939	33943	like
 O	33943	33944	:
-B-api_mention	33945	33952	MyClass
-I-api_mention	33952	33953	<
-I-api_mention	33953	33954	T
-I-api_mention	33954	33955	>
+O	33945	33952	MyClass
+O	33952	33953	<
+O	33953	33954	T
+O	33954	33955	>
 O	33956	33957	a
 O	33958	33959	=
-B-api_mention	33960	33963	new
-I-api_mention	33963	33964	<
-I-api_mention	33964	33965	T
-I-api_mention	33965	33966	>
-I-api_mention	33966	33973	MyClass
-I-api_mention	33973	33974	<
-I-api_mention	33974	33975	T
-I-api_mention	33975	33976	>
-I-api_mention	33976	33977	(
-I-api_mention	33977	33981	args
+O	33960	33963	new
+O	33963	33964	<
+O	33964	33965	T
+O	33965	33966	>
+O	33966	33973	MyClass
+O	33973	33974	<
+O	33974	33975	T
+O	33975	33976	>
+O	33976	33977	(
+O	33977	33981	args
 O	33981	33982	)
 O	33982	33983	;
 O	33984	33986	or
@@ -7337,20 +7337,20 @@ O	33990	33995	using
 O	33996	34000	type
 O	34001	34010	inference
 O	34010	34011	:
-B-api_mention	34012	34019	MyClass
-I-api_mention	34019	34020	<
-I-api_mention	34020	34021	T
-I-api_mention	34021	34022	>
+O	34012	34019	MyClass
+O	34019	34020	<
+O	34020	34021	T
+O	34021	34022	>
 O	34023	34024	a
 O	34025	34026	=
 O	34027	34030	new
-B-api_mention	34031	34038	MyClass
-I-api_mention	34038	34039	<
-I-api_mention	34039	34040	T
-I-api_mention	34040	34041	>
-I-api_mention	34041	34042	(
-I-api_mention	34042	34046	args
-I-api_mention	34046	34047	)
+O	34031	34038	MyClass
+O	34038	34039	<
+O	34039	34040	T
+O	34040	34041	>
+O	34041	34042	(
+O	34042	34046	args
+O	34046	34047	)
 O	34047	34048	;
 O	34049	34052	See
 O	34053	34057	also
@@ -7443,7 +7443,7 @@ O	34418	34419	,
 O	34420	34423	and
 O	34424	34427	the
 O	34428	34429	<
-O	34429	34435	String
+B-api_mention	34429	34435	String
 O	34435	34436	>
 O	34437	34439	in
 B-api_mention	34440	34451	Collections
@@ -8183,7 +8183,7 @@ O	37680	37684	very
 O	37685	37693	flexible
 O	37694	37696	to
 O	37697	37700	add
-O	37701	37707	Stream
+B-api_mention	37701	37707	Stream
 O	37707	37708	-
 O	37708	37717	returning
 O	37718	37725	methods
@@ -8228,7 +8228,7 @@ O	37891	37896	makes
 O	37897	37902	sense
 O	37903	37905	to
 O	37906	37913	provide
-O	37914	37920	Stream
+B-api_mention	37914	37920	Stream
 O	37920	37921	-
 O	37921	37930	returning
 O	37931	37938	methods
@@ -8317,7 +8317,7 @@ O	38332	38338	taking
 O	38339	38348	advantage
 O	38349	38351	of
 O	38352	38353	a
-O	38354	38360	Stream
+B-api_mention	38354	38360	Stream
 O	38360	38361	'
 O	38361	38362	s
 O	38363	38371	laziness
@@ -9454,7 +9454,7 @@ O	43347	43350	are
 O	43351	43357	better
 O	43358	43362	than
 B-api_mention	43363	43369	Marker
-I-api_mention	43370	43380	Interfaces
+O	43370	43380	Interfaces
 O	43380	43381	?
 
 O	43382	43383	-
@@ -9710,10 +9710,10 @@ O	44560	44565	again
 O	44566	44572	create
 O	44573	44574	a
 O	44575	44579	real
-O	44580	44585	clone
-O	44585	44586	(
-O	44586	44590	args
-O	44590	44591	)
+B-api_mention	44580	44585	clone
+I-api_mention	44585	44586	(
+I-api_mention	44586	44590	args
+I-api_mention	44590	44591	)
 O	44592	44598	method
 O	44599	44602	for
 O	44603	44606	you
@@ -9782,10 +9782,10 @@ O	44895	44904	signature
 O	44904	44905	:
 O	44906	44912	public
 O	44913	44917	void
-B-api_mention	44918	44929	doSomething
-I-api_mention	44929	44930	(
-I-api_mention	44930	44934	args
-I-api_mention	44934	44935	)
+O	44918	44929	doSomething
+O	44929	44930	(
+O	44930	44934	args
+O	44934	44935	)
 O	44936	44937	{
 O	44938	44939	.
 O	44939	44940	.
@@ -9818,10 +9818,10 @@ O	45049	45055	public
 O	45056	45065	interface
 O	45066	45072	Widget
 O	45073	45080	extends
-B-api_mention	45081	45087	Foobar
-I-api_mention	45087	45088	<
-I-api_mention	45088	45089	T
-I-api_mention	45089	45090	>
+O	45081	45087	Foobar
+O	45087	45088	<
+O	45088	45089	T
+O	45089	45090	>
 O	45091	45092	{
 O	45093	45094	}
 O	45095	45099	Then
@@ -9833,10 +9833,10 @@ O	45123	45127	this
 O	45127	45128	:
 O	45129	45135	public
 O	45136	45140	void
-B-api_mention	45141	45152	doSomething
-I-api_mention	45152	45153	(
-I-api_mention	45153	45157	args
-I-api_mention	45157	45158	)
+O	45141	45152	doSomething
+O	45152	45153	(
+O	45153	45157	args
+O	45157	45158	)
 O	45159	45160	{
 O	45161	45162	.
 O	45162	45163	.
@@ -10145,7 +10145,7 @@ O	46687	46688	.
 
 O	46689	46695	Source
 O	46696	46699	for
-O	46700	46706	marker
+B-api_mention	46700	46706	marker
 O	46707	46716	interface
 O	46717	46724	comment
 
@@ -11028,22 +11028,22 @@ O	50626	50627	.
 O	50628	50629	#
 O	50629	50632	pre
 O	50633	50637	Your
-B-api_mention	50638	50649	testPrivate
+O	50638	50649	testPrivate
 O	50650	50656	method
 O	50657	50664	accepts
 O	50665	50667	an
 O	50668	50676	instance
 O	50677	50679	of
-B-api_mention	50680	50687	MyClass
+O	50680	50687	MyClass
 O	50687	50688	.
 
 O	50689	50694	Since
-B-api_mention	50695	50706	testPrivate
+O	50695	50706	testPrivate
 O	50707	50709	is
 O	50710	50711	a
 O	50712	50718	method
 O	50719	50725	inside
-B-api_mention	50726	50733	MyClass
+O	50726	50733	MyClass
 O	50734	50735	,
 O	50736	50738	it
 O	50739	50743	will
@@ -11084,10 +11084,10 @@ O	50903	50906	But
 O	50907	50909	if
 O	50910	50913	you
 O	50914	50920	define
-B-api_mention	50921	50932	testPrivate
+O	50921	50932	testPrivate
 O	50933	50940	outside
 O	50941	50943	of
-B-api_mention	50944	50951	MyClass
+O	50944	50951	MyClass
 O	50952	50956	then
 O	50956	50957	,
 O	50958	50961	you
@@ -11111,10 +11111,10 @@ O	51027	51028	a
 O	51029	51035	method
 O	51036	51038	or
 O	51039	51040	a
-O	51041	51047	setter
+B-api_mention	51041	51047	setter
 O	51048	51050	or
 O	51051	51052	a
-O	51053	51059	getter
+B-api_mention	51053	51059	getter
 O	51059	51060	.
 
 O	51062	51070	Question
@@ -11157,10 +11157,10 @@ O	51213	51221	finished
 O	51222	51225	the
 O	51226	51233	mocking
 O	51234	51237	for
-B-api_mention	51238	51249	MyMainModel
+O	51238	51249	MyMainModel
 O	51250	51251	.
 
-O	51252	51259	Mockito
+B-api_mention	51252	51259	Mockito
 O	51260	51265	doesn
 O	51265	51266	'
 O	51266	51267	t
@@ -11252,7 +11252,7 @@ O	51631	51632	a
 O	51633	51639	method
 O	51640	51642	on
 O	51643	51644	a
-B-api_mention	51645	51649	mock
+O	51645	51649	mock
 O	51650	51656	object
 O	51656	51657	,
 B-api_mention	51658	51665	Mockito
@@ -11319,8 +11319,8 @@ O	51963	51964	#
 O	51964	51966	li
 B-api_mention	51967	51971	Mock
 O	51972	51978	method
-B-api_mention	51979	51988	mainModel
-I-api_mention	51988	51989	.
+O	51979	51988	mainModel
+B-api_mention	51988	51989	.
 I-api_mention	51989	51996	getList
 I-api_mention	51996	51997	(
 I-api_mention	51997	52001	args
@@ -11354,7 +11354,7 @@ O	52131	52137	method
 O	52137	52138	.
 
 O	52139	52142	The
-O	52143	52153	thenReturn
+B-api_mention	52143	52153	thenReturn
 O	52154	52160	method
 O	52161	52164	can
 O	52165	52169	then

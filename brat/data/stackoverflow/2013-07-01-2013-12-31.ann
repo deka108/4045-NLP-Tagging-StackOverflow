@@ -170,7 +170,7 @@ T176	api_mention 27095 27101	String
 T177	api_mention 27216 27221	Class
 T178	api_mention 27591 27597	String
 T179	api_mention 27840 27846	String
-T180	api_mention 28011 28017	String
+T180	api_mention 28001 28017	Java.lang.String
 T181	api_mention 28183 28195	String(args)
 T182	api_mention 28497 28503	Object
 T183	api_mention 28668 28674	String
@@ -263,7 +263,7 @@ T269	api_mention 41642 41656	trySplit(args)
 T270	api_mention 41797 41806	Collector
 T271	api_mention 42037 42046	Collector
 T272	api_mention 42224 42246	Spliterator.trySplit()
-T273	api_mention 42251 42260	Collector
+T273	api_mention 42251 42267	Collector<T,A,R>
 T274	api_mention 42356 42367	Spliterator
 T275	api_mention 42425 42435	Collection
 T276	api_mention 42538 42549	Spliterator
@@ -345,3 +345,10 @@ T330	api_mention 39334 39340	System
 T345	api_mention 23513 23527	java.util.date
 T346	api_mention 12590 12610	decompressGZIP(args)
 T347	api_mention 5584 5591	Utility
+T348	api_mention 29313 29326	Stackoverflow
+T349	api_mention 29468 29478	main(args)
+T350	api_mention 29496 29509	Stackoverflow
+T351	api_mention 29612 29625	Stackoverflow
+T352	api_mention 24443 24450	Instant
+T353	api_mention 38102 38109	Integer
+T354	api_mention 39640 39644	List

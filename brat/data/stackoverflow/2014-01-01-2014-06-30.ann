@@ -24,14 +24,12 @@ T23	api_mention 62230 62244	identity(args)
 T24	api_mention 62267 62290	Function.identity(args)
 T25	api_mention 62428 62441	flatten(args)
 T26	api_mention 62480 62493	flatMap(args)
-T27	api_mention 61704 61732	Stream.concat(Stream,Stream)
-T28	api_mention 61226 61255	Streams.concat(Stream,Stream)
 T29	api_mention 60554 60575	Stream.concat(Stream)
 T30	api_mention 58132 58143	toLowerCase
 T31	api_mention 58173 58179	String
 T32	api_mention 58209 58215	String
 T33	api_mention 57893 57918	.setOnClickListener(args)
-T34	api_mention 55715 55740	StringLiteral.split(args)
+T34	api_mention 55728 55740	.split(args)
 T35	api_mention 60041 60054	StringBuilder
 T36	api_mention 60081 60093	CharSequence
 T37	api_mention 60238 60250	CharSequence
@@ -79,7 +77,6 @@ T78	api_mention 3801 3827	StreamSupport.stream(args)
 T79	api_mention 3869 3880	Iterable<T>
 T80	api_mention 4086 4095	Stream<T>
 T81	api_mention 4110 4121	Iterable<T>
-T82	api_mention 4322 4335	StringLiteral
 T84	api_mention 4438 4451	LocalDateTime
 T85	api_mention 4487 4500	LocalDateTime
 T86	api_mention 4633 4639	Stream
@@ -209,9 +206,8 @@ T226	api_mention 25759 25783	BigDecimal.valueOf(args)
 T227	api_mention 25796 25806	BigDecimal
 T228	api_mention 25824 25840	BigDecimal(args)
 T229	api_mention 25878 25885	Integer
-T230	api_mention 26011 26021	equals(..)
-T231	api_mention 26077 26084	Integer
-T232	api_mention 26086 26094	parseInt
+T230	api_mention 26009 26021	. equals(..)
+T231	api_mention 26077 26094	Integer. parseInt
 T233	api_mention 26470 26477	valueOf
 T234	api_mention 26924 26937	Integer(args)
 T235	api_mention 26775 26806	parseInt(java.lang.String, int)
@@ -339,7 +335,6 @@ T361	api_mention 41342 41354	format(args)
 T362	api_mention 41452 41469	DateTimeFormatter
 T363	api_mention 41491 41522	DateTimeFormatter.ISO_DATE_TIME
 T364	api_mention 41537 41550	LocalDateTime
-T365	api_mention 41598 41611	StringLiteral
 T366	api_mention 41618 41629	parse(args)
 T367	api_mention 41634 41646	format(args)
 T368	api_mention 41709 41718	LocalDate
@@ -449,7 +444,6 @@ T491	api_mention 53942 53951	Stream<T>
 T492	api_mention 54068 54074	String
 T493	api_mention 54544 54553	IntStream
 T494	api_mention 55671 55697	split(String regex, limit)
-T495	api_mention 55905 55918	StringLiteral
 T496	api_mention 56852 56857	split
 T497	api_mention 57521 57526	split
 T498	api_mention 57605 57610	split
@@ -512,3 +506,14 @@ T295	api_mention 10193 10221	IntStr#integerToString(args)
 T403	api_mention 37383 37393	Comparator
 T408	api_mention 45117 45128	Collections
 T409	api_mention 34174 34182	Iterable
+T410	api_mention 42414 42422	Patterns
+T411	api_mention 19634 19640	RxJava
+T420	api_mention 32142 32152	TimeSeries
+T82	api_mention 4358 4371	LocalDateTime
+T28	api_mention 61226 61240	Streams.concat
+T232	api_mention 61241 61247	Stream
+T421	api_mention 61248 61254	Stream
+T27	api_mention 61704 61717	Stream.concat
+T422	api_mention 61718 61724	Stream
+T423	api_mention 61725 61731	Stream
+T430	api_mention 60409 60415	Lambda

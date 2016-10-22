@@ -78,7 +78,6 @@ T90	api_mention 27721 27731	Observable
 T91	api_mention 27772 27793	notifyObservers(args)
 T92	api_mention 27859 27875	setChanged(args)
 T93	api_mention 28144 28152	Observer
-T94	api_mention 28177 28209	update(Observable o, Object arg)
 T98	api_mention 28250 28258	Observer
 T99	api_mention 28273 28283	Observable
 T101	api_mention 28529 28542	StringBuilder
@@ -87,7 +86,7 @@ T103	api_mention 28846 28858	StringBuffer
 T104	api_mention 29032 29045	StringBuilder
 T106	api_mention 29806 29853	StringBuilder(args).append(args).toString(args)
 T109	api_mention 29958 29971	StringBuilder
-T110	api_mention 30376 30402	import android.os.Vibrator
+T110	api_mention 30383 30402	android.os.Vibrator
 T111	api_mention 30481 30488	Vibrate
 T112	api_mention 30646 30659	vibrate(args)
 T108	api_mention 30846 30859	vibrate(args)
@@ -296,3 +295,17 @@ T6	api_mention 393 407	.nextInt(args)
 T7	api_mention 451 466	.nextLine(args)
 T8	api_mention 486 501	.nextLine(args)
 T298	api_mention 21964 21968	Long
+T299	api_mention 30950 30963	.cancel(args)
+T300	api_mention 16089 16095	Spring
+T301	api_mention 16914 16944	.registerCustomConverter(args)
+T302	api_mention 25730 25739	Observers
+T303	api_mention 26078 26087	Observers
+T304	api_mention 26171 26179	Observer
+T305	api_mention 28358 28364	Object
+T306	api_mention 27987 27993	Object
+T94	api_mention 28177 28183	update
+T307	api_mention 28184 28194	Observable
+T308	api_mention 28198 28204	Object
+T309	api_mention 29233 29239	String
+T310	api_mention 29432 29445	StringBuilder
+T311	api_mention 29124 29130	String

@@ -215,7 +215,6 @@ T215	api_mention 26916 26928	BufferReader
 T216	api_mention 27033 27044	Files.lines
 T217	api_mention 27132 27145	forEach(args)
 T218	api_mention 27166 27177	Iterable<T>
-T219	api_mention 27179 27194	lines::iterator
 T220	api_mention 27203 27209	Stream
 T221	api_mention 27216 27224	Iterable
 T222	api_mention 27310 27323	Files.lines()
@@ -314,7 +313,7 @@ T314	api_mention 35770 35792	SimpleDateFormat(args)
 T315	api_mention 36047 36054	HashMap
 T316	api_mention 36195 36202	HashMap
 T317	api_mention 36142 36157	String.intern()
-T318	api_mention 36215 36261	HashMap(int initialCapacity, float loadFactor)
+T318	api_mention 36215 36222	HashMap
 T319	api_mention 36341 36358	DateTimeFormatter
 T320	api_mention 36501 36532	DateTimeFormat.forPattern(args)
 T321	api_mention 36594 36598	Enum
@@ -471,3 +470,13 @@ T471	api_mention 13510 13517	Integer
 T472	api_mention 13264 13271	Integer
 T473	api_mention 1275 1281	String
 T474	api_mention 6322 6334	GossipRouter
+T59	api_mention 31076 31090	StringBuilders
+T475	api_mention 52381 52385	File
+T476	api_mention 39484 39498	AtomicIntegers
+T477	api_mention 49261 49273	equals(args)
+T478	api_mention 49278 49292	hashCode(args)
+T479	api_mention 49371 49384	setUuid(args)
+T480	api_mention 1843 1847	List
+T481	api_mention 1850 1853	Set
+T482	api_mention 3181 3191	Collection
+T219	api_mention 27179 27194	lines::iterator

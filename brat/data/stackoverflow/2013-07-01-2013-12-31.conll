@@ -1227,7 +1227,7 @@ O	5564	5572	20358883
 O	5573	5575	Is
 O	5576	5581	there
 O	5582	5583	a
-O	5584	5591	Utility
+B-api_mention	5584	5591	Utility
 O	5592	5598	method
 O	5599	5608	somewhere
 O	5609	5613	that
@@ -2824,10 +2824,10 @@ O	12567	12570	The
 O	12571	12577	object
 O	12578	12582	your
 O	12583	12589	method
-O	12590	12604	decompressGZIP
-O	12604	12605	(
-O	12605	12609	args
-O	12609	12610	)
+B-api_mention	12590	12604	decompressGZIP
+I-api_mention	12604	12605	(
+I-api_mention	12605	12609	args
+I-api_mention	12609	12610	)
 O	12611	12616	needs
 O	12617	12619	is
 O	12620	12621	a
@@ -5085,11 +5085,11 @@ O	23486	23489	new
 O	23490	23493	API
 B-api_mention	23494	23507	LocalDateTime
 O	23508	23512	into
-O	23513	23517	java
-O	23517	23518	.
-O	23518	23522	util
-O	23522	23523	.
-O	23523	23527	date
+B-api_mention	23513	23517	java
+I-api_mention	23517	23518	.
+I-api_mention	23518	23522	util
+I-api_mention	23522	23523	.
+I-api_mention	23523	23527	date
 O	23527	23528	:
 B-api_mention	23529	23533	Date
 I-api_mention	23533	23534	.
@@ -5320,7 +5320,7 @@ I-api_mention	24433	24437	Date
 O	24438	24439	.
 
 O	24440	24442	An
-O	24443	24450	Instant
+B-api_mention	24443	24450	Instant
 O	24451	24455	also
 O	24456	24460	does
 O	24461	24464	not
@@ -6120,11 +6120,11 @@ O	27985	27991	answer
 O	27991	27992	-
 O	27992	28000	17489437
 
-O	28001	28005	Java
-O	28005	28006	.
-O	28006	28010	lang
-O	28010	28011	.
-B-api_mention	28011	28017	String
+B-api_mention	28001	28005	Java
+I-api_mention	28005	28006	.
+I-api_mention	28006	28010	lang
+I-api_mention	28010	28011	.
+I-api_mention	28011	28017	String
 O	28018	28020	is
 O	28021	28024	not
 O	28025	28029	just
@@ -6399,7 +6399,7 @@ I-api_mention	29289	29296	println
 O	29297	29301	call
 O	29302	29308	throws
 O	29309	29312	the
-O	29313	29326	Stackoverflow
+B-api_mention	29313	29326	Stackoverflow
 O	29327	29336	exception
 O	29336	29337	.
 
@@ -6430,14 +6430,14 @@ O	29447	29449	an
 O	29450	29462	illustration
 O	29462	29463	:
 O	29464	29467	The
-O	29468	29472	main
-O	29472	29473	(
-O	29473	29477	args
-O	29477	29478	)
+B-api_mention	29468	29472	main
+I-api_mention	29472	29473	(
+I-api_mention	29473	29477	args
+I-api_mention	29477	29478	)
 O	29479	29483	call
 O	29484	29491	trigger
 O	29492	29495	the
-O	29496	29509	Stackoverflow
+B-api_mention	29496	29509	Stackoverflow
 O	29510	29519	exception
 O	29520	29522	at
 O	29523	29527	call
@@ -6461,7 +6461,7 @@ O	29589	29594	which
 O	29595	29602	trigger
 O	29603	29604	a
 O	29605	29611	second
-O	29612	29625	Stackoverflow
+B-api_mention	29612	29625	Stackoverflow
 O	29626	29627	.
 O	29628	29631	cnt
 O	29632	29635	get
@@ -7596,9 +7596,9 @@ I-api_mention	34122	34123	.
 I-api_mention	34123	34126	out
 I-api_mention	34126	34127	.
 I-api_mention	34127	34134	println
-O	34135	34136	(
-O	34136	34139	may
-O	34139	34140	)
+I-api_mention	34135	34136	(
+I-api_mention	34136	34139	may
+I-api_mention	34139	34140	)
 O	34141	34146	needs
 O	34147	34148	5
 O	34149	34154	level
@@ -8247,10 +8247,10 @@ O	37078	37082	same
 O	37083	37093	phenomenon
 O	37094	37097	for
 B-api_mention	37098	37102	Long
-O	37102	37103	.
-O	37103	37106	Min
-O	37106	37107	_
-O	37107	37112	Value
+I-api_mention	37102	37103	.
+I-api_mention	37103	37106	Min
+I-api_mention	37106	37107	_
+I-api_mention	37107	37112	Value
 O	37113	37115	if
 O	37116	37119	you
 O	37120	37125	store
@@ -8479,7 +8479,7 @@ O	38090	38091	'
 O	38091	38092	s
 O	38093	38096	the
 O	38097	38101	only
-O	38102	38109	Integer
+B-api_mention	38102	38109	Integer
 O	38110	38114	that
 O	38115	38119	does
 O	38120	38124	this
@@ -8678,11 +8678,11 @@ O	38951	38952	.
 O	38953	38958	Usage
 O	38958	38959	:
 B-api_mention	38960	38970	StreamUtil
-O	38970	38971	.
-O	38971	38980	takeWhile
-O	38980	38981	(
-O	38981	38985	args
-O	38985	38986	)
+I-api_mention	38970	38971	.
+I-api_mention	38971	38980	takeWhile
+I-api_mention	38980	38981	(
+I-api_mention	38981	38985	args
+I-api_mention	38985	38986	)
 O	38986	38987	;
 O	38988	38992	Here
 O	38992	38993	'
@@ -8761,7 +8761,7 @@ O	39250	39256	Create
 O	39257	39261	your
 O	39262	39265	own
 O	39266	39271	class
-O	39272	39278	System
+B-api_mention	39272	39278	System
 O	39279	39281	in
 O	39282	39285	tha
 O	39286	39290	same
@@ -8774,7 +8774,7 @@ O	39316	39318	In
 O	39319	39323	this
 O	39324	39328	case
 O	39329	39333	your
-O	39334	39340	System
+B-api_mention	39334	39340	System
 O	39341	39346	class
 O	39347	39351	will
 O	39352	39356	hide
@@ -8852,7 +8852,7 @@ O	39627	39628	/
 O	39628	39629	/
 O	39630	39637	Returns
 O	39638	39639	a
-O	39640	39644	List
+B-api_mention	39640	39644	List
 O	39645	39651	backed
 O	39652	39654	by
 O	39655	39656	a
@@ -9453,13 +9453,13 @@ I-api_mention	42245	42246	)
 O	42247	42248	#
 O	42248	42250	li
 B-api_mention	42251	42260	Collector
-O	42260	42261	<
-O	42261	42262	T
-O	42262	42263	,
-O	42263	42264	A
-O	42264	42265	,
-O	42265	42266	R
-O	42266	42267	>
+I-api_mention	42260	42261	<
+I-api_mention	42261	42262	T
+I-api_mention	42262	42263	,
+I-api_mention	42263	42264	A
+I-api_mention	42264	42265	,
+I-api_mention	42265	42266	R
+I-api_mention	42266	42267	>
 
 O	42269	42277	Question
 O	42277	42278	-
