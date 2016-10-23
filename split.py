@@ -11,22 +11,20 @@ if '__main__' == __name__:
     digit_matcher = re.compile('\\d{6,}')
     question_ptn = re.compile('Question-\\d+')
     K = 4
+    seed = 42
     args = sys.argv[1:]
     opts, args = getopt(args, '', ['conll=', 'seed='])
     conll_inputs=''
     for option, value in opts:
         if '--conll' == option:
             conll_inputs=value
-        if '--seed' == option:
-            if value:
-                seed = int(value)
-            else:
-                seed = 42
-            print('seed=%d'%seed)
+        elif '--seed' == option:
+            seed=int(value)
     assert conll_inputs, 'Provide .conll file(s)!, e.g.:\npython train.py --conll=file1.conll,file2.conll,file3.conll'
     post_list = []
     post_text_list = []
 
+    print('seed=%d'%seed)
     for conll_filename in conll_inputs.split(','):
         post = []
         with open(conll_filename, encoding='UTF-8', mode='r') as conll_file:
