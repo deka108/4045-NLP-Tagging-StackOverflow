@@ -11,7 +11,6 @@ if '__main__' == __name__:
     digit_matcher = re.compile('\\d{6,}')
     question_ptn = re.compile('Question-\\d+')
     K = 4
-    seed = 42
     args = sys.argv[1:]
     opts, args = getopt(args, '', ['conll=', 'seed='])
     conll_inputs=''
@@ -19,7 +18,11 @@ if '__main__' == __name__:
         if '--conll' == option:
             conll_inputs=value
         if '--seed' == option:
-            seed = value
+            if value:
+                seed = int(value)
+            else:
+                seed = 42
+            print('seed=%d'%seed)
     assert conll_inputs, 'Provide .conll file(s)!, e.g.:\npython train.py --conll=file1.conll,file2.conll,file3.conll'
     post_list = []
     post_text_list = []
