@@ -9,7 +9,7 @@ from getopt import getopt
 
 if '__main__' == __name__:
     digit_matcher = re.compile('\\d{6,}')
-    question_ptn = re.compile("Question-\d+")
+    question_ptn = re.compile('Question-\\d+')
     K = 4
     seed = 42
     args = sys.argv[1:]
@@ -41,12 +41,12 @@ if '__main__' == __name__:
             if post:
                 post_list.append(post)
 
-        txt_filename = conll_filename[:-len("conll")] + "txt"
+        txt_filename = conll_filename[:-5] + "txt"
         with open(txt_filename, encoding='UTF-8', mode='r') as txt_file:
             lines = txt_file.readlines()
             post_body = ''
             for i in range(len(lines)):
-                if (question_ptn.match(lines[i]) and i != 0):
+                if i != 0 and question_ptn.match(lines[i]):
                     post_text_list.append(post_body)
                     post_body = lines[i]
                 else:
