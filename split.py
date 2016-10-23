@@ -43,7 +43,7 @@ if '__main__' == __name__:
             lines = txt_file.readlines()
             post_body = ''
             for i in range(len(lines)):
-                if (question_ptn.match(lines[i]) and i != 0):
+                if i != 0 and question_ptn.match(lines[i]):
                     post_text_list.append(post_body)
                     post_body = lines[i]
                 else:
