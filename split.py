@@ -9,7 +9,7 @@ from getopt import getopt
 
 if '__main__' == __name__:
     digit_matcher = re.compile('\\d{6,}')
-    question_ptn = re.compile("Question-\d+")
+    question_ptn = re.compile('Question-\\d+')
     K = 4
     args = sys.argv[1:]
     opts, args = getopt(args, '', ['conll='])
