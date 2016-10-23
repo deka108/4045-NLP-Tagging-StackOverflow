@@ -1,9 +1,9 @@
-CRFClassifier invoked on Sun Oct 23 08:28:00 SGT 2016 with arguments:
+CRFClassifier invoked on Sun Oct 23 10:56:59 SGT 2016 with arguments:
    -loadClassifier train/api_mention-1.ser.gz -testFile train/test-1.tsv
 testFile=train/test-1.tsv
 loadClassifier=train/api_mention-1.ser.gz
-Loading classifier from train/api_mention-1.ser.gz ... done [0.6 sec].
-CRFClassifier tagged 34122 words in 1 documents at 13360.22 words per second.
+Loading classifier from train/api_mention-1.ser.gz ... done [0.8 sec].
+CRFClassifier tagged 34122 words in 1 documents at 15819.19 words per second.
          Entity	P	R	F1	TP	FP	FN
     api_mention	0.8576	0.8407	0.8491	813	135	154
          Totals	0.8576	0.8407	0.8491	813	135	154
