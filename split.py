@@ -54,7 +54,7 @@ if '__main__' == __name__:
     dataset_size = len(post_list)
     indices = list(range(dataset_size))
 
-    # random.seed(42)
+    random.seed(42)
     random.shuffle(indices)
 
     # don't mind this folks
