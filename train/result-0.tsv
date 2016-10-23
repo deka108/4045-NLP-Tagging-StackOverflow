@@ -7801,7 +7801,7 @@ You	O	O
 Only	O	O
 Need	O	O
 Ints	O	O
-”	O	O
+â€	O	O
 removed	O	O
 from	O	O
 Android	O	O
@@ -8560,7 +8560,7 @@ compiled	O	O
 class	O	O
 files	O	O
 in	O	O
-§	O	O
+Â§	O	O
 13	O	O
 .	O	O
 1	O	O
@@ -8571,7 +8571,7 @@ in	O	O
 blockquote	O	O
 And	O	O
 in	O	O
-§	O	O
+Â§	O	O
 13	O	O
 .	O	O
 4	O	O
@@ -8728,13 +8728,13 @@ objects	O	O
 .	O	O
 They	O	O
 don	O	O
-’	O	O
+â€™	O	O
 t	O	O
 have	O	O
 a	O	O
-“	O	O
+â€œ	O	O
 reset	O	O
-”	O	O
+â€	O	O
 action	O	O
 and	O	O
 in	O	O
@@ -8747,12 +8747,12 @@ such	O	O
 rewind	O	O
 action	O	O
 would	O	O
-“	O	O
+â€œ	O	O
 take	O	O
 away	O	O
 much	O	O
 power	O	O
-”	O	O
+â€	O	O
 .	O	O
 How	O	O
 would	O	O
@@ -9031,7 +9031,7 @@ an	O	O
 IEnumerator	O	O
 so	O	O
 it	O	O
-’	O	O
+â€™	O	O
 s	O	O
 wrong	O	O
 to	O	O
@@ -9084,7 +9084,7 @@ that	O	O
 works	O	O
 with	O	O
 Java	O	O
-’	O	O
+â€™	O	O
 s	O	O
 Collection	B-api_mention	B-api_mention
 s	O	O
@@ -9218,7 +9218,7 @@ of	O	O
 a	O	O
 method	O	O
 isn	O	O
-’	O	O
+â€™	O	O
 t	O	O
 always	O	O
 intuitively	O	O
@@ -9341,7 +9341,7 @@ considered	O	O
 .	O	O
 It	O	O
 wasn	O	O
-’	O	O
+â€™	O	O
 t	O	O
 created	O	O
 with	O	O
@@ -9350,7 +9350,7 @@ comparable	O	O
 to	O	O
 .	O	O
 NET	O	O
-’	O	O
+â€™	O	O
 s	O	O
 in	O	O
 mind	O	O
@@ -9419,7 +9419,7 @@ Spliterator	B-api_mention	B-api_mention
 s	O	O
 .	O	O
 That	O	O
-’	O	O
+â€™	O	O
 s	O	O
 it	O	O
 .	O	O
@@ -9437,14 +9437,14 @@ better	O	O
 ,	O	O
 but	O	O
 that	O	O
-’	O	O
+â€™	O	O
 s	O	O
 not	O	O
 productive	O	O
 ,	O	O
 it	O	O
 won	O	O
-’	O	O
+â€™	O	O
 t	O	O
 change	O	O
 ,	O	O
@@ -9502,7 +9502,7 @@ itself	O	O
 (	O	O
 that	O	O
 doesn	O	O
-’	O	O
+â€™	O	O
 t	O	O
 preclude	O	O
 doing	O	O
@@ -9561,11 +9561,11 @@ same	O	O
 time	O	O
 )	O	O
 doesn	O	O
-’	O	O
+â€™	O	O
 t	O	O
 play	O	O
 well	O	O
-…	O	O
+â€¦	O	O
 For	O	O
 completeness	O	O
 ,	O	O
@@ -9588,12 +9588,12 @@ it	O	O
 does	O	O
 not	O	O
 really	O	O
-“	O	O
+â€œ	O	O
 take	O	O
 away	O	O
 much	O	O
 power	O	O
-”	O	O
+â€	O	O
 .	O	O
 #	O	O
 pre	O	O
@@ -13693,7 +13693,7 @@ open	O	O
 .	O	O
 From	O	O
 JLS	O	O
-§	O	O
+Â§	O	O
 14	O	O
 .	O	O
 20	O	O
@@ -19026,7 +19026,7 @@ answer	O	O
 Since	O	O
 this	O	O
 hasn	O	O
-’	O	O
+â€™	O	O
 t	O	O
 addressed	O	O
 yet	O	O
@@ -19079,7 +19079,7 @@ support	O	O
 and	O	O
 this	O	O
 doesn	O	O
-’	O	O
+â€™	O	O
 t	O	O
 look	O	O
 like	O	O
@@ -19091,7 +19091,7 @@ back	O	O
 then	O	O
 it	O	O
 wasn	O	O
-’	O	O
+â€™	O	O
 t	O	O
 easy	O	O
 for	O	O
@@ -19208,7 +19208,7 @@ a	O	O
 tool	O	O
 which	O	O
 doesn	O	O
-’	O	O
+â€™	O	O
 t	O	O
 need	O	O
 to	O	O
@@ -19289,7 +19289,7 @@ weird	O	O
 feature	O	O
 which	O	O
 hasn	O	O
-’	O	O
+â€™	O	O
 t	O	O
 even	O	O
 mentioned	O	O
@@ -19337,7 +19337,7 @@ uucafe	O	O
 The	O	O
 meaning	O	O
 doesn	O	O
-’	O	O
+â€™	O	O
 t	O	O
 change	O	O
 ,	O	O
@@ -19397,7 +19397,7 @@ ever	O	O
 used	O	O
 that	O	O
 feature	O	O
-…	O	O
+â€¦	O	O
 Question	O	O
 -	O	O
 6470651	O	O
@@ -26332,7 +26332,7 @@ erasure	O	O
 This	O	O
 is	O	O
 debatable	O	O
-—	O	O
+â€”	O	O
 even	O	O
 if	O	O
 T	B-api_mention	O
@@ -26413,7 +26413,7 @@ not	O	O
 catch	O	O
 or	O	O
 specify	O	O
-—	O	O
+â€”	O	O
 but	O	O
 that	O	O
 was	O	O

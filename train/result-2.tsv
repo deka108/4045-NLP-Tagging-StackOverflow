@@ -632,7 +632,7 @@ other	O	O
 is	O	O
 that	O	O
 NaN	O	O
-?	O	O
+â‰ 	O	O
 NaN	O	O
 ,	O	O
 and	O	O
@@ -3765,7 +3765,7 @@ I	O	O
 have	O	O
 a	O	O
 set	O	O
-–	O	O
+â€“	O	O
 a	O	O
 HashSet	B-api_mention	B-api_mention
 I	O	O
@@ -3776,7 +3776,7 @@ some	O	O
 items	O	O
 from	O	O
 it	O	O
-…	O	O
+â€¦	O	O
 none	O	O
 of	O	O
 the	O	O
@@ -3862,7 +3862,7 @@ currentTimeMillis	I-api_mention	I-api_mention
 ,	O	O
 which	O	O
 isn	O	O
-’	O	O
+â€™	O	O
 t	O	O
 the	O	O
 world	O	O
@@ -3880,12 +3880,12 @@ case	O	O
 ,	O	O
 as	O	O
 you	O	O
-’	O	O
+â€™	O	O
 ll	O	O
 see	O	O
 .	O	O
 Here	O	O
-’	O	O
+â€™	O	O
 s	O	O
 the	O	O
 code	O	O
@@ -3893,7 +3893,7 @@ code	O	O
 #	O	O
 pre	O	O
 Let	O	O
-’	O	O
+â€™	O	O
 s	O	O
 start	O	O
 off	O	O
@@ -3958,7 +3958,7 @@ it	O	O
 a	O	O
 bit	O	O
 easier	O	O
-–	O	O
+â€“	O	O
 300	O	O
 ,	O	O
 000	O	O
@@ -19005,7 +19005,7 @@ sorting	O	O
 which	O	O
 Quicksort	O	O
 doesn	O	O
-’	O	O
+â€™	O	O
 t	O	O
 offer	O	O
 .	O	O
@@ -19021,7 +19021,7 @@ natural	O	O
 order	O	O
 you	O	O
 won	O	O
-’	O	O
+â€™	O	O
 t	O	O
 notice	O	O
 a	O	O
@@ -23716,7 +23716,7 @@ NaN	I-api_mention	I-api_mention
 .	O	O
 From	O	O
 JLS	O	O
-§	O	O
+Â§	O	O
 15	O	O
 .	O	O
 21	O	O
@@ -31695,7 +31695,7 @@ considering	O	O
 arrays	O	O
 are	O	O
 objects	O	O
-—	O	O
+â€”	O	O
 why	O	O
 did	O	O
 the	O	O
@@ -35248,7 +35248,7 @@ applying	O	O
 capture	O	O
 conversion	O	O
 (	O	O
-§	O	O
+Â§	O	O
 5	O	O
 .	O	O
 1	O	O
