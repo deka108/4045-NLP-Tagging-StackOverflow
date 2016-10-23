@@ -38,7 +38,7 @@ if '__main__' == __name__:
             if post:
                 post_list.append(post)
 
-        txt_filename = conll_filename[:-len("conll")] + "txt"
+        txt_filename = conll_filename[:-5] + "txt"
         with open(txt_filename, encoding='UTF-8', mode='r') as txt_file:
             lines = txt_file.readlines()
             post_body = ''
