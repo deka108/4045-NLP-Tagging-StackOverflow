@@ -7,21 +7,10 @@ import matplotlib.pyplot as plt
 import fileinput
 from nltk.corpus import stopwords
 
-# change the index
+mydict = {}
 
-preprocessed_path_java = [
-    'preprocessed/preprocessed_2011-01-01-2011-06-30_java.json',
-    'preprocessed/preprocessed_2011-07-01-2011-12-31_java.json',
-    'preprocessed/preprocessed_2012-01-01-2012-06-30_java.json',
-    'preprocessed/preprocessed_2012-07-01-2012-12-31_java.json',
-    'preprocessed/preprocessed_2013-01-01-2013-06-30_java.json',
-    'preprocessed/preprocessed_2013-07-01-2013-12-31_java.json',
-    'preprocessed/preprocessed_2014-01-01-2014-06-30_java.json',
-    'preprocessed/preprocessed_2014-07-01-2014-12-31_java.json',
-    'preprocessed/preprocessed_2015-01-01-2015-06-30_java.json',
-    'preprocessed/preprocessed_2015-07-01-2015-12-31_java.json'
-]
-
+FILE_DEST = 'Stat_API\\'
+    
 api_preprocessed_path = [
     'api_preprocessed\\2011-01-01-2011-06-30.txt',
     'api_preprocessed\\2011-07-01-2011-12-31.txt',
@@ -34,10 +23,6 @@ api_preprocessed_path = [
     'api_preprocessed\\2015-01-01-2015-06-30.txt',
     'api_preprocessed\\2015-07-01-2015-12-31.txt'
 ]
-
-mydict = {}
-
-FILE_DEST = 'Stat_API\\'
 
 def read_files(file_paths):
     data = fileinput.input(file_paths)
@@ -68,7 +53,7 @@ def len_of_posts(dataset,path):
                 for word in sentence:
                     if re.match('^\w+[\.\,\?\!\:\;]$', word):
                         word = strip_punctuation(word)
-                    if re.match('^\w+', word) and word.lower() not in stopword:
+                    if re.match('^\w+', word):
                         count +=1
         dest.write("length of pos {} : {}\n".format(i, count))
         dest.write("total number of posts:{} \n".format(total_all))
@@ -109,7 +94,6 @@ def get_statistics(data,path):
     data.close()
     return answer_file
 
-
 def create_histo(data,path):
     # change the upper limit if you want to make bigger histogram e.g.
     # e.g. 12 means that answer counts above 12 will be combined with 12
@@ -127,13 +111,13 @@ def create_histo(data,path):
     plt.xlabel('# of answers')
     plt.ylabel('Distribution value')
     plt.title('Answer Distribution')
-    # plt.show()
-    # change the save path for other pict
+        # plt.show()
+        # change the save path for other pict
     plt.savefig(path+'histogram.png')
 
 if __name__=="__main__":
     len_of_posts(api_preprocessed_path,FILE_DEST)
-    stats_file = get_statistics(api_preprocessed_path,FILE_DEST)
-    create_histo(stats_file,FILE_DEST)
+    # stats_file = get_statistics(api_preprocessed_path,FILE_DEST)
+    # create_histo(stats_file,FILE_DEST)
 
 
