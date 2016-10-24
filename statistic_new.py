@@ -5,7 +5,6 @@ from collections import Counter
 import re
 import matplotlib.pyplot as plt
 import fileinput
-from nltk.corpus import stopwords
 
 mydict = {}
 
@@ -39,7 +38,6 @@ def len_of_posts(dataset,path):
     questions_id =''
     count = 0
     i = -1
-    stopword = set(stopwords.words('english'))
     with open(path + 'post_length.txt', 'a+') as dest:
         for lines in data:
             if quest.match(lines):
@@ -64,9 +62,10 @@ def get_statistics(data,path):
     total_quest = 0
     total_ans = 0
     total = 0
+    ans_list = []
     quest = re.compile('^Question-\d')
-    source = fileinput.input(data)
-    for lines in source:
+    data = fileinput.input(data)
+    for lines in data:
         if quest.match(lines):
             line = lines.split(',')
             try:
@@ -79,10 +78,13 @@ def get_statistics(data,path):
                     mydict[line[0].strip('\n')] += 1
                 except KeyError:
                     mydict[line[0].strip('\n')] = 1
+                    ans_list.append(line[0].strip('\n'))
                 total_ans +=1
-    for value in mydict.values():
-        if (value - 1 >= 0):
-            answer_file.append(value)
+    for key in mydict.keys():
+        if key in ans_list:
+            answer_file.append(mydict[key])
+        elif (mydict[key] -1 > 0):
+            answer_file.append(mydict[key]-1)
     lst = Counter(mydict)
     with open(path+'num_of_thread.txt','w+') as source:
         source.write("number of Thread in all of the post : \n")
@@ -105,19 +107,17 @@ def create_histo(data,path):
         else:
             temp_list.append(i)
     df = pandas.DataFrame(temp_list)
-    plt.hist(df[0], bins =upper_limit, range=(1,upper_limit),  align= 'mid', histtype='bar')
-    plt.xticks(range(1, upper_limit+1, 1))
-    # plt.yticks(range(0,100))
+    bins = range(min(df[0]),max(df[0])+2,1)
+    plt.hist(df[0], bins =bins,  align= 'left', histtype='bar')
+    plt.xticks(bins)
     plt.xlabel('# of answers')
     plt.ylabel('Distribution value')
     plt.title('Answer Distribution')
-        # plt.show()
-        # change the save path for other pict
     plt.savefig(path+'histogram.png')
 
 if __name__=="__main__":
-    len_of_posts(api_preprocessed_path,FILE_DEST)
-    # stats_file = get_statistics(api_preprocessed_path,FILE_DEST)
-    # create_histo(stats_file,FILE_DEST)
+    # len_of_posts(api_preprocessed_path,FILE_DEST)
+    stats_file = get_statistics(api_preprocessed_path,FILE_DEST)
+    create_histo(stats_file,FILE_DEST)
 
 
