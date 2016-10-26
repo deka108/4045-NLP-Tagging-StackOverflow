@@ -194,7 +194,7 @@ T200	api_mention 34219 34237	StackOverflowError
 T201	api_mention 31174 31191	System.out.prinln
 T202	api_mention 31413 31420	println
 T203	api_mention 32447 32454	println
-T204	api_mention 34116 34140	System.out.println (may)
+T204	api_mention 34116 34134	System.out.println
 T205	api_mention 34754 34772	System.out.println
 T206	api_mention 35613 35637	System.out.println(args)
 T207	api_mention 36219 36236	Integer.MIN_VALUE
@@ -352,3 +352,5 @@ T351	api_mention 29612 29625	Stackoverflow
 T352	api_mention 24443 24450	Instant
 T353	api_mention 38102 38109	Integer
 T354	api_mention 39640 39644	List
+T355	api_mention 48393 48405	Spliterators
+T356	api_mention 47356 47368	.nullValue()
