@@ -79,24 +79,6 @@ def update_half_year(year, is_first_half):
     update_year(half, year)
 
 
-def generate_json_per_year(year, file_format=file_name_month):
-    """Generates JSON file per year from 01/01/08 - 31/12/16."""
-    while (year >= base_year):
-        update_year(date_year, year)
-
-        # Sends a GET request via StackExchange API.
-        # Example: https://api.stackexchange.com/2.2/questions?pagesize=100&fromdate=1356998400&todate=1388448000&order=desc&sort=votes&site=stackoverflow&filter=!17vhT8QOUm)koH5(u-VKOO052pl0CqLsE)qJhVj8Pg-YDP
-        res = requests.get(url, params=payload)
-
-        # Write JSON result into a JSON file
-        file_name = file_name_year % year + json_suffix
-        path = os.path.join(data_dir, file_name)
-        with open(path, 'w') as output:
-            json.dump(res.json(), output)
-
-        year -= 1
-
-
 def generate_json_per_halfyear(year, file_format=file_name_month):
     """Generates JSON file per 6 months from 01/01/11 - 31/12/15."""
     is_first_half = False
@@ -133,82 +115,4 @@ def generate_json_per_halfyear_tag(year):
     del payload['tagged']
 
 
-def generate_json_per_month(year, size=10, file_format=file_name_month):
-    """Generates JSON file per month from 01/01/08 - 31/12/15."""
-    payload['pagesize'] = size
-
-    while (year >= base_year):
-        format_per_month = get_format_per_month(year)
-
-        for i in range(len(format_per_month)):
-            update_year(format_per_month[i], year)
-
-            # Sends a GET request via StackExchange API.
-            # Example: https://api.stackexchange.com/2.2/questions?pagesize=100&fromdate=1356998400&todate=1388448000&order=desc&sort=votes&site=stackoverflow&filter=!17vhT8QOUm)koH5(u-VKOO052pl0CqLsE)qJhVj8Pg-YDP
-            res = requests.get(url, params=payload)
-
-            # Write JSON result into a JSON file
-            frm = format_per_month[i][from_date] % year
-            to = format_per_month[i][to_date] % year
-            file_name = file_format % (frm, to) + json_suffix
-
-            path = os.path.join(data_dir, file_name)
-
-            with open(path, 'w') as output:
-                json.dump(res.json(), output)
-
-        year -= 1
-
-    payload['pagesize'] = pagesize
-
-
-def check_questions_per_year(year):
-    """Validates that number of question posts per year are 100."""
-    while (year >= base_year):
-        file_name = file_name_year % year + json_suffix
-        path = os.path.join(data_dir, file_name)
-
-        with open(path) as input:
-            data = json.load(input)
-        print 'Number of questions for year %d: %d ' % (
-        year, len(data['items']))
-
-        year -= 1
-
-
-def check_questions_per_halfyear(year, file_format=file_name_month):
-    """Validates that number of question posts per half year are 100."""
-    is_first_half = False
-
-    while (year >= base_halfyear):
-        if is_first_half:
-            frmdate = first_half[from_date] % year
-            todate = first_half[to_date] % year
-            year -= 1
-        else:
-            frmdate = sec_half[from_date] % year
-            todate = sec_half[to_date] % year
-
-        time_range = '%s-%s' % (frmdate, todate)
-        file_name = file_format % (frmdate, todate) + json_suffix
-
-        path = os.path.join(data_dir, file_name)
-
-        with open(path) as input:
-            data = json.load(input)
-
-        print 'Number of question posts in %s: %d ' % (
-        time_range, len(data['items']))
-
-        is_first_half = not is_first_half
-
-# generate_json_per_year(2016)
-# check_questions_per_year(2016)
-
-# generate_json_per_month(2015)
-
-# generate_json_per_halfyear(2015)
-# check_questions_per_halfyear(2015)
-
-# generate_json_per_halfyear_java_tag(2015)
-# check_questions_per_halfyear(2015, file_name_month_java)
+generate_json_per_halfyear_java_tag(2015)

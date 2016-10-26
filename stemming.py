@@ -11,19 +11,6 @@ import nltk
 # if you havent download stopwords
 # nltk.download('stopwords')
 
-preprocessed_path_java = [
-    'preprocessed/preprocessed_2011-01-01-2011-06-30_java.json',
-    'preprocessed/preprocessed_2011-07-01-2011-12-31_java.json',
-    'preprocessed/preprocessed_2012-01-01-2012-06-30_java.json',
-    'preprocessed/preprocessed_2012-07-01-2012-12-31_java.json',
-    'preprocessed/preprocessed_2013-01-01-2013-06-30_java.json',
-    'preprocessed/preprocessed_2013-07-01-2013-12-31_java.json',
-    'preprocessed/preprocessed_2014-01-01-2014-06-30_java.json',
-    'preprocessed/preprocessed_2014-07-01-2014-12-31_java.json',
-    'preprocessed/preprocessed_2015-01-01-2015-06-30_java.json',
-    'preprocessed/preprocessed_2015-07-01-2015-12-31_java.json'
-]
-
 api_preprocessed_path = [
     'api_preprocessed\\2011-01-01-2011-06-30.txt',
     'api_preprocessed\\2011-07-01-2011-12-31.txt',
@@ -84,10 +71,7 @@ def preprocess(file_paths, after,choice):
         return lst
 
 def stem(path,choice,after=False):
-    if choice=='json':
-        lst = preprocess(preprocessed_path_java, after,choice)
-    else:
-        lst = preprocess(api_preprocessed_path, after,choice)
+    lst = preprocess(api_preprocessed_path, after,choice)
     dct = [(value,key) for key,value in lst.iteritems()]
     dct.sort(reverse=True)
     if after:
