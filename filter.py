@@ -35,30 +35,7 @@ sec_half = {from_date: '%s-07-01', to_date: '%s-12-31'}
 date_year = {from_date: '%s-01-01', to_date: '%s-12-31'}
 
 date_format = '%Y-%m-%d'
-base_year = 2008
 base_halfyear = 2011
-
-
-def get_format_per_month(year):
-    per_month = [
-        {from_date: '%s-01-01', to_date: '%s-01-31'},
-        {from_date: '%s-02-01', to_date: '%s-02-28'},
-        {from_date: '%s-03-01', to_date: '%s-03-31'},
-        {from_date: '%s-04-01', to_date: '%s-04-30'},
-        {from_date: '%s-05-01', to_date: '%s-05-31'},
-        {from_date: '%s-06-01', to_date: '%s-06-30'},
-        {from_date: '%s-07-01', to_date: '%s-07-31'},
-        {from_date: '%s-08-01', to_date: '%s-08-31'},
-        {from_date: '%s-09-01', to_date: '%s-09-30'},
-        {from_date: '%s-10-01', to_date: '%s-10-31'},
-        {from_date: '%s-11-01', to_date: '%s-11-30'},
-        {from_date: '%s-12-01', to_date: '%s-12-31'}
-    ]
-
-    if year % 4 == 0:
-        per_month[1] = {from_date: '%s-02-01', to_date: '%s-02-29'}
-
-    return per_month
 
 
 def update_year(format, year):
