@@ -1,9 +1,11 @@
+from __future__ import division
 import io
 from string import punctuation
 import pandas
 from collections import Counter
 import re
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter
 import fileinput
 
 mydict = {}
@@ -92,15 +94,20 @@ def get_statistics(data,path):
         for i,(answer,quest) in enumerate(dst,0):
             total += answer
             source.write("{}------{}\n".format(answer,quest))
-        source.write("total threads:{}\n\ntotal questions:{}\n\ntotal answer:{}\n".format(total,total_quest,total_ans))
+        source.write("total thread:{}\n\ntotal post:{}\n\ntotal questions:{}\n\ntotal answer:{}\n".format(i+1,total,total_quest,total_ans))
     data.close()
     return answer_file
+
+def to_percent(y, position):
+    s = str(100 * y)
+    return s + '%'
 
 def create_histo(data,path):
     # change the upper limit if you want to make bigger histogram e.g.
     # e.g. 12 means that answer counts above 12 will be combined with 12
     upper_limit = 6
     temp_list = []
+    total = 0
     for i in data:
         if i >= upper_limit:
             temp_list.append(upper_limit)
@@ -108,8 +115,10 @@ def create_histo(data,path):
             temp_list.append(i)
     df = pandas.DataFrame(temp_list)
     bins = range(min(df[0]),max(df[0])+2,1)
-    plt.hist(df[0], bins =bins,  align= 'left', histtype='bar')
+    plt.hist(df[0], bins = bins,  align= 'left', histtype='bar',normed = True)
     plt.xticks(bins)
+    formatter = FuncFormatter(to_percent)
+    plt.gca().yaxis.set_major_formatter(formatter)
     plt.xlabel('# of answers')
     plt.ylabel('Distribution value')
     plt.title('Answer Distribution')
