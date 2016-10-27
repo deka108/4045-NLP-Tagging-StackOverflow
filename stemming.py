@@ -1,4 +1,4 @@
-from nltk.corpus import stopwords
+    from nltk.corpus import stopwords
 import json
 import io
 import re
@@ -101,4 +101,5 @@ def stem(path,choice,after=False):
             dest_file.write(unicode('{}. {} {}\n'.format(i, count, word)))
 
 # True for looking after stemming
+# choice for type of file you want to pass
 stem(FILE_DEST,choice = 'api',after=True)
