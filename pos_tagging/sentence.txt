@@ -1,10 +1,10 @@
-Changing the springloaded version in my pom.xml did the trick.
-I thought I should add my two pence worth on this topic.
-Recently I hit the same issue trying to upgrade an ancient app to 2.4.4.
-Once it is loaded, the static initializer of class C is invoked.
-What is the correct way to perform this test?
-Now the main method, we printed the value of dependsOnA of class B.
-This works because the .equals() contract guarantees that for any object o, o.equals(null) is always false.
-How would Random.ints() be supposed to handle such a request?
-Since these are Iterables, you can call the iterator() method more than once.
-We wanted consistent, predictable behavior for what happens if you call iterator() twice.
+It has generally been the case the Java source code has been forward compatible.
+I have a server side implemented in Scala and React/Flux based front end.
+No, you appear to have a legit bug.
+There is no actual difference in the functionality between the 2 version's loop.
+For me, the reason is a likely performance inprovement, at a negligible cost in terms of code clarity.
+I've got of the following five 6 methods to do it.
+Usually you'll be looking for the hostname your host has in a specific context.
+This is just micro-optimisation that you shouldn't worry about.
+It's a feature of the Java language.
+After digging around for a while, I can't say that I find the answer, but I think it's quite close now.

@@ -210,8 +210,8 @@ T236	api_mention 2868 2873	SLF4J
 T237	api_mention 3060 3063	JUL
 T238	api_mention 3350 3353	JUL
 T239	api_mention 3460 3463	JUL
-T240	api_mention 3465 3481	log.finest(args)
-T241	api_mention 3552 3565	log.log(args)
+T240	api_mention 3468 3481	.finest(args)
+T241	api_mention 3555 3564	.log(args
 T242	api_mention 3813 3816	JUL
 T243	api_mention 3920 3923	JUL
 T244	api_mention 4132 4135	JUL
@@ -229,8 +229,8 @@ T255	api_mention 5947 5950	JUL
 T256	api_mention 6456 6461	SLF4J
 T257	api_mention 6504 6507	JUL
 T258	api_mention 6381 6387	String
-T259	api_mention 6463 6480	logger.info(args)
-T260	api_mention 6509 6525	logger.log(args)
+T259	api_mention 6469 6480	.info(args)
+T260	api_mention 6515 6525	.log(args)
 T261	api_mention 6678 6683	SLF4J
 T262	api_mention 6697 6704	Logback
 T263	api_mention 6877 6880	JUL
@@ -255,7 +255,7 @@ T281	api_mention 10006 10009	JUL
 T282	api_mention 10095 10098	JUL
 T283	api_mention 10100 10103	JUL
 T284	api_mention 10443 10446	JUL
-T14	api_mention 12165 12191	request.getParameter(args)
+T14	api_mention 12172 12191	.getParameter(args)
 T211	api_mention 49534 49537	JUL
 T285	api_mention 49266 49269	JUL
 T286	api_mention 48854 48859	SLF4J
@@ -309,3 +309,7 @@ T308	api_mention 28198 28204	Object
 T309	api_mention 29233 29239	String
 T310	api_mention 29432 29445	StringBuilder
 T311	api_mention 29124 29130	String
+T312	api_mention 1273 1276	JUL
+T313	api_mention 1605 1608	JUL
+T314	api_mention 1898 1907	Formatter
+T315	api_mention 6808 6811	JUL

@@ -517,3 +517,7 @@ T27	api_mention 61704 61717	Stream.concat
 T422	api_mention 61718 61724	Stream
 T423	api_mention 61725 61731	Stream
 T430	api_mention 60409 60415	Lambda
+T365	api_mention 44957 44972	HashingStrategy
+T432	api_mention 45056 45062	equals
+T433	api_mention 45067 45075	hashcode
+T434	api_mention 34404 34412	Iterable

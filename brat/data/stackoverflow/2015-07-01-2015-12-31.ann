@@ -493,3 +493,11 @@ T492	api_mention 71759 71769	Exceptions
 T493	api_mention 72123 72134	Exceptional
 T494	api_mention 73261 73271	init(args)
 T495	api_mention 44045 44062	Arrays.fill(args)
+T496	api_mention 19801 19829	java.lang.reflect.Executable
+T497	api_mention 20557 20585	java.lang.reflect.Executable
+T498	api_mention 20717 20727	Executable
+T499	api_mention 20740 20746	Member
+T500	api_mention 20847 20857	Executable
+T501	api_mention 21054 21064	Executable
+T502	api_mention 32469 32486	PubliclyCloneable
+T503	api_mention 43288 43297	java.util
