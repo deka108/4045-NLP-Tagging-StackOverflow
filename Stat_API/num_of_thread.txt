@@ -287,7 +287,9 @@ number of Thread in all of the post :
 2------Question-16159203
 2------Question-21375659
 5------Question-10827872
-total threads:735
+total thread:288
+
+total post:735
 
 total questions:139
 
