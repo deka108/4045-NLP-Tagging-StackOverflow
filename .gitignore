@@ -7,6 +7,3 @@ stanford-ner.zip
 stanford-ner/*
 !stanford-ner/init.bat
 !stanford-ner/example/
-
-src/*
-!src/readme.txt
