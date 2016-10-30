@@ -1,0 +1,194 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+
+		#container > div {
+			border-bottom: 1px solid black;
+		}
+
+		:not(pre) > code{
+			background-color: yellow;
+		}
+
+		blockquote{
+			background-color: lightsalmon;
+		}
+
+		pre{
+			background-color: lightgray;
+		}
+
+		.question-span, .answer-span, .post-span{
+			font-style: italic;
+		}
+
+		</style>
+	</head>
+
+	<body>
+		<div id="container"></div>
+
+		<script type="text/javascript">
+			var path_name_javatag = [
+				'data/data_2011-01-01-2011-06-30_java.json', 
+				'data/data_2011-07-01-2011-12-31_java.json', 
+				'data/data_2012-01-01-2012-06-30_java.json', 
+				'data/data_2012-07-01-2012-12-31_java.json', 
+				'data/data_2013-01-01-2013-06-30_java.json', 
+				'data/data_2013-07-01-2013-12-31_java.json', 
+				'data/data_2014-01-01-2014-06-30_java.json', 
+				'data/data_2014-07-01-2014-12-31_java.json', 
+				'data/data_2015-01-01-2015-06-30_java.json', 
+				'data/data_2015-07-01-2015-12-31_java.json', 
+			];
+
+			var api_mention_javatag = [
+				'api_mention/data_2011-01-01-2011-06-30_java_api_mention.json', 
+				'api_mention/data_2011-07-01-2011-12-31_java_api_mention.json', 
+				'api_mention/data_2012-01-01-2012-06-30_java_api_mention.json', 
+				'api_mention/data_2012-07-01-2012-12-31_java_api_mention.json', 
+				'api_mention/data_2013-01-01-2013-06-30_java_api_mention.json', 
+				'api_mention/data_2013-07-01-2013-12-31_java_api_mention.json', 
+				'api_mention/data_2014-01-01-2014-06-30_java_api_mention.json', 
+				'api_mention/data_2014-07-01-2014-12-31_java_api_mention.json', 
+				'api_mention/data_2015-01-01-2015-06-30_java_api_mention.json', 
+				'api_mention/data_2015-07-01-2015-12-31_java_api_mention.json', 
+			];
+
+			var container = document.getElementById('container');
+
+			// http://stackoverflow.com/a/14388512
+			function fetchJSONFile(path, callback) {
+			    var httpRequest = new XMLHttpRequest();
+			    httpRequest.onreadystatechange = function() {
+			        if (httpRequest.readyState === 4) {
+			            if (httpRequest.status === 200) {
+			                var data = JSON.parse(httpRequest.responseText);
+			                if (callback) callback(data);
+			            }
+			        }
+			    };
+			    httpRequest.open('GET', path);
+			    httpRequest.send(); 
+			}
+			
+			function displayJsonData(path_to_file){
+				console.log(path_to_file)
+				container.innerHTML = '';
+
+				fetchJSONFile(path_to_file, function (data) {
+					document.title = path_to_file.replace('data\/', '');
+					console.log(data);
+
+					data.items.forEach(function (qn, i) {
+						// Create question div
+						var qnDiv = document.createElement("div");
+						qnDiv.className = "question";
+						var qnHeading = document.createElement("h2"); 
+						qnHeading.innerHTML = "Question " + i + ": " +
+                                qn.question_id;
+						qnDiv.appendChild(qnHeading);
+
+						// Insert SO link to the question
+						var qnSpan = document.createElement("span");
+						qnSpan.className = "question-span";
+						qnSpan.innerHTML = "Link: ";
+						var qnLink = document.createElement("a");
+						qnLink.href = qn.link;
+						qnLink.innerHTML = qn.link;
+						qnSpan.appendChild(qnLink);
+						qnSpan.insertAdjacentHTML("beforeend",
+                                "<br/>Answer count: " + qn.answer_count);
+						qnDiv.appendChild(qnSpan);
+						
+						// Insert question body
+						qnDiv.insertAdjacentHTML('beforeend', qn.body);
+
+                        if (qn.answers) {
+                            qn.answers.forEach(function (ans, j) {
+                                // Create answer div
+                                var ansDiv = document.createElement("div");
+                                ansDiv.className = "answer";
+                                var ansHeading = document.createElement("h4");
+                                ansHeading.innerHTML = "Answer " + j + ": " +
+                                        ans.answer_id;
+                                ansDiv.appendChild(ansHeading);
+
+                                // Insert SO link to the answer
+                                var ansSpan = document.createElement("span");
+                                ansSpan.className = "answer-span";
+                                ansSpan.innerHTML = "Link: ";
+                                var ansLink = document.createElement("a");
+                                ansLink.href = ans.link;
+                                ansLink.innerHTML = ans.link;
+                                ansSpan.appendChild(ansLink);
+                                ansDiv.appendChild(ansSpan);
+
+                                // Insert answer body
+                                ansDiv.insertAdjacentHTML("beforeend", ans.body);
+
+                                qnDiv.appendChild(ansDiv);
+                            });
+                        }
+
+						container.appendChild(qnDiv);
+					});
+				});
+			}
+
+			function displayJsonApiMention(path_to_file){
+				console.log(path_to_file)
+				container.innerHTML = '';
+
+				fetchJSONFile(path_to_file, function (data) {
+					document.title = path_to_file.replace('api_mention\/', '');
+					console.log(data);
+
+					data.items.forEach(function (post, i) {
+						// Create post div
+						var postDiv = document.createElement("div");
+						postDiv.className = "post";
+						var postHeading = document.createElement("h2");
+						postHeading.innerHTML = "Post " + i + ": " + post.title;
+						postDiv.appendChild(postHeading);
+
+						// Insert SO link to the post
+						var postSpan = document.createElement("span");
+						postSpan.className = "post-span";
+						if (post.post_type == "question"){
+							postSpan.insertAdjacentHTML("beforeend", "Post Type: Question<br/>");
+						} else{
+							postSpan.insertAdjacentHTML("beforeend",
+							"Post Type: Answer<br/>"+
+							"Answer ID: " + post.answer_id + "<br/>");
+						}
+						postSpan.insertAdjacentHTML("beforeend", 
+							"Question ID: " + post.question_id + "<br/>");
+						postSpan.insertAdjacentHTML("beforeend", "Link: ");
+						
+						var postLink = document.createElement("a");
+						postLink.href = post.link;
+						postLink.innerHTML = post.link;
+						postSpan.appendChild(postLink);
+
+						postDiv.appendChild(postSpan);
+						
+						// Insert post body
+						postDiv.insertAdjacentHTML('beforeend', post.body);
+
+						container.appendChild(postDiv);
+					});
+				});
+			}
+
+			// Uncomment and change index param of displayJSON to change the file path
+			// File path change can also be changed through developer console
+			// displayJsonData(path_name_javatag[6]);
+			// displayJsonApiMention(api_mention_javatag[6]);
+
+		</script>
+
+	</body>
+</html>

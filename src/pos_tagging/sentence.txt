@@ -1,0 +1,10 @@
+It has generally been the case the Java source code has been forward compatible.
+I have a server side implemented in Scala and React/Flux based front end.
+No, you appear to have a legit bug.
+There is no actual difference in the functionality between the 2 version's loop.
+For me, the reason is a likely performance inprovement, at a negligible cost in terms of code clarity.
+I've got of the following five 6 methods to do it.
+Usually you'll be looking for the hostname your host has in a specific context.
+This is just micro-optimisation that you shouldn't worry about.
+It's a feature of the Java language.
+After digging around for a while, I can't say that I find the answer, but I think it's quite close now.
