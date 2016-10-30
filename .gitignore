@@ -1,7 +1,7 @@
 # User defined tasks
 .idea/
 
-.DS_Store
+*.DS_Store
 
 stanford-ner.zip
 stanford-ner/*
