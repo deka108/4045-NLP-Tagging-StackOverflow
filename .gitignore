@@ -1,12 +1,9 @@
 # User defined tasks
 .idea/
 
-.DS_Store
+*.DS_Store
 
 stanford-ner.zip
 stanford-ner/*
 !stanford-ner/init.bat
 !stanford-ner/example/
-
-src/*
-!src/readme.txt

@@ -19,6 +19,27 @@
 
 	It will populate api_preprocessed/ with preprocessed post in text files for each half year from 2011-2015.
 
++===================+
+| Statistic Process |
++===================+
+1.	Dependencies:
+	1.1 pandas library, by running command pip install pandas
+	1.2 matplotlib library, by running command pip install matlplotlib
+	
+2.	At root folder:
+		*Run statistic_new.py after running preprocess.bat
+		--this will create histogram for answers' distribution, length of post, number of thread files to Stat_API/ 
+
++==================+
+| Stemming Process |
++==================+
+1.	Dependencies:
+	1.1 Snowball stemmer, from nltk library, by running command pip install snowballstemmer
+	1.2 stopwords, from nltk library, by running command nltk.download('stopwords') in the script
+	
+2.	At root folder:
+		*Run stemming.py after running preprocess.bat
+		--this will create files for rank after and before stemming to Stat_API/ 
 
 +========================+
 | The Annotation Process |
