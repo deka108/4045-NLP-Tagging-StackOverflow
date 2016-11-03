@@ -9,20 +9,7 @@ from string import punctuation
 import nltk
 
 # if you havent download stopwords
-# nltk.download('stopwords')
-
-preprocessed_path_java = [
-    'preprocessed/preprocessed_2011-01-01-2011-06-30_java.json',
-    'preprocessed/preprocessed_2011-07-01-2011-12-31_java.json',
-    'preprocessed/preprocessed_2012-01-01-2012-06-30_java.json',
-    'preprocessed/preprocessed_2012-07-01-2012-12-31_java.json',
-    'preprocessed/preprocessed_2013-01-01-2013-06-30_java.json',
-    'preprocessed/preprocessed_2013-07-01-2013-12-31_java.json',
-    'preprocessed/preprocessed_2014-01-01-2014-06-30_java.json',
-    'preprocessed/preprocessed_2014-07-01-2014-12-31_java.json',
-    'preprocessed/preprocessed_2015-01-01-2015-06-30_java.json',
-    'preprocessed/preprocessed_2015-07-01-2015-12-31_java.json'
-]
+nltk.download('stopwords')
 
 api_preprocessed_path = [
     'api_preprocessed\\2011-01-01-2011-06-30.txt',
@@ -36,7 +23,7 @@ api_preprocessed_path = [
     'api_preprocessed\\2015-01-01-2015-06-30.txt',
     'api_preprocessed\\2015-07-01-2015-12-31.txt'
 ]
-# FILE_DEST = 'Stat\\'
+
 FILE_DEST = 'Stat_API\\'
 
 def read_json(file_path):
@@ -102,4 +89,4 @@ def stem(path,choice,after=False):
 
 # True for looking after stemming
 # choice for type of file you want to pass
-stem(FILE_DEST,choice = 'api',after=True)
+stem(FILE_DEST,choice = 'api',after=False)

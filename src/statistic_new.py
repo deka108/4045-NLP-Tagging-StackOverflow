@@ -40,23 +40,24 @@ def len_of_posts(dataset,path):
     questions_id =''
     count = 0
     i = -1
-    with open(path + 'post_length.txt', 'a+') as dest:
-        for lines in data:
-            if quest.match(lines):
-                if i >=0:
-                    dest.write("length of pos {} : {}\n".format(i, count))
-                i+=1
-                total_all += count
-                count = 0
-            else:
-                sentence = lines.split()
-                for word in sentence:
-                    if re.match('^\w+[\.\,\?\!\:\;]$', word):
-                        word = strip_punctuation(word)
-                    if re.match('^\w+', word):
-                        count +=1
-        dest.write("length of pos {} : {}\n".format(i, count))
-        dest.write("total number of posts:{} \n".format(total_all))
+    with open(path + 'post_length.txt', 'w+') as test:
+        with open(path + 'post_length.txt', 'a+') as dest:
+            for lines in data:
+                if quest.match(lines):
+                    if i >=0:
+                        dest.write("length of pos {} : {}\n".format(i, count))
+                    i+=1
+                    total_all += count
+                    count = 0
+                else:
+                    sentence = lines.split()
+                    for word in sentence:
+                        if re.match('^\w+[\.\,\?\!\:\;]$', word):
+                            word = strip_punctuation(word)
+                        if re.match('^\w+', word):
+                            count +=1
+            dest.write("length of pos {} : {}\n".format(i, count))
+            dest.write("total number of posts:{} \n".format(total_all))
     data.close()
 
 def get_statistics(data,path):
@@ -125,7 +126,7 @@ def create_histo(data,path):
     plt.savefig(path+'histogram.png')
 
 if __name__=="__main__":
-    # len_of_posts(api_preprocessed_path,FILE_DEST)
+    len_of_posts(api_preprocessed_path,FILE_DEST)
     stats_file = get_statistics(api_preprocessed_path,FILE_DEST)
     create_histo(stats_file,FILE_DEST)
 
