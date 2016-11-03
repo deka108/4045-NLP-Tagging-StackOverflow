@@ -27,7 +27,7 @@
 	1.2 matplotlib library, by running command pip install matlplotlib
 	
 2.	At root folder:
-		*Run statistic_new.py after running preprocess.bat
+	2.1	Run statistic_new.py after running preprocess.bat
 		--this will create histogram for answers' distribution, length of post, number of thread files to Stat_API/ 
 
 +==================+
@@ -39,7 +39,9 @@
 	
 2.	At root folder:
 		*Run stemming.py after running preprocess.bat
-		--this will create files for rank after and before stemming to Stat_API/ 
+		-- this will create files for most frequent word rank to Stat_API/
+		-- for ranking before stemming, change the input after inside the script into False
+		-- otherwise, keep after equals to True for ranking after stemming 
 
 +=====================+
 | POS Tagging Process |
