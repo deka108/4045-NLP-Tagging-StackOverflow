@@ -9,7 +9,7 @@
 	run python filter.py
 	-- this will generate top 100 question threads (including answers) for every half year from 2011-2015 in JSON format.
 
-3. Select posts for the experiment. The selected posts are put under api_mention/ directory.
+3. Select posts for the experiment. The selected posts are put under api_mention/ directory. 
 
 +===============+
 | Preprocessing |
