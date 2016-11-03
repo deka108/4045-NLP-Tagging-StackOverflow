@@ -41,6 +41,17 @@
 		*Run stemming.py after running preprocess.bat
 		--this will create files for rank after and before stemming to Stat_API/ 
 
++=====================+
+| POS Tagging Process |
++=====================+
+1.	Dependencies:
+	1.1 nltk library, by running command pip install nltk
+	
+2.	At root\pos_tagging folder:
+		*Run pos_tag.py
+		--read 10 randomly selected sentences in sentence.txt
+		--this will create a file containing POS tagging result (result.txt)
+
 +========================+
 | The Annotation Process |
 +========================+
