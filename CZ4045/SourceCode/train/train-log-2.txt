@@ -1,0 +1,174 @@
+CRFClassifier invoked on Sun Oct 23 08:24:12 SGT 2016 with arguments:
+   -prop train/train-2.prop
+usePrevSequences=true
+useClassFeature=true
+useTypeSeqs2=true
+useSequences=true
+wordShape=chris2useLC
+useTypeySequences=true
+useDisjunctive=true
+noMidNGrams=true
+serializeTo=train/api_mention-2.ser.gz
+maxNGramLeng=6
+useNGrams=true
+usePrev=true
+useNext=true
+maxLeft=1
+trainFile=train/train-2.tsv
+map=word=0,answer=1
+useWord=true
+useTypeSeqs=true
+numFeatures = 164722
+Time to convert docs to feature indices: 3.8 seconds
+numClasses: 3 [0=O,1=B-api_mention,2=I-api_mention]
+numDocuments: 1
+numDatums: 97572
+numFeatures: 164722
+Time to convert docs to data/labels: 3.0 seconds
+numWeights: 855570
+QNMinimizer called on double function of 855570 variables, using M = 25.
+               An explanation of the output:
+Iter           The number of iterations
+evals          The number of function evaluations
+SCALING        <D> Diagonal scaling was used; <I> Scaled Identity
+LINESEARCH     [## M steplength]  Minpack linesearch
+                   1-Function value was too high
+                   2-Value ok, gradient positive, positive curvature
+                   3-Value ok, gradient negative, positive curvature
+                   4-Value ok, gradient negative, negative curvature
+               [.. B]  Backtracking
+VALUE          The current function value
+TIME           Total elapsed time
+|GNORM|        The current norm of the gradient
+{RELNORM}      The ratio of the current to initial gradient norms
+AVEIMPROVE     The average improvement / current value
+EVALSCORE      The last available eval score
+
+Iter ## evals ## <SCALING> [LINESEARCH] VALUE TIME |GNORM| {RELNORM} AVEIMPROVE EVALSCORE
+
+Iter 1 evals 1 <D> [1113M 1.429E-5] 1.881E5 3.73s |1.686E4| {1.501E-1} 0.000E0 - 
+Iter 2 evals 6 <D> [3M 5.000E0] 1.700E5 4.89s |1.089E4| {9.694E-2} 5.310E-2 - 
+Iter 3 evals 8 <D> [M 1.000E0] 1.581E5 5.46s |7.509E3| {6.685E-2} 6.311E-2 - 
+Iter 4 evals 9 <D> [M 1.000E0] 1.539E5 6.08s |3.599E3| {3.204E-2} 5.553E-2 - 
+Iter 5 evals 10 <D> [M 1.000E0] 1.507E5 6.78s |2.442E3| {2.174E-2} 4.953E-2 - 
+Iter 6 evals 11 <D> [M 1.000E0] 1.475E5 7.28s |1.321E3| {1.176E-2} 4.580E-2 - 
+Iter 7 evals 12 <D> [M 1.000E0] 1.455E5 7.91s |1.262E3| {1.124E-2} 4.176E-2 - 
+Iter 8 evals 13 <D> [M 1.000E0] 1.431E5 8.50s |1.679E3| {1.495E-2} 3.923E-2 - 
+Iter 9 evals 14 <D> [M 1.000E0] 1.397E5 9.05s |9.562E2| {8.512E-3} 3.851E-2 - 
+Iter 10 evals 15 <D> [M 1.000E0] 1.333E5 9.59s |1.349E3| {1.201E-2} 4.106E-2 - 
+Iter 11 evals 16 <D> [M 1.000E0] 1.024E5 10.03s |1.988E3| {1.770E-2} 6.610E-2 - 
+Iter 12 evals 17 <D> [M 1.000E0] 8.065E4 10.99s |8.482E2| {7.551E-3} 9.606E-2 - 
+Iter 13 evals 18 <D> [M 1.000E0] 7.650E4 12.25s |5.755E2| {5.124E-3} 1.012E-1 - 
+Iter 14 evals 19 <D> [M 1.000E0] 6.462E4 13.01s |5.830E2| {5.190E-3} 1.333E-1 - 
+Iter 15 evals 20 <D> [1M 4.701E-1] 5.637E4 14.22s |1.471E3| {1.309E-2} 1.617E-1 - 
+Iter 16 evals 22 <D> [1M 2.988E-1] 4.702E4 15.35s |1.499E3| {1.334E-2} 2.095E-1 - 
+Iter 17 evals 24 <D> [M 1.000E0] 3.496E4 15.96s |1.645E3| {1.465E-2} 3.094E-1 - 
+Iter 18 evals 25 <D> [M 1.000E0] 3.126E4 16.77s |1.006E3| {8.955E-3} 3.468E-1 - 
+Iter 19 evals 26 <D> [M 1.000E0] 2.607E4 17.50s |6.268E2| {5.580E-3} 4.114E-1 - 
+Iter 20 evals 27 <D> [M 1.000E0] 2.149E4 18.08s |6.210E2| {5.528E-3} 3.764E-1 - 
+Iter 21 evals 28 <D> [M 1.000E0] 1.799E4 18.73s |4.591E2| {4.087E-3} 3.483E-1 - 
+Iter 22 evals 29 <D> [1M 1.973E-1] 1.604E4 19.71s |8.823E2| {7.854E-3} 3.769E-1 - 
+Iter 23 evals 31 <D> [1M 3.975E-1] 1.329E4 20.74s |5.173E2| {4.605E-3} 3.861E-1 - 
+Iter 24 evals 33 <D> [M 1.000E0] 1.154E4 21.34s |4.113E2| {3.661E-3} 3.887E-1 - 
+Iter 25 evals 34 <D> [M 1.000E0] 1.037E4 21.96s |4.217E2| {3.755E-3} 3.532E-1 - 
+Iter 26 evals 35 <D> [M 1.000E0] 9.420E3 22.54s |7.458E2| {6.640E-3} 2.711E-1 - 
+Iter 27 evals 36 <D> [M 1.000E0] 8.483E3 23.10s |3.642E2| {3.242E-3} 2.685E-1 - 
+Iter 28 evals 37 <D> [M 1.000E0] 7.711E3 23.71s |3.995E2| {3.557E-3} 2.381E-1 - 
+Iter 29 evals 38 <D> [1M 3.202E-1] 7.024E3 24.74s |3.339E2| {2.972E-3} 2.059E-1 - 
+Iter 30 evals 40 <D> [M 1.000E0] 6.054E3 25.33s |3.663E2| {3.261E-3} 1.972E-1 - 
+Iter 31 evals 41 <D> [M 1.000E0] 5.422E3 25.82s |2.829E2| {2.519E-3} 1.959E-1 - 
+Iter 32 evals 42 <D> [M 1.000E0] 4.800E3 26.39s |4.966E2| {4.421E-3} 1.769E-1 - 
+Iter 33 evals 43 <D> [M 1.000E0] 4.319E3 27.04s |5.006E2| {4.456E-3} 1.671E-1 - 
+Iter 34 evals 44 <D> [M 1.000E0] 3.786E3 27.64s |2.686E2| {2.391E-3} 1.740E-1 - 
+Iter 35 evals 45 <D> [M 1.000E0] 3.425E3 28.20s |5.558E2| {4.948E-3} 1.750E-1 - 
+Iter 36 evals 46 <D> [M 1.000E0] 3.008E3 28.75s |2.236E2| {1.990E-3} 1.821E-1 - 
+Iter 37 evals 47 <D> [M 1.000E0] 2.669E3 29.30s |1.264E2| {1.125E-3} 1.889E-1 - 
+Iter 38 evals 48 <D> [1M 2.862E-1] 2.424E3 30.61s |1.525E2| {1.357E-3} 1.898E-1 - 
+Iter 39 evals 50 <D> [2M 4.088E-1] 2.194E3 31.85s |1.435E2| {1.277E-3} 1.759E-1 - 
+Iter 40 evals 52 <D> [M 1.000E0] 1.926E3 32.61s |2.470E2| {2.199E-3} 1.816E-1 - 
+Iter 41 evals 53 <D> [M 1.000E0] 1.674E3 33.33s |1.579E2| {1.405E-3} 1.868E-1 - 
+Iter 42 evals 54 <D> [M 1.000E0] 1.496E3 34.08s |1.281E2| {1.141E-3} 1.886E-1 - 
+Iter 43 evals 55 <D> [M 1.000E0] 1.345E3 34.82s |3.403E2| {3.029E-3} 1.816E-1 - 
+Iter 44 evals 56 <D> [1M 4.558E-1] 1.249E3 36.34s |2.147E2| {1.912E-3} 1.742E-1 - 
+Iter 45 evals 58 <D> [M 1.000E0] 1.179E3 36.91s |1.280E2| {1.140E-3} 1.551E-1 - 
+Iter 46 evals 59 <D> [M 1.000E0] 1.115E3 37.63s |8.680E1| {7.728E-4} 1.394E-1 - 
+Iter 47 evals 60 <D> [M 1.000E0] 9.871E2 38.30s |3.392E2| {3.019E-3} 1.455E-1 - 
+Iter 48 evals 61 <D> [M 1.000E0] 9.087E2 38.93s |1.484E2| {1.321E-3} 1.415E-1 - 
+Iter 49 evals 62 <D> [M 1.000E0] 8.481E2 39.62s |1.556E2| {1.386E-3} 1.270E-1 - 
+Iter 50 evals 63 <D> [M 1.000E0] 7.890E2 40.40s |9.508E1| {8.465E-4} 1.121E-1 - 
+Iter 51 evals 64 <D> [2M 5.128E-1] 7.476E2 41.96s |1.112E2| {9.897E-4} 1.002E-1 - 
+Iter 52 evals 66 <D> [M 1.000E0] 7.131E2 42.85s |1.786E2| {1.590E-3} 8.855E-2 - 
+Iter 53 evals 67 <D> [M 1.000E0] 6.804E2 43.56s |6.291E1| {5.601E-4} 8.362E-2 - 
+Iter 54 evals 68 <D> [M 1.000E0] 6.497E2 44.36s |6.172E1| {5.494E-4} 8.146E-2 - 
+Iter 55 evals 69 <D> [M 1.000E0] 6.388E2 45.03s |2.222E2| {1.978E-3} 7.452E-2 - 
+Iter 56 evals 70 <D> [M 1.000E0] 6.184E2 45.66s |1.842E2| {1.640E-3} 5.964E-2 - 
+Iter 57 evals 71 <D> [M 1.000E0] 5.924E2 46.25s |4.569E1| {4.067E-4} 5.339E-2 - 
+Iter 58 evals 72 <D> [M 1.000E0] 5.821E2 46.92s |3.170E1| {2.822E-4} 4.571E-2 - 
+Iter 59 evals 73 <D> [M 1.000E0] 5.637E2 47.53s |3.769E1| {3.355E-4} 3.997E-2 - 
+Iter 60 evals 74 <D> [M 1.000E0] 5.482E2 48.17s |3.281E1| {2.921E-4} 3.637E-2 - 
+Iter 61 evals 75 <D> [1M 3.991E-1] 5.377E2 49.36s |5.315E1| {4.731E-4} 3.263E-2 - 
+Iter 62 evals 77 <D> [M 1.000E0] 5.237E2 50.01s |4.292E1| {3.821E-4} 2.992E-2 - 
+Iter 63 evals 78 <D> [M 1.000E0] 5.195E2 50.73s |4.920E1| {4.380E-4} 2.506E-2 - 
+Iter 64 evals 79 <D> [M 1.000E0] 5.129E2 51.33s |2.136E1| {1.902E-4} 2.454E-2 - 
+Iter 65 evals 80 <D> [M 1.000E0] 5.073E2 52.01s |3.651E1| {3.250E-4} 2.188E-2 - 
+Iter 66 evals 81 <D> [M 1.000E0] 5.022E2 52.68s |3.793E1| {3.377E-4} 1.797E-2 - 
+Iter 67 evals 82 <D> [M 1.000E0] 4.989E2 53.34s |5.079E1| {4.522E-4} 1.666E-2 - 
+Iter 68 evals 83 <D> [1M 2.888E-1] 4.967E2 54.55s |2.909E1| {2.590E-4} 1.348E-2 - 
+Iter 69 evals 85 <D> [M 1.000E0] 4.945E2 55.32s |2.084E1| {1.855E-4} 1.086E-2 - 
+Iter 70 evals 86 <D> [M 1.000E0] 4.923E2 55.98s |1.779E1| {1.584E-4} 9.225E-3 - 
+Iter 71 evals 87 <D> [M 1.000E0] 4.898E2 56.71s |1.822E1| {1.622E-4} 6.930E-3 - 
+Iter 72 evals 88 <D> [1M 3.031E-1] 4.885E2 57.96s |3.620E1| {3.223E-4} 6.341E-3 - 
+Iter 73 evals 90 <D> [M 1.000E0] 4.865E2 58.75s |3.057E1| {2.721E-4} 5.425E-3 - 
+Iter 74 evals 91 <D> [M 1.000E0] 4.851E2 59.43s |1.594E1| {1.419E-4} 4.585E-3 - 
+Iter 75 evals 92 <D> [M 1.000E0] 4.839E2 60.10s |1.609E1| {1.433E-4} 3.786E-3 - 
+Iter 76 evals 93 <D> [M 1.000E0] 4.825E2 60.79s |2.592E1| {2.308E-4} 3.411E-3 - 
+Iter 77 evals 94 <D> [M 1.000E0] 4.812E2 61.37s |2.623E1| {2.335E-4} 3.228E-3 - 
+Iter 78 evals 95 <D> [M 1.000E0] 4.802E2 62.05s |2.973E1| {2.647E-4} 2.986E-3 - 
+Iter 79 evals 96 <D> [M 1.000E0] 4.789E2 62.88s |1.417E1| {1.262E-4} 2.780E-3 - 
+Iter 80 evals 97 <D> [M 1.000E0] 4.776E2 63.68s |9.328E0| {8.304E-5} 2.547E-3 - 
+Iter 81 evals 98 <D> [M 1.000E0] 4.763E2 64.39s |2.747E1| {2.445E-4} 2.572E-3 - 
+Iter 82 evals 99 <D> [M 1.000E0] 4.746E2 65.03s |1.795E1| {1.598E-4} 2.507E-3 - 
+Iter 83 evals 100 <D> [M 1.000E0] 4.734E2 65.62s |1.233E1| {1.098E-4} 2.475E-3 - 
+Iter 84 evals 101 <D> [M 1.000E0] 4.721E2 66.30s |2.671E1| {2.378E-4} 2.486E-3 - 
+Iter 85 evals 102 <D> [M 1.000E0] 4.716E2 66.89s |3.417E1| {3.042E-4} 2.304E-3 - 
+Iter 86 evals 103 <D> [M 1.000E0] 4.703E2 67.55s |1.144E1| {1.018E-4} 2.315E-3 - 
+Iter 87 evals 104 <D> [M 1.000E0] 4.696E2 68.23s |6.973E0| {6.208E-5} 2.259E-3 - 
+Iter 88 evals 105 <D> [M 1.000E0] 4.687E2 68.89s |1.514E1| {1.348E-4} 2.177E-3 - 
+Iter 89 evals 106 <D> [1M 1.702E-1] 4.685E2 70.09s |1.411E1| {1.256E-4} 1.951E-3 - 
+Iter 90 evals 108 <D> [M 1.000E0] 4.680E2 70.67s |8.376E0| {7.456E-5} 1.777E-3 - 
+Iter 91 evals 109 <D> [M 1.000E0] 4.675E2 71.25s |6.097E0| {5.428E-5} 1.509E-3 - 
+Iter 92 evals 110 <D> [M 1.000E0] 4.669E2 71.89s |8.258E0| {7.352E-5} 1.377E-3 - 
+Iter 93 evals 111 <D> [2M 5.217E-1] 4.666E2 73.03s |1.068E1| {9.508E-5} 1.189E-3 - 
+Iter 94 evals 113 <D> [1M 4.696E-1] 4.664E2 74.31s |1.607E1| {1.431E-4} 1.123E-3 - 
+Iter 95 evals 115 <D> [M 1.000E0] 4.662E2 74.96s |1.548E1| {1.378E-4} 8.759E-4 - 
+Iter 96 evals 116 <D> [M 1.000E0] 4.659E2 75.58s |5.211E0| {4.639E-5} 7.806E-4 - 
+Iter 97 evals 117 <D> [M 1.000E0] 4.658E2 76.31s |5.435E0| {4.838E-5} 6.351E-4 - 
+Iter 98 evals 118 <D> [M 1.000E0] 4.655E2 77.09s |1.005E1| {8.943E-5} 6.440E-4 - 
+Iter 99 evals 119 <D> [1M 1.788E-1] 4.654E2 78.30s |8.115E0| {7.225E-5} 5.582E-4 - 
+Iter 100 evals 121 <D> [M 1.000E0] 4.651E2 79.30s |5.208E0| {4.636E-5} 5.183E-4 - 
+Iter 101 evals 122 <D> [M 1.000E0] 4.650E2 80.15s |3.939E0| {3.507E-5} 4.280E-4 - 
+Iter 102 evals 123 <D> [M 1.000E0] 4.648E2 81.02s |4.217E0| {3.755E-5} 3.905E-4 - 
+Iter 103 evals 124 <D> [M 1.000E0] 4.645E2 81.98s |4.569E0| {4.067E-5} 3.914E-4 - 
+Iter 104 evals 125 <D> [1M 3.755E-1] 4.644E2 83.58s |6.666E0| {5.935E-5} 3.794E-4 - 
+Iter 105 evals 127 <D> [M 1.000E0] 4.642E2 84.29s |4.038E0| {3.595E-5} 3.776E-4 - 
+Iter 106 evals 128 <D> [M 1.000E0] 4.641E2 85.16s |5.534E0| {4.927E-5} 3.692E-4 - 
+Iter 107 evals 129 <D> [M 1.000E0] 4.639E2 86.11s |5.309E0| {4.726E-5} 3.300E-4 - 
+Iter 108 evals 130 <D> [M 1.000E0] 4.639E2 86.73s |8.120E0| {7.228E-5} 3.221E-4 - 
+Iter 109 evals 131 <D> [M 1.000E0] 4.638E2 87.34s |5.367E0| {4.778E-5} 2.884E-4 - 
+Iter 110 evals 132 <D> [M 1.000E0] 4.637E2 88.04s |6.834E0| {6.084E-5} 2.663E-4 - 
+Iter 111 evals 133 <D> [M 1.000E0] 4.636E2 88.67s |6.207E0| {5.526E-5} 2.445E-4 - 
+Iter 112 evals 134 <D> [M 1.000E0] 4.635E2 89.28s |3.392E0| {3.019E-5} 2.165E-4 - 
+Iter 113 evals 135 <D> [M 1.000E0] 4.634E2 90.13s |2.566E0| {2.284E-5} 2.124E-4 - 
+Iter 114 evals 136 <D> [M 1.000E0] 4.633E2 91.04s |4.546E0| {4.047E-5} 1.832E-4 - 
+Iter 115 evals 137 <D> [1M 4.185E-1] 4.633E2 92.52s |4.513E0| {4.018E-5} 1.733E-4 - 
+Iter 116 evals 139 <D> [1M 3.254E-1] 4.632E2 93.85s |5.553E0| {4.943E-5} 1.521E-4 - 
+Iter 117 evals 141 <D> [M 1.000E0] 4.632E2 94.80s |2.282E0| {2.031E-5} 1.527E-4 - 
+Iter 118 evals 142 <D> [M 1.000E0] 4.631E2 95.60s |2.257E0| {2.009E-5} 1.377E-4 - 
+Iter 119 evals 143 <D> [M 1.000E0] 4.631E2 96.22s |4.008E0| {3.568E-5} 1.356E-4 - 
+Iter 120 evals 144 <D> [2M 5.194E-1] 4.631E2 97.29s |4.742E0| {4.222E-5} 1.236E-4 - 
+Iter 121 evals 146 <D> [M 1.000E0] 4.630E2 97.99s |4.091E0| {3.642E-5} 1.133E-4 - 
+Iter 122 evals 147 <D> [M 1.000E0] 4.630E2 98.62s
+QNMinimizer terminated due to average improvement: | newest_val - previous_val | / |newestVal| < TOL 
+Total time spent in optimization: 98.62s
+CRFClassifier training done [106.5 sec].
+Serializing classifier to train/api_mention-2.ser.gz...done.

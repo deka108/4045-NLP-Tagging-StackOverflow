@@ -1,0 +1,217 @@
+All the paths used here are relative to SourceCode/ directory. The explanation regarding the output files are included in the report.
+
++============================+
+| 1. Data Collection Process |
++============================+
+
+The collection process was previously like this:
+	1. Dependencies:
+		1.1 Python Requests library: pip install requests
+		1.2 StackExchange API: https://api.stackexchange.com/2.2
+
+	2. Download Data Set
+		run python filter.py
+		-- this generates top 100 question threads (including answers) for every half year from 2011-2015 in JSON format.
+
+	3. Select posts for the experiment using extract.py. 
+
+The final selected and extracted posts are put under api_mention/ directory. The format of the data file is a JSON of posts. We have these files here because we already picked the posts and extracted the post id and its post body, which can't just simply be downloaded over the internet because of manual extraction. Also, these files must exist for the preprocessing script to run.
+
+Output: 
+{
+    "items": [
+        {
+            "body": <post_body>,
+            "link": <post_link>,
+            "post_type": "question" or "answer",
+            "question_id": <question_id>,
+            "answer_id": <answer_id> --> only exist if it is an answer post
+            "tags": "java",
+            "title": <post_title>
+        },
+ }
+ items contain a list of post items
+
++==================+
+| 2. Preprocessing |
++==================+
+Dependencies:
+	BeautifulSoup: pip install beautifulsoup4
+
+At root folder:
+	* Run preprocess.bat
+
+It will populate api_preprocessed/ with preprocessed post in text files for each half year from 2011-2015. Input to preprocess is the JSON files under api_mention/ directory, and the output of the preprocessed text data is a text file without HTML tags.
+
+Output: (2011-01-01-2011-06-30.txt)
+Question-<question_id>, [answer-answerid]
+<cleaned_post_text>
+
++======================+
+| 3. Statistic Process |
++======================+
+1.	Dependencies:
+	1.1 pandas library, by running command pip install pandas
+	1.2 matplotlib library, by running command pip install matlplotlib
+	
+2.	At root folder:
+		*Run statistic_new.py after preprocess.bat is already run
+		--this will create histogram for answers' distribution, length of post, number of thread files to Stat_API/ 
+
+Output: 
+	- histogram: shows the number of answer posts with respect to question threads
+	- num_of_thread.txt - shows the number of posts with respect to question threads
+	<post_count>------Question-<question_id>
+	- post_length.txt - shows the number of words in each post
+
++=====================+
+| 4. Stemming Process |
++=====================+
+1.	Dependencies:
+	1.1 Snowball stemmer, from nltk library, by running command pip install snowballstemmer
+	1.2 stopwords, from nltk library, by running command nltk.download('stopwords') in the script
+	
+2.	At root folder:
+		*Run stemming.py after preprocess.bat is already run
+		-- this will create files for most frequent word rank to Stat_API/
+		-- for ranking before stemming, change the input after inside the script into False
+		-- otherwise, keep after equals to True for ranking after stemming 
+
+Output:
+	- stemmed_before.txt & stemmed_after.txt: top 20 frequent words appearing in the posts before and after stemming
+
++========================+
+| 5. POS Tagging Process |
++========================+
+1.	Dependencies:
+	1.1 nltk library, by running command pip install nltk
+	
+2.	At root\pos_tagging folder:
+		*Run pos_tag.py after preprocess.bat is already run
+		--read 10 randomly selected sentences in sentence.txt
+		--this will create a file containing POS tagging result (result.txt)
+
+Output: result.txt
+	- List of pair of words consist of word token and its POS tags
+	[(Token1, POS1), (Token2, POS2), ..., (LastToken, LastPOStag)]
+
++===========================+
+| 6. The Annotation Process |
++===========================+
+Essentially, the annotation process process is done to generate BIO labels for every token of each post inside the text files. The preprocessed text under api_preprocessed/ directory is used as the input of the annotation process. To ease the annotation process, we annotated the text used Brat tool and run a converter to generate the BIO labels.  The final BIO labels for each preprocessed text can be seen inside the conll files under brat/data/stackoverflow/ directory. These conll files are used for the Stanford NER classifier.
+
+Using Brat annotation tool:
+1. Dependencies:
+	1.1 Git clone from https://github.com/nlplab/brat
+	1.2 Use python2, Brat tool is implemented using Python 2.7.11
+
+2. Setup:
+	2.1 Copy brat files under brat/tools/ under cloned brat repository,
+		eg: brat/tools/* is copied into cloned-brat-repo/tools
+
+		There are two files available in this folder:
+		- anntoconll_utf8.py -> converts ann labels into tab separated BIO format
+		- BIOtostandoff_utf8.py -> converts BIO labels into ann format of BRAT
+
+	2.2 Similarly, copy all brat files under data/ into the cloned brat repository,
+		eg: brat/data is copied under cloned-brat-repo/data
+
+		There are three subdirectories exist in this folder:
+		- stackoverflow: contains the original preprocessed text files and the manual api annotation
+
+		- classifier: contains 4 text files and the predicted annotation labels generated by the classifier corresponding to the 4-fold test data
+
+		- gold: contains 4 text files and the gold standard for the annotation labels (manually annotated by humans) corresponding to the 4-fold test data
+
+	2.3. Run cloned-brat-repo/.install.sh
+	2.4. Run python2 standalone.py to run the server:
+		python2 standalone.py [optional-port-number]
+		
+		Default port number is 8001
+
+3. Annotation process
+	3.1. Open chrome, navigate to localhost:8001, access to StackOverflow collection and choose a text data
+		http://localhost:8001/index.xhtml#/stackoverflow/
+		
+	3.2. Annotate the api mention in the text
+	3.3. Run ./anntoconll_utf8.sh to convert the brat .ann files to .conll and generates tokenize words with their respective BIO tags. Conll file is  a tabbed separated file consist of key term in the first column and the I, O, B tags in the second column. 
+
+Sample Output: (brat/data/stackoverflow/2011-01-01-2011-06-30.conll)
+	O	114	115	I
+	O	116	121	tried
+	B-api_mention	122	126	trim
+	I-api_mention	126	127	(
+	I-api_mention	127	131	args
+	I-api_mention	131	132	)
+	O	133	136	but
+
+The first column represents the BIO label, the second and third column represents the start & end position of the label inside the text, and the last column represents the token. A token is either a non-whitespaced consecutive alphanumeric characters or a single punctuation.
+
++=============+
+| 7. Training |
++=============+
+	Requirements:
+		* JDK 1.8
+		* Stanford NER (http://nlp.stanford.edu/software/CRF-NER.shtml#Download)
+
+	- Windows
+		At root folder:
+			* Run split_all.bat: aggregate all the text files, shuffle them and splits them into 4 folds
+			* Run train.bat
+			* Run test.bat
+
+Output:
+	- split_all.bat generates train/train-*.tsv, train/test-*.tsv: represents the 4 training and testing folds of tab separated values
+		Sample output:
+
+			Collections	B-api_mention
+			.	I-api_mention
+			parallelStream	I-api_mention
+			(	I-api_mention
+			args	I-api_mention
+			)	I-api_mention
+			is	O
+			valuable	O
+
+		The first column represents the token, the second label represents the BIO label for that token in the gold standard used for training the NER classifier.
+
++=========================+
+| 8. Evaluation Analysis  | 
++=========================+
+	Results and confusion matrices can be found in:
+		* %ROOT%\train\result-0.tsv
+		* %ROOT%\train\score-0.txt
+
+		* %ROOT%\train\result-1.tsv
+		* %ROOT%\train\score-1.txt
+
+		* %ROOT%\train\result-2.tsv
+		* %ROOT%\train\score-2.txt
+
+		* %ROOT%\train\result-3.tsv
+		* %ROOT%\train\score-3.txt
+
+	result-*.tsv contains list of tokens with gold standard annotation and predicted annotation
+	score-*.txt contains the confusion matrix for respective fold
+
+Sample Output:
+	- train/result-0.tsv
+		Use	O	O
+		StringBulderObj	B-api_mention	B-api_mention
+		.	I-api_mention	I-api_mention
+		setLength	I-api_mention	I-api_mention
+		(	I-api_mention	I-api_mention
+		args	I-api_mention	I-api_mention
+		)	I-api_mention	I-api_mention
+		.	O	O
+
+	First column represents the token, second column represents the label in the Gold Standard and the third column represents the predicted BIO label for the token made by the classifier.
+
+	- train/score-0.tsv - contains the scores of each Classifier model performance.
+
+Diff and Compare the Classification Results on Brat
+	-* make sure that the files under classifier/ and gold/ from brat/data are copied to brat directory (see step 6.2.2)
+
+	1. Run Brat Server
+	2. Open http://localhost:8001/diff.xhtml#/gold/test-0?diff=/classifier
+	The right side will show the Gold Standard annotation and the left side will show the Classifier annotation results

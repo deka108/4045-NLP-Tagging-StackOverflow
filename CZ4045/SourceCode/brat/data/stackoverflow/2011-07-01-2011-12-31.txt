@@ -1,0 +1,215 @@
+Question-6841333
+If I run the following program, which parses two date strings referencing times one second apart and compares them: #pre The output is: 353 Why is ld4-ld3 not 1 (as I would expect from the one-second difference in the times), but 353 ? If I change the dates to times one second later: #pre Then ld4-ld3 will be 1 . Java version: #pre Timezone( TimeZone.getDefault(args) ): #pre
+
+Question-7693324
+I got a simple question in Java: How can I convert a String that was obtained by Long.toString(args) to long ?
+
+Question-7520432
+I wanted to clarify if I understand this correctly: #li == -> is a reference comparison, i.e. both objects point to the same memory location #li .equals(args) -> evaluates to the comparison of values in the objects Am I correct in my understanding ?
+
+Question-7348711
+Which of the following is the best and most portable way to get the hostname of the current computer in Java? Runtime.getRuntime(args).exec(args) vs InetAddress.getLocalHost(args).getHostName(args)
+
+Question-6667243
+What is the best way to use the values stored in an Enum as String literals? For example: #pre Then later I could use Mode.mode1 to return its string representation as mode1 . Without having to keep calling Mode.model.toString(args) .
+
+Question-8189466
+Note: I am aware of the Iterator#remove(args) method. In the following code sample, I don't understand why the List.remove in main method throws ConcurrentModificationException but not in the remove method. #pre
+
+Question-7032070
+Assuming that arraylist is defined as ArrayList<T> arraylist , is arraylist.removeAll(arraylist) equivalent to arraylist.clear() ? If so, can I assume that the clear(args) method is more efficient for emptying the array list? Are there any caveats in using arraylist.removeAll(args) instead of arraylist.clear(args) ?
+
+Question-6652687
+#blockquote Is there a convenience method to strip any leading or trailing spaces from a Java String? Something like: #pre Result: no spaces:keep this myString.replace(args) would replace the space between keep and this. Thanks
+
+Question-6608795
+I wonder what the difference is between Class.getResource(args) and ClassLoader.getResource(args) ? edit: I especially want to know if any caching is involved on file/directory level. As in "are directory listings cached in the Class version?" AFAIK the following should essentially do the same, but they are not: #pre I discovered this when fiddling with some report generation code that creates a new file in WEB-INF/classes/ from an existing file in that directory. When using the method from Class, I could find files that were there at deployment using getClass(args).getResource(args) , but when trying to fetch the newly created file, I recieved a null object. Browsing the directory clearly shows that the new file is there. The filenames were prepended with a forward slash as in "/myFile.txt". The ClassLoader version of getResource(args) on the other hand did find the generated file. From this experience it seems that there is some kind of caching of the directory listing going on. Am I right, and if so, where is this documented? From the API docs on Class.getResource(args) #blockquote To me, this reads "Class.getResource is really calling its own classloader's getResource()". Which would be the same as doing getClass(args).getClassLoader(args).getResource(args) . But it is obviously not. Could someone please provide me with some illumination into this matter?
+
+Question-7935858
+I have prepared a simple code snippet in order to separate the erroneous portion from my web application. #pre I have tested it while building a web application JSF. I just want to know why in the above code temp.split(args) does not work. The statement, System.out.println(args); displays nothing on the console means that it doesn't go through the loop. When I change the argument of the temp.split(args) method to other characters, It works just fine as usual. What might be the problem?
+
+Question-6841333, answer-20906129
+As explained by others, there's a time discontinuity there. There are two possible timezone offsets for 1927-12-31 23:54:08 at Asia/Shanghai , but only one offset for 1927-12-31 23:54:07 . So, depending on which offset is used, there's either a one second difference or a 5 minutes and 53 seconds difference. This slight shift of offsets, instead of the usual one-hour daylight savings (summer time) we are used to, obscures the problem a bit. Note that the 2013a update of the timezone database moved this discontinuity a few seconds earlier, but the effect would still be observable. The new java.time package on Java 8 let use see this more clearly, and provide tools to handle it. Given: #pre Then durationAtEarlierOffset will be one second, while durationAtLaterOffset will be five minutes and 53 seconds. Also, these two offsets are the same: #pre But these two are different: #pre You can see the same problem comparing 1927-12-31 23:59:59 with 1928-01-01 00:00:00 , though, in this case, it is the earlier offset that produce the longer divergence, and it is the earlier date that has two possible offsets. Another way to approach this is to check whether there's a transition going on. We can do this like this: #pre You can check whether the transition is an overlap - in which case there's more than one valid offset for that date/time - or a gap - in which case that date/time is not valid for that zone id - by using the isOverlap(args) and isGap(args) methods on zot4 . I hope this helps people handle this sort of issue once Java 8 becomes widely available, or to those using Java 7 who adopt the JSR 310 backport.
+
+Question-8172420, answer-8172439
+You can use Character.toString(char) . Note that this method simply returns a call to String.valueOf(char) , which also works. As others have noted, string concatenation works as a shortcut as well: String s = StringLiteral + CharLiteral; But this compiles down to: String s = new StringBuilder(args).append(args).append(args).toString(args); which is less efficient because the StringBuilder is backed by a char[] (over-allocated by StringBuilder() to 16 ), only for that array to be defensively copied by the resulting String . String.valueOf(args) "gets in the back door" by wrapping the char in a single-element array and passing it to the package private constructor String(char[], boolean) , which avoids the array copy.
+
+Question-8172420, answer-8172444
+Try this: Character.toString(args) or just this: aChar + StringLiteral
+
+Question-8172420, answer-15633542
+Nice question. I've got of the following five 6 methods to do it. #pre #blockquote String.valueOf(args) invokes new String(args) , which in turn sets the value char array. #pre On the other hand String.valueOf(args) invokes the following package private constructor. #pre Source code from String.java in Java 8 source code #blockquote #li Java :: How to convert primitive char to String in Java #li How to convert Char to String in Java with Example
+
+Question-8172420, answer-32174377
+We have various ways to convert a char to String . One way is to make use of static method toString(args) in Character class: #pre Actually this toString method internally makes use of valueOf method from String class which makes use of char array: #pre So second way is to use this directly: String str2 = String.valueOf(args); This valueOf method in String class makes use of char array: #pre So the third way is to make use of an anonymous array to wrap a single character and then passing it to String constructor: String str4 = new String(args); The fourth way is to make use of concatenation: String str3 = StringLiteral + ch; This will actually make use of append method from StringBuilder class which is actually preferred when we are doing concatenation in a loop.
+
+Question-6802483, answer-6802523
+There is no direct way to do this - Java has no Map literals (yet - I think they were proposed for Java 8). Some people like this: #pre This creates an anonymous subclass of HashMap, whose instance initializer puts these values. (By the way, a map can't contain twice the same value, your second put will overwrite the first one. I'll use different values for the next examples.) The normal way would be this (for a local variable): #pre If your test map is an instance variable, put the initialization in a constructor or instance initializer: #pre If your test map is a class variable, put the initialization in a static initializer: #pre If you want your map to never change, you should after the initialization wrap your map by Collections.unmodifiableMap(args) . You can do this in a static initializer too: #pre (I'm not sure if you can now make test final ... try it out and report here.)
+
+Question-7488643, answer-7488669
+Two steps: #li String [] items = commaSeparated.split(args); #li List<T> container = Arrays.asList(args);
+
+Question-7488643, answer-7488683
+You can first split them using String.split(args) , and then convert the returned String array to an ArrayList using Arrays.asList(args)
+
+Question-7488643, answer-7488710
+Arrays.asList returns a fixed-size List backed by the array. If you want a normal mutable java.util.ArrayList you need to do this: List<T> list = new ArrayList<T>(args); Or, using Guava : List<T> list = Lists.newArrayList(args); Using a Splitter gives you more flexibility in how you split the string and gives you the ability to, for example, skip empty strings in the results and trim results. It also has less weird behavior than String.split as well as not requiring you to split by regex (that's just one option).
+
+Question-7693324, answer-7693341
+To convert a String to a Long (object), use Long.valueOf(args).longValue(args); See link
+
+Question-7520432, answer-7520464
+In general, the answer to your question is "yes", but... #li equals will only compare what it is written to compare, no more, no less. #li if a class does not override the equals method, then it defaults to the equals(args) method of the closest parent class that has overridden this method. #li If no parent classes have provided an override, then it defaults to the method from the ultimate parent class, Object, and so you're left with the Object#equals(args) method. Per the Object API this is the same as == ; that is, it returns true if and only if both variables refer to the same object, if their references are one and the same. Thus you will be testing for object equality and not functional equality . #li Always remember to override hashCode if you override equals so as not to "break the contract". As per the API, the result returned from the hashCode(args) method for two objects must be the same if their equals methods shows that they are equivalent. The converse is not necessarily true.
+
+Question-7520432, answer-7521675
+Just remember that .equals(args) has to be implemented by the class you are trying to compare. Otherwise, there isn't much of a point; the version of the method for the Object class does the same thing as the comparison operation: Object#equals . The only time you really want to use the comparison operator for objects is wen you are comparing Enums. This is because there is only one instance of an Enum value at a time. For instance, given the enum enum FooEnum {A, B, C} You will never have more than one instance of A at a time, and the same for B and C . This means that you can actually write a method like so: #pre And you will have no problems whatsoever.
+
+Question-7520432, answer-27478241
+== can be used in many object types but you can use Object.equals for any type , especially Strings and Google Map Markers.
+
+Question-7520432, answer-29226136
+Also note that .equals(args) normally contains == for testing as this is the first thing you would wish to test for if you wanted to test if two objects are equal. And == actually does look at values for primitive types, for objects it checks the reference.
+
+Question-7520432, answer-35399386
+The String pool (aka interning ) and Integer pool blur the difference further, and may allow you to use == for objects in some cases instead of .equals This can give you greater performance (?), at the cost of greater complexity. E.g.: #pre Complexity tradeoff: the following may surprise you: #pre I advise you to stay away from such micro-optimization, and always use .equals for objects, and == for primitives: #pre
+
+Question-7520432, answer-36875991
+Basically, == compares if two objects have the same reference on the heap, so unless two references are linked to the same object, this comparison will be false. equals(args) is a method inherited from Object class. This method by default compares if two objects have the same referece. It means: object1.equals(args) <=> object1 == object2 However, if you want to establish equality between two objects of the same class you should override this method. It is also very important to override the method hashCode(args) if you have overriden equals(args) . Implement hashCode(args) when establishing equality is part of the Java Object Contract. If you are working with collections, and you haven't implemented hashCode(args) , Strange Bad Things could happen: #pre null will be printed after executing the previous code if you haven't implemented hashCode(args) .
+
+Question-6992608, answer-6992643
+There's no built in type for ConcurrentHashSet because you can always derive a set from a map. Since there are many types of maps, you use a method to produce a set from a given map (or map class). Prior to Java 8, you produce a concurrent hash set backed by a concurrent hash map, by using Collections.newSetFromMap(map) In Java 8 (pointed out by @Matt), you can get a concurrent hash set view via ConcurrentHashMap.newKeySet() . This is a bit simpler than the old newSetFromMap which required you to pass in an empty map object. But it is specific to ConcurrentHashMap . Anyway, the Java designers could have created a new set interface every time a new map interface was created, but that pattern would be impossible to enforce when third parties create their own maps. It is better to have the static methods that derive new sets; that approach always works, even when you create your own map implementations.
+
+Question-6992608, answer-26764904
+As pointed by this the best way to obtain a concurrency-able HashSet is by means of Collections.synchronizedSet(args) Set s = Collections.synchronizedSet(args); This worked for me and I haven't seen anybody really pointing to it. EDIT This is less efficient than the currently aproved solution, as Eugene points out, since it just wraps your set into a synchronized decorator, while a ConcurrentHashMap actually implements low-level concurrency and it can back your Set just as fine. So thanks to Mr. Stepanenkov for making that clear. #a
+
+Question-7438612, answer-7438613
+Replace will replace all instances of a letter. All you need to do is use substring() : #pre
+
+Question-7569335, answer-39329245
+As others have pointed out the preferred way is to use: new StringBuilder(args).reverse(args).toString(args) but if you want to implement this by youself, i'am afraid that the rest of responses have flaws. The reason is that String represent a list of Unicode points, encoded in a char[] array according to the variable-length encoding: UTF-16 . This means some code points use a single element of the array (one code unit) but others use two of them, so there might be pairs of characters that must be treated as a single unit (consecutive "high" and "low" surrogates) #pre
+
+Question-7655127, answer-7655177
+String text = String.copyValueOf(args); or String text = String.valueOf(args); is arguably better (encapsulates the new String call).
+
+Question-7348711, answer-7353205
+InetAddress.getLocalHost(args).getHostName(args) is the more portable way. exec(args) actually calls out to the operating system to execute the hostname command. Here are a couple other related answers on SO: #li Java current machine name and logged in user? #li Get DNS name of local machine as seen by a remote machine EDIT: You should take a look at A.H.'s answer or Arnout Engelen's answer for details on why this might not work as expected, depending on your situation. As an answer for this person who specifically requested portable, I still think getHostName(args) is fine, but they bring up some good points that should be considered.
+
+Question-7348711, answer-7353473
+InetAddress.getLocalHost(args).getHostName(args) is better (as explained by Nick), but still not very good One host can be known under many different hostnames. Usually you'll be looking for the hostname your host has in a specific context. For example, in a web application, you might be looking for the hostname used by whoever issued the request you're currently handling. How to best find that one depends on which framework you're using for your web application. In some kind of other internet-facing service, you'll want the hostname your service is available through from the 'outside'. Due to proxies, firewalls etc this might not even be a hostname on the machine your service is installed on - you might try to come up with a reasonable default, but you should definitely make this configurable for whoever installs this.
+
+Question-7348711, answer-7800008
+Strictly speaking - you have no choice but calling either hostname(args) or - on Unix gethostname(args) . This is the name of your computer. Any attempt to determine the hostname by an IP address like this InetAddress.getLocalHost(args).getHostName(args) is bound to fail in some circumstances: #li The IP address might not resolve into any name. Bad DNS setup, bad system setup or bad provider setup may be the reason for this. #li A name in DNS can have many aliases called CNAMEs. These can only be resolved in one direction properly: name to address. The reverse direction is ambiguous. Which one is the "official" name? #li A host can have many different IP addresses - and each address can have many different names. Two common cases are: One ethernet port has several "logical" IP addresses or the computer has several ethernet ports. It is configurable whether they share an IP or have different IPs. This is called "multihomed". #li One Name in DNS can resolve to several IP Addresses. And not all of those addresses must be located on the same computer! (Usecase: A simple form of load-balancing) #li Let's not even start talking about dynamic IP addresses. Also don't confuse the name of an IP-address with the name of the host (hostname). A metaphor might make it clearer: #blockquote This illustrates it pretty much I think. The good news is: The real hostname is usually not necessary. In most cases any name which resolves into an IP address on this host will do. (The stranger might enter the city by Northgate, but helpful locals translate the "2nd left" part.) If the remaining corner cases you must use the definitive source of this configuration setting - which is the C function gethostname(args) . That function is also called by the program hostname .
+
+Question-7348711, answer-20793241
+Environment variables may also provide a useful means -- COMPUTERNAME on Windows, HOSTNAME on most modern Unix/Linux shells. See: #a I'm using these as "supplementary" methods to InetAddress.getLocalHost(args).getHostName(args) , since as several people point out, that function doesn't work in all environments. Runtime.getRuntime(args).exec(args) is another possible supplement. At this stage, I haven't used it. #pre
+
+Question-7348711, answer-28043703
+As others have noted, getting the hostname based on DNS resolution is unreliable. Since this question is unfortunately still relevant in 2016 , I'd like to share with you my network-independent solution, with some test runs on different systems. The following code tries to do the following: #li On Windows #li Read the COMPUTERNAME environment variable through System.getenv(args) . #li Execute hostname.exe and read the response #li On Linux #li Read the HOSTNAME environment variable through System.getenv(args) #li Execute hostname and read the response #li Read /etc/hostname (to do this I'm executing cat since the snippet already contains code to execute and read. Simply reading the file would be better, though). The code: #pre Results for different operating systems: OpenSuse 13.1 #pre Ubuntu 14.04 LTS This one is kinda strange since echo $HOSTNAME returns the correct hostname, but System.getenv(args) does not: #pre EDIT: According to legolas108 , System.getenv(args) works on Ubuntu 14.04 if you run export HOSTNAME before executing the Java code. Windows 7 #pre The machine names have been replaced but I kept the capitalization and structure. Note the extra newline when executing hostname , you might have to take it into account in some cases.
+
+Question-8098953, answer-8103083
+The first thing to keep in mind is that Java ternary operators have a "type", and that this is what the compiler will determine and consider no matter what the actual/real types of the second or third parameter are. Depending on several factors the ternary operator type is determined in different ways as illustrated in the Java Language Specification 15.26 In the question above we should consider the last case: #blockquote This is by far the most complex case once you take a look at applying capture conversion (§5.1.10) and most of all at lub(T1, T2) . In plain English and after an extreme simplification we can describe the process as calculating the "Least Common Superclass" (yes, think of the LCM) of the second and third parameters. This will give us the ternary operator "type". Again, what I just said is an extreme simplification (consider classes that implement multiple common interfaces). For example, if you try the following: #pre You'll notice that resulting type of the conditional expression is java.util.Date since it's the "Least Common Superclass" for the Timestamp / Time pair. Since null can be autoboxed to anything, the "Least Common Superclass" is the Integer class and this will be the return type of the conditional expression (ternary operator) above. The return value will then be a null pointer of type Integer and that is what will be returned by the ternary operator. At runtime, when the Java Virtual Machine unboxes the Integer a NullPointerException is thrown. This happens because the JVM attempts to invoke the function null.intValue(args) , where null is the result of autoboxing. In my opinion (and since my opinion is not in the Java Language Specification many people will find it wrong anyway) the compiler does a poor job in evaluating the expression in your question. Given that you wrote true ? param1 : param2 the compiler should determine right away that the first parameter - null - will be returned and it should generate a compiler error. This is somewhat similar to when you write while(args){} etc... and the compiler complains about the code underneath the loop and flags it with Unreachable Statements . Your second case is pretty straightforward and this answer is already too long... ;) CORRECTION: After another analysis I believe that I was wrong to say that a null value can be boxed/autoboxed to anything. Talking about the class Integer, explicit boxing consists in invoking the new Integer(args) constructor or maybe the Integer.valueOf(args); (I found this version somewhere). The former would throw a NumberFormatException (and this does not happen) while the second would just not make sense since an int cannot be null ...
+
+Question-8430805, answer-22332291
+Sudheesh B Nair 's has a nice (and accepted) answer on the question, which i think should have a better alternative such as; What's wrong with measuring time passed and checking if TIME_INTERVAL miliseconds (say 2000) passed since the last back press. The following sample code uses System.currentTimeMillis(args); to store the time onBackPressed(args) is called; #pre Back on accepted answer critique ; Using a flag to indicate if it was pressed in last TIME_INTERVAL (say 2000) milliseconds and set - reset is via Handler 's postDelayed(args) method was the first thing to come in my mind. But the postDelayed(args) action should be cancelled when activity is closing, removing the Runnable . In order to remove the Runnable , it must not be declared anonymous , and be declared as member along with the Handler aswell. Then removeCallbacks(args) method of Handler can be called appropriately. The following sample is the demonstration; #pre Thanks to @NSouth for contributing; In order to prevent toast message appearing even after the application is closed, Toast can be declared as a member - say mExitToast - and can be cancelled via mExitToast.cancel(args); just before super.onBackPressed(args); call.
+
+Question-6667243, answer-6667307
+mode1.name(args) or String.valueOf(args) . It doesn't get better than that, I'm afraid
+
+Question-6667243, answer-6667310
+You can use Mode.mode1.name(args) however you often don't need to do this. Mode mode = System.out.println(args);
+
+Question-6667243, answer-6667354
+Enum is just a little bit special class. Enums can store additional fields, implement methods etc. For example #pre Now you can say: System.out.println(args) and see output: a
+
+Question-6667243, answer-25575077
+You could override the toString(args) method for each enum value. Example: #pre Usage: #pre
+
+Question-8275499, answer-8275508
+Just use TheClassName.class instead of getClass(args) .
+
+Question-8275499, answer-8275761
+getClass(args) method is defined in Object class with the following signature: #blockquote Since it is not defined as static , you can not call it within a static code block. See these answers for more information: Q1 , Q2 , Q3 . If you're in a static context, then you have to use the class literal expression to get the Class, so you basically have to do like: #blockquote This type of expression is called Class Literals and they are explained in Java Language Specification Book as follows: #blockquote You can also find information about this subject on API documentation for Class.
+
+Question-8275499, answer-17397548
+As for the code example in the question, the standard solution is to reference the class explicitly by its name, and it is even possible to do without getClassLoader(args) call: #pre This approach still has a back side that it is not very safe against copy/paste errors in case you need to replicate this code to a number of similar classes. And as for the exact question in the headline, there is a trick posted in the adjacent thread : Class currentClass = new Object(args) { }.getClass(args).getEnclosingClass(args); It uses a nested anonymous Object subclass to get hold of the execution context. This trick has a benefit of being copy/paste safe... It may be also worth noting that if this snippet is shaped as a static method of some base class, then currenClass value will always be a reference to that base class rather than to any subclass that may be using that method.
+
+Question-8189466, answer-8189786
+Here's why: As it is says in the Javadoc: #blockquote This check is done in the next(args) method of the iterator (as you can see by the stacktrace). But we will reach the next(args) method only if hasNext(args) delivered true, which is what is called by the for each to check if the boundary is met. In your remove method, when hasNext(args) checks if it needs to return another element, it will see that it returned two elements, and now after one element was removed the list only contains two elements. So all is peachy and we are done with iterating. The check for concurrent modifications does not occur, as this is done in the next(args) method which is never called. Next we get to the second loop. After we remove the second number the hasNext method will check again if can return more values. It has returned two values already, but the list now only contains one. But the code here is: #pre 1 != 2, so we continue to the next(args) method, which now realizes that someone has been messing with the list and fires the exception. Hope that clears your question up.
+
+Question-8189466, answer-23592535
+I had that same problem but in case that I was adding en element into iterated list. I made it this way #pre Now everything goes fine because you don't create any iterator over your list, you iterate over it "manually". And condition i < integerList.size(args) will never fool you because when you remove/add something into List size of the List decrement/increment.. Hope it helps, for me that was solution.
+
+Question-7032070, answer-7032137
+Unless there is a specific optimization that checks if the argument passed to removeAll(args) is the collection itself (and I highly doubt that such an optimization is there) it will be significantly slower than a simple .clear(args) . Apart from that (and at least equally important): arraylist.removeAll(args) is just obtuse, confusing code. It is a very backwards way of saying "clear this collection". What advantage would it have over the very understandable arraylist.clear(args) ?
+
+Question-7032070, answer-7032144
+The source code for clear(args) : #pre The source code for removeAll(args) (As defined in AbstractCollection ): #pre clear(args) is much faster since it doesn't have to deal with all those extra method calls. And as Atrey points out, c.contains(args) increases the time complexity of removeAll to O(n^2) as opposed to clear 's O(n).
+
+Question-7032070, answer-7032180
+The clear(args) method removes all the elements of a single ArrayList . It's a fast operation, as it just sets some array elements to null . The removeAll(args) method, which is inherited from AbstractCollection , removes all the elements that are in the argument collection from the collection you call the method on. It's a relatively slow operation, as it has to search through one of the collections involved.
+
+Question-7032070, answer-7032208
+clear(args) will go through the underlying Array and set each entry to null; removeAll(args) will go through the ArrayList checking for collection and remove(args) it if it exists. I would imagine that clear(args) is way faster then removeAll because it's not comparing, etc.
+
+Question-6840803, answer-6840856
+SimpleDateFormat stores intermediate results in instance fields. So if one instance is used by two threads they can mess each other's results. Looking at the source code reveals that there is a Calendar instance field, which is used by operations on DateFormat / SimpleDateFormat For example parse(args) calls calendar.clear(args) initially and then calendar.add(args) . If another thread invokes parse(args) before the completion of the first invocation, it will clear the calendar, but the other invocation will expect it to be populated with intermediate results of the calculation. One way to reuse date formats without trading thread-safety is to put them in a ThreadLocal - some libraries do that. That's if you need to use the same format multiple times within one thread. But in case you are using a servlet container (that has a thread pool), remember to clean the thread-local after you finish. To be honest, I don't understand why they need the instance field, but that's the way it is. You can also use joda-time DateTimeFormat which is threadsafe.
+
+Question-6652687, answer-6652772
+Use String#trim() method or String allRemoved = myString.replaceAll(args) for trim both the end. For left trim: String leftRemoved = myString.replaceAll(args); For right trim: String rightRemoved = myString.replaceAll(args);
+
+Question-7283338, answer-7283475
+Because any particular implementation of Set may or may not be random access . You can always get an iterator and step through the Set, using the iterators' next(args) method to return the result you want once you find the equal element. This works regardless of the implementation. If the implementation is NOT random access (picture a linked-list backed Set), a get(args) method in the interface would be deceptive, since it would have to iterate the collection to find the element to return, and a get(args) would seem to imply this would be necessary, that the Set could jump directly to the element to get. contains(args) may or may not have to do the same thing, of course, depending on the implementation, but the name doesn't seem to lend itself to the same sort of misunderstandings.
+
+Question-8157755, answer-8157791
+If you want the value you are assigning in the constructor, you need to add a method in the enum definition to return that value. If you want a unique number that represent the enum value, you can use ordinal(args) .
+
+Question-6684665, answer-6684822
+You can't just take the returned string and construct a string from it... it's not a byte[] data type anymore, it's already a string; you need to parse it. For example : #pre ** EDIT ** You get an hint of your problem in your question, where you say " Whatever I seem to try I end up getting a byte array which looks as follows... [91, 45, ... ", because 91 is the byte value for [ , so [91, 45, ... is the byte array of the string " [-45, 1, 16, ... " string. The method Arrays.toString(args) will return a String representation of the specified array; meaning that the returned value will not be a array anymore. For example : #pre As you can see, s1 holds the string representation of the array b1 , while s2 holds the string representation of the bytes contained in b1 . Now, in your problem, your server returns a string similar to s1 , therefore to get the array representation back, you need the opposite constructor method. If s2.getBytes(args) is the opposite of new String(args) , you need to find the opposite of Arrays.toString(args) , thus the code I pasted in the first snippet of this answer.
+
+Question-6684665, answer-6684852
+What Arrays.toString(args) does is create a string representation of each individual byte in your byteArray. Please check the API documentation Arrays API To convert your response string back to the original byte array, you have to use split(args) or something and convert it into a collection and then convert each individual item in there to a byte to recreate your byte array.
+
+Question-6684665, answer-6684935
+If you want to convert the string back into a byte array you will need to use String.getBytes(args) (or equivalent Python function) and this will allow you print out the original byte array.
+
+Question-6684665, answer-12685471
+The kind of output you are seeing from your byte array ( [B@405217f8 ) is also an output for a zero length byte array (ie new byte[0] ). It looks like this string is a reference to the array rather than a description of the contents of the array like we might expect from a regular collection's toString(args) method. As with other respondents, I would point you to the String constructors that accept a byte[] parameter to construct a string from the contents of a byte array. You should be able to read raw bytes from a socket's InputStream if you want to obtain bytes from a TCP connection. If you have already read those bytes as a String (using an InputStreamReader ), then, the string can be converted to bytes using the getBytes(args) function. Be sure to pass in your desired character set to both the String constructor and getBytes(args) functions, and this will only work if the byte data can be converted to characters by the InputStreamReader . If you want to deal with raw bytes you should really avoid using this stream reader layer.
+
+Question-7707556, answer-15870428
+There is a subtle issue here that is a bit of a gotcha. The toString(args) method has a base implementation in Object . CharSequence is an interface; and although the toString(args) method appears as part of that interface, there is nothing at compile-time that will force you to override it and honor the additional constraints that the CharSequence toString(args) method's javadoc puts on the toString(args) method; ie that it should return a string containing the characters in the order returned by charAt(args) . Your IDE won't even help you out by reminding that you that you probably should override toString(args) . For example, in intellij, this is what you'll see if you create a new CharSequence implementation: #a . Note the absence of toString(args) . If you rely on toString(args) on an arbitrary CharSequence , it should work provided the CharSequence implementer did their job properly. But if you want to avoid any uncertainty altogether, you should use a StringBuilder and append(args) , like so: #pre
+
+Question-8579657, answer-8579702
+If you just invoke run(args) directly, it's executed on the calling thread, just like any other method call. Thread.start(args) is required to actually create a new thread so that the runnable's run method is executed in parallel.
+
+Question-8579657, answer-8641412
+Thread.start(args) code registers the Thread with scheduler and the scheduler calls the run(args) method. Also, Thread is class while Runnable is an interface.
+
+Question-8579657, answer-13134221
+Actually Thread.start(args) creates a new thread and have its own execution scenario. Thread.start(args) calls the run(args) method asynchronously,which changes the state of new Thread to Runnable. But Thread.run(args) does not create any new thread. Instead it execute the run method in the current running thread synchronously. If you are using Thread.run(args) then you are not using the features of multi threading at all.
+
+Question-8579657, answer-19629304
+If you do run(args) in main method, the thread of main method will invoke the run method instead of the thread you require to run. The start(args) method creates new thread and for which the run(args) method has to be done
+
+Question-8579657, answer-26159918
+invoke run(args) is executing on the calling thread, like any other method call. whereas Thread.start(args) creates a new thread. invoking run(args) is a programmatic bug.
+
+Question-8579657, answer-33375616
+Most of these answers miss the big picture, which is that, as far as the Java language is concerned, there is no more difference between t.start(args) and r.run(args) than there is between any other two methods. They're both just methods. They both run in the thread that called them . They both do whatever they were coded to do, and then they both return, still in the same thread, to their callers. The biggest difference is that most of the code for t.start(args) is native code while, in most cases, the code for r.run(args) is going to be pure Java. But that's not much of a difference. Code is code. Native code is harder to find, and harder to understand when you find it, but it's still just code that tells the computer what to do. So, what does t.start(args) do? It creates a new native thread, it arranges for that thread to call t.run(args) , and then it tells the OS to let the new thread run. Then it returns. And what does r.run(args) do? The funny thing is, the person asking this question is the person who wrote it . r.run(args) does whatever you (i.e., the developer who wrote it) designed it to do. t.start(args) is the method that the library provides for your code to call when you want a new thread. r.run(args) is the method that you provide for the library to call in the new thread.
+
+Question-8579657, answer-35264580
+Main difference is that when program calls start(args) method a new Thread is created and code inside run() method is executed in new Thread while if you call run(args) method directly no new Thread is created and code inside run() will execute on current Thread . Another difference between start vs run in Java thread is that you can not call start() method twice on thread object . once started, second call of start() will throw IllegalStateException in Java while you can call run() method twice.
+
+Question-8579657, answer-35931153
+If you directly call run(args) method, you are not using multi-threading feature since run(args) method is executed as part of caller thread. If you call start(args) method on Thread, the Java Virtual Machine will call run() method and two threads will run concurrently - Current Thread ( main(args) in your example) and Other Thread (Runnable r1 in your example). Have a look at source code of start(args) method in Thread class #pre In above code, you can't see invocation to run(args) method. private native void start0(args) is responsible for calling run(args) method. JVM executes this native method.
+
+Question-6608795, answer-20069798
+All these answers around here, as well as the answers in this question , suggest that loading absolute URLs, like "/foo/bar.properties" treated the same by class.getResourceAsStream(args) and class.getClassLoader(args).getResourceAsStream(args) . This is NOT the case, at least not in my Tomcat configuration/version (currently 7.0.40). #pre Sorry, I have absolutely no satisfying explanation, but I guess that tomcat does dirty tricks and his black magic with the classloaders and cause the difference. I always used class.getResourceAsStream(args) in the past and haven't had any problems. PS: I also posted this over here
+
+Question-6608795, answer-22327270
+I tried reading from input1.txt which was inside one of my packages together with the class which was trying to read it. The following works: #pre The most important part was to call getPath(args) if you want the correct path name in String format. DO NOT USE toString(args) because it will add some extra formatting text which will TOTALLY MESS UP the fileName (you can try it and see the print out). Spent 2 hours debugging this... :(
+
+Question-7935858, answer-7935873
+java.lang.String.split splits on regular expressions, and . in a regular expression means "any character". Try temp.split(args) .
+
+Question-7935858, answer-7935881
+The documentation on split() says: #blockquote (Emphasis mine.) A dot is a special character in regular expression syntax. Use Pattern.quote() on the parameter to split() if you want the split to be on a literal string pattern: String[] words = temp.split(args);
